@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>產品診斷報告｜先搞清楚你的產品能不能進美國｜北美大型通路出海整合服務</title>
+  <meta name="description" content="第一階段：產品診斷報告。五關詳解（定價／配方／法規／品牌故事／工廠合規）、市調品測、當地真人訪談、FDA 預檢、定價與可行性——先幫你看清楚，再決定怎麼走。診斷檔 US$1,500 起（示範）。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       設計基調 v3：沉穩現代精品 · 深色高級（Direction C）
+       全站深色、香檳金點綴、Sora 現代標題、保留 Hero 大圖。
+       金色語意：主 CTA／門票／已成案標記／勾號。
+       所有 class 名沿用，HTML/JS 不動。
+       ============================================================ */
+    :root {
+      --bg:          #0C0F16;
+      --bg2:         #11151F;
+      --card:        #161C28;
+      --card-hi:     #1B2230;
+      --paper:       #0C0F16;
+      --paper-hi:    #161C28;
+      --midnight:    #11151F;
+      --midnight-2:  #090C12;
+      --ink:         #F0F2F6;
+      --text:        #C4CBD6;
+      --slate:       #8B93A3;
+      --paper-dim:   rgba(240,242,246,.66);
+      --steel:       #7E96B8;
+      --gold:        #D9BE86;
+      --gold-bright: #E6D2A2;
+      --gold-deep:   #C7A968;
+      --gold-soft:   rgba(217,190,134,.14);
+      --line:        rgba(240,242,246,.10);
+      --line-soft:   rgba(240,242,246,.06);
+      --line-dark:   rgba(240,242,246,.12);
+      --font: 'Noto Sans TC','PingFang TC','Source Han Sans TC','Microsoft JhengHei',sans-serif;
+      --serif: 'Sora','Noto Sans TC',sans-serif;
+      --fig: 'Sora','Noto Sans TC',sans-serif;
+      --ease: cubic-bezier(.23,1,.32,1);
+      --max: 1160px;
+      --r: 12px;
+      --r-s: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 90px; }
+    body {
+      margin: 0; min-width: 320px;
+      background: var(--bg); color: var(--text);
+      font-family: var(--font); font-weight: 400; line-height: 1.85; font-size: 16.5px;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; line-height: 1.28; letter-spacing: -.005em; color: #fff; }
+    p { margin: 0; }
+    ::selection { background: var(--gold-soft); }
+
+    /* ---------- layout ---------- */
+    .wrap { position: relative; z-index: 2; width: min(100%, var(--max)); margin-inline: auto; padding-inline: clamp(22px, 5.5vw, 52px); }
+    section { position: relative; }
+    .band { padding-block: clamp(80px, 10vw, 148px); }
+    .band.white { background: var(--bg); }
+    .band.paper-hi { background: var(--bg2); }
+    .band.dark { background: var(--bg2); }
+    .band.dark::after {
+      content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: radial-gradient(120% 80% at 88% -5%, rgba(217,190,134,.08), transparent 55%);
+    }
+    .band.dark > .wrap { z-index: 2; }
+    .band.dark h2, .band.dark h3, .band.dark h4 { color: #fff; }
+
+    /* ---------- eyebrow + section head ---------- */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: .72rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold);
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); opacity: .85; }
+    .band.dark .eyebrow { color: var(--gold); }
+    .shead { max-width: 50rem; margin-bottom: clamp(44px, 5.5vw, 68px); }
+    .shead h2 { font-size: clamp(1.7rem, 4vw, 2.55rem); margin-top: 18px; line-height: 1.3; }
+    .shead .sub { margin-top: 20px; color: var(--slate); font-size: 1.06rem; line-height: 1.95; max-width: 42rem; }
+    .band.dark .shead .sub { color: var(--paper-dim); }
+
+    /* ---------- buttons ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 28px; border: 0; border-radius: var(--r-s);
+      font-weight: 600; letter-spacing: .01em; cursor: pointer;
+      transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease);
+    }
+    .btn svg { flex: none; }
+    .btn-gold { background: var(--gold); color: #1A1408; }
+    .btn-gold:hover { transform: translateY(-2px); background: #E8D2A0; }
+    .btn-ink { background: var(--card-hi); color: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+    .btn-ink:hover { transform: translateY(-2px); background: #222b3a; }
+    .btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--gold); color: var(--gold-bright); }
+    .band.dark .btn-ghost { color: #fff; }
+    .btn-sm { min-height: 44px; padding: 0 20px; font-size: .9rem; }
+    .btn:active { transform: scale(.975); }
+    .arrow-link { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; color: var(--gold); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .band.dark .arrow-link { color: var(--gold); }
+    .arrow-link:hover { border-bottom-color: currentColor; }
+    .arrow-link svg { transition: transform .2s var(--ease); }
+    .arrow-link:hover svg { transform: translateX(4px); }
+
+    /* ---------- header / nav ---------- */
+    .header { position: fixed; inset: 0 0 auto 0; z-index: 60; background: transparent; border-bottom: 1px solid transparent; transition: background .35s var(--ease), border-color .35s var(--ease), backdrop-filter .35s var(--ease); }
+    .header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgba(9,12,18,.78) 0%, rgba(9,12,18,.36) 46%, rgba(9,12,18,0) 100%); transition: opacity .35s var(--ease); }
+    .header.scrolled { background: rgba(12,15,22,.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(217,190,134,.16); }
+    .header.scrolled::before { opacity: 0; }
+    .header:has(.mobile-menu.open) { background: rgba(12,15,22,.98); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+    .header:has(.mobile-menu.open)::before { opacity: 0; }
+    .nav { display: flex; align-items: center; gap: 24px; height: 68px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-family: var(--serif); font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+    .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); flex: none; }
+    .brand small { display: block; font-family: var(--font); font-size: .6rem; font-weight: 400; letter-spacing: .18em; color: var(--paper-dim); margin-top: 3px; }
+    .nav-links { display: none; gap: 28px; margin-left: 12px; font-size: .9rem; font-weight: 400; color: var(--paper-dim); }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: #fff; }
+    .nav-links a.active::after { content: ""; display: block; height: 2px; margin-top: 3px; background: var(--gold); border-radius: 2px; }
+    .nav-dd { position: relative; }
+    .nav-dd::after { content: ""; position: absolute; top: 100%; left: -14px; right: -14px; height: 18px; }
+    .nav-dd > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dd > a .chev { transition: transform .2s var(--ease); opacity: .7; }
+    .nav-dd:hover > a .chev, .nav-dd:focus-within > a .chev { transform: rotate(180deg); opacity: 1; }
+    .nav-dd-panel { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); min-width: 256px; padding: 8px; background: rgba(17,21,31,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--line); border-radius: var(--r-s); box-shadow: 0 28px 60px rgba(0,0,0,.55); display: flex; flex-direction: column; gap: 2px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s var(--ease), transform .18s var(--ease); z-index: 60; }
+    .nav-dd:hover .nav-dd-panel, .nav-dd:focus-within .nav-dd-panel { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dd-panel a { display: block; padding: 11px 13px; border-radius: 6px; color: var(--paper-dim); }
+    .nav-dd-panel a:hover, .nav-dd-panel a.active { background: rgba(240,242,246,.05); color: #fff; }
+    .nav-dd-panel a b { display: block; font-size: .92rem; font-weight: 600; color: #fff; }
+    .nav-dd-panel a i { display: block; font-style: normal; font-size: .75rem; color: var(--paper-dim); margin-top: 3px; }
+    .nav-dd-panel a .st { font-family: var(--fig); color: var(--gold); font-weight: 600; font-size: .78rem; margin-right: 8px; }
+    .nav-cta { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+    .nav-cta .btn-ghost { color: #fff; display: none; }
+    @media (min-width: 980px) { .nav-cta .btn-ghost { display: inline-flex; } }
+    @media (max-width: 899px) { .nav-cta { margin-left: 0; } }
+    .nav-toggle { margin-left: auto; display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--line); border-radius: var(--r-s); color: #fff; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; gap: 2px; padding: 8px 0 16px; border-top: 1px solid var(--line); max-height: calc(100svh - 80px); overflow: auto; }
+    .mobile-menu a { color: var(--paper-dim); padding: 13px 4px; font-weight: 500; border-bottom: 1px solid var(--line-soft); }
+    .mobile-menu.open { display: flex; }
+    @media (min-width: 900px) { .nav-links { display: flex; } .nav-toggle { display: none; } .mobile-menu { display: none !important; } }
+
+    /* ---------- context strip（冷入口保護）---------- */
+    .hero-screen { min-height: 100svh; display: flex; flex-direction: column; }
+    .context-strip { padding-top: 64px; background: var(--midnight-2); color: var(--paper-dim); border-bottom: 1px solid rgba(217,190,134,.18); }
+    .context-strip .wrap { display: flex; align-items: center; gap: 12px; padding-block: 11px; font-size: .86rem; letter-spacing: .01em; }
+    .context-strip .pin { color: var(--gold); flex: none; }
+    .context-strip b { color: #fff; font-weight: 600; }
+
+    /* ---------- breadcrumb ---------- */
+    .crumb { background: var(--midnight-2); }
+    .crumb .wrap { display: flex; align-items: center; gap: 8px; padding-block: 10px; font-size: .82rem; color: var(--paper-dim); flex-wrap: wrap; }
+    .crumb a:hover { color: #fff; }
+    .crumb .sep { opacity: .5; }
+    .crumb .here { color: var(--gold); font-weight: 600; }
+
+    /* ---------- page hero（短・深・保留大圖 + Ken Burns）---------- */
+    .page-hero { position: relative; flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; background: var(--bg); color: #fff; padding-block: clamp(52px, 8vw, 96px); overflow: hidden; }
+    .page-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(120deg, rgba(9,12,18,.94) 32%, rgba(9,12,18,.66) 78%), url('assets/scene-desk.jpg') center/cover; animation: kenburns 30s cubic-bezier(.16,1,.3,1) infinite alternate; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; z-index: 0; background: radial-gradient(80% 120% at 88% 0%, rgba(217,190,134,.16), transparent 55%); pointer-events: none; }
+    .page-hero .wrap { position: relative; z-index: 1; }
+    .page-hero .eyebrow { color: var(--gold); }
+    .page-hero h1 { margin-top: 20px; font-size: clamp(2.1rem, 5.4vw, 3.5rem); line-height: 1.1; max-width: 20ch; text-shadow: 0 2px 30px rgba(0,0,0,.45); }
+    .page-hero .sub { margin-top: 22px; max-width: 42rem; font-size: clamp(1rem, 2vw, 1.16rem); line-height: 1.9; color: rgba(255,255,255,.88); }
+    .page-hero .stage-pills { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .page-hero .sp { display: inline-flex; align-items: center; gap: 7px; font-size: .82rem; font-weight: 600; padding: 7px 14px; border-radius: 999px; background: rgba(240,242,246,.06); border: 1px solid var(--line); color: var(--paper-dim); }
+    .page-hero .sp.on { background: var(--gold); color: #1A1408; border-color: transparent; }
+    @keyframes kenburns { from { transform: scale(1.001); } to { transform: scale(1.09) translateY(-1.4%); } }
+
+    /* ---------- placeholder ---------- */
+    .ph { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border-radius: var(--r); color: var(--paper-dim); text-align: center; min-height: 200px; padding: 32px; transition: box-shadow .3s var(--ease);
+      background:
+        radial-gradient(120% 88% at 50% 6%, rgba(217,190,134,.07) 0%, transparent 56%),
+        linear-gradient(180deg, var(--card-hi) 0%, var(--midnight-2) 100%);
+      box-shadow: inset 0 0 0 1px rgba(217,190,134,.20), inset 0 1px 0 rgba(255,255,255,.03); }
+    .ph:hover { box-shadow: inset 0 0 0 1px rgba(217,190,134,.36), inset 0 1px 0 rgba(255,255,255,.04); }
+    .ph::before { content: ""; position: absolute; inset: 14px; border-radius: 6px; border: 1px solid rgba(217,190,134,.16); pointer-events: none; }
+    .ph::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, transparent 42%, rgba(230,210,162,.05) 50%, transparent 58%); transform: translateX(-100%); animation: phsheen 6.5s ease-in-out infinite; }
+    @keyframes phsheen { 0%, 72% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    .ph.dark { background: radial-gradient(120% 88% at 50% 6%, rgba(217,190,134,.05) 0%, transparent 56%), linear-gradient(180deg, var(--midnight) 0%, var(--midnight-2) 100%); }
+    .ph .cam { width: 34px; height: 34px; opacity: .9; color: var(--gold); filter: drop-shadow(0 0 10px rgba(217,190,134,.28)); position: relative; z-index: 1; transition: transform .4s var(--ease); }
+    .ph:hover .cam { transform: scale(1.08); }
+    .ph .lbl { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: .8rem; letter-spacing: .18em; font-weight: 600; text-transform: uppercase; color: var(--gold-bright); }
+    .ph .lbl::before { content: ""; width: 34px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .ph .lbl small { display: block; max-width: 30ch; font-weight: 400; font-size: .72rem; letter-spacing: .03em; text-transform: none; color: var(--paper-dim); opacity: .82; margin-top: 2px; }
+
+    /* §1 安靜問題段 */
+    .intro2 { display: grid; grid-template-columns: 1fr; gap: clamp(28px,4vw,52px); align-items: center; }
+    @media (min-width: 820px) { .intro2 { grid-template-columns: 1.05fr .95fr; } }
+    .intro2 .lead { max-width: 40rem; }
+    .intro2 .lead h2 { font-size: clamp(1.7rem, 4vw, 2.55rem); margin-top: 16px; }
+    .intro2 .lead p { margin-top: 22px; font-size: 1.1rem; line-height: 1.95; color: var(--text); }
+    .intro2 .lead p .hl { font-weight: 700; color: var(--steel); }
+    .intro2 .ph { min-height: 320px; }
+
+    /* §2 風險三卡 */
+    .riskgrid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 720px) { .riskgrid { grid-template-columns: repeat(3,1fr); } }
+    .riskcard { border: 1px solid var(--line); border-radius: var(--r); padding: 32px 28px; background: var(--card); transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease); }
+    .riskcard:hover { transform: translateY(-6px); border-color: rgba(217,190,134,.5); box-shadow: 0 26px 52px -30px rgba(0,0,0,.7); }
+    .riskcard .ic { width: 44px; height: 44px; color: var(--steel); }
+    .riskcard .ic svg { width: 100%; height: 100%; }
+    .riskcard p { margin-top: 22px; font-size: 1.08rem; font-weight: 600; line-height: 1.6; color: #fff; }
+
+    /* §3 解法：五關體檢 + 研究報告（主角） */
+    .dxblock { border-radius: var(--r); padding: clamp(26px,3vw,36px); }
+    .dxblock.gate { background: var(--card); border: 1px solid var(--line); }
+    .dxblock.report { margin-top: 20px; background: linear-gradient(165deg, rgba(217,190,134,.14), rgba(217,190,134,.03)); border: 1px solid rgba(217,190,134,.46); }
+    .dxblock .pl { display: inline-flex; align-items: center; gap: 8px; font-size: .74rem; font-weight: 700; letter-spacing: .14em; }
+    .dxblock.gate .pl { color: var(--paper-dim); }
+    .dxblock.report .pl { color: var(--gold); }
+    .dxblock h3 { margin-top: 12px; color: #fff; font-size: 1.3rem; }
+    .dxblock > p.desc { margin-top: 10px; color: var(--paper-dim); font-size: .98rem; line-height: 1.8; max-width: 46rem; }
+    .gate-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 22px; }
+    @media (min-width: 680px) { .gate-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 980px) { .gate-grid { grid-template-columns: repeat(5,1fr); } }
+    .gate-cell { border: 1px solid var(--line); border-radius: var(--r-s); padding: 18px 16px; transition: border-color .2s var(--ease), transform .2s var(--ease); }
+    .gate-cell:hover { border-color: rgba(217,190,134,.4); transform: translateY(-3px); }
+    .gate-cell .gi { width: 30px; height: 30px; color: var(--paper-dim); }
+    .gate-cell .gi svg { width: 100%; height: 100%; }
+    .gate-cell b { display: block; margin-top: 12px; color: #fff; font-size: .98rem; font-weight: 600; }
+    .gate-cell span { display: block; margin-top: 5px; color: var(--paper-dim); font-size: .84rem; line-height: 1.6; }
+    .report-body { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 22px; }
+    @media (min-width: 860px) { .report-body { grid-template-columns: 1.15fr .85fr; } }
+    .rep-item { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: flex-start; margin-top: 18px; }
+    .rep-item:first-child { margin-top: 0; }
+    .rep-item .ri { flex: none; width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; color: var(--gold); background: rgba(217,190,134,.14); }
+    .rep-item .ri svg { width: 20px; height: 20px; }
+    .rep-item b { display: block; color: #fff; font-size: 1.03rem; font-weight: 600; line-height: 1.4; }
+    .rep-item span { display: block; margin-top: 5px; color: var(--paper-dim); font-size: .92rem; line-height: 1.7; }
+    .toc { border: 1px solid rgba(217,190,134,.4); border-radius: var(--r); background: rgba(9,12,18,.4); padding: 24px; }
+    .toc .toc-h { font-size: .72rem; font-weight: 700; letter-spacing: .14em; color: var(--gold); }
+    .toc ol { list-style: none; margin: 16px 0 0; padding: 0; counter-reset: toc; }
+    .toc li { counter-increment: toc; display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); color: var(--paper-dim); font-size: .92rem; }
+    .toc li:first-child { border-top: 0; }
+    .toc li::before { content: counter(toc, decimal-leading-zero); font-variant-numeric: tabular-nums; color: var(--gold); font-weight: 700; font-size: .8rem; }
+
+    /* §4 證明步驟（microcase） */
+    .microcase { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: center; border: 1px solid var(--line); border-radius: var(--r); padding: clamp(24px,3.5vw,36px); background: var(--card); }
+    @media (min-width: 820px) { .microcase { grid-template-columns: 1.3fr 1fr; } }
+    .microcase .flag { display: inline-flex; align-self: flex-start; font-size: .7rem; font-weight: 700; letter-spacing: .1em; padding: 5px 12px; border-radius: 999px; background: rgba(217,190,134,.14); color: var(--gold-bright); box-shadow: inset 0 0 0 1px rgba(217,190,134,.4); }
+    .microcase h3 { margin-top: 14px; font-size: clamp(1.3rem, 3vw, 1.7rem); color: #fff; }
+    .microcase p { margin-top: 12px; color: var(--slate); font-size: 1.02rem; line-height: 1.85; }
+    .microcase .ph { min-height: 180px; }
+    .microcase .proof { margin-top: 16px; display: grid; gap: 12px; }
+    .microcase .proof p { margin-top: 0; color: var(--text); font-size: 1rem; line-height: 1.75; }
+    .microcase .proof p b { color: #fff; font-weight: 600; }
+    .microcase .proof .num { color: var(--gold); font-weight: 700; }
+    .microcase .closer { margin-top: 18px; font-weight: 600; color: #fff; font-size: 1.08rem; line-height: 1.5; }
+
+    /* §5 自我分流 + 費用鉤子 */
+    .route-fee { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 780px) { .route-fee { grid-template-columns: 1fr 1fr; } }
+    .route-fee .rf { border: 1px solid var(--line); border-radius: var(--r); padding: 28px 30px; background: var(--card); }
+    .route-fee .rf .k { font-size: .72rem; font-weight: 700; letter-spacing: .14em; color: var(--gold); }
+    .route-fee .rf p { margin-top: 12px; color: var(--slate); font-size: 1.02rem; line-height: 1.8; }
+    .route-fee .rf p b { color: var(--ink); font-weight: 600; }
+    .route-fee .rf a { color: var(--gold-bright); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .route-fee .rf .feeprice { margin-top: 8px; font-size: 1.5rem; font-weight: 700; color: #fff; font-family: var(--fig); }
+    .route-fee .rf .feeprice .fill { color: var(--gold); }
+
+    /* §6 置中收尾 + trust */
+    .final h2 { font-size: clamp(1.9rem,5vw,2.9rem); max-width: 20ch; }
+    .final .sub { margin-top: 20px; max-width: 38rem; color: var(--paper-dim); font-size: 1.06rem; line-height: 1.85; }
+    .final .line-block { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .final.center { text-align: center; }
+    .final.center .shead { margin-inline: auto; }
+    .final.center .eyebrow { justify-content: center; }
+    .final.center h2 { margin-inline: auto; }
+    .final.center .line-block { justify-content: center; }
+    .trustrow { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; color: var(--paper-dim); font-size: .92rem; }
+    .trustrow .ti b { color: #fff; }
+    .trustrow .ti .fill { color: var(--gold); font-style: italic; }
+
+    /* ---------- footer ---------- */
+    .footer { background: var(--midnight-2); color: var(--paper-dim); padding-block: 64px; }
+    .footcols { display: grid; grid-template-columns: 1fr; gap: 32px; }
+    @media (min-width: 760px) { .footcols { grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; gap: 30px; } }
+    .footcols h4 { color: #fff; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; margin: 0 0 16px; }
+    .footcols a, .footcols p { display: block; color: var(--paper-dim); font-size: .9rem; padding: 6px 0; margin: 0; }
+    .footcols a:hover { color: var(--gold-bright); }
+    .footbar { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: .8rem; color: var(--paper-dim); }
+
+    /* ---------- sticky LINE ---------- */
+    .sticky-line { position: fixed; z-index: 55; right: 22px; bottom: 22px; }
+    .sticky-line .btn { border-radius: var(--r-s); box-shadow: 0 18px 44px -14px rgba(0,0,0,.6); }
+    @media (max-width: 640px) { .sticky-line { left: 16px; right: 16px; bottom: 14px; } .sticky-line .btn { width: 100%; min-height: 54px; font-size: 1.02rem; } body { padding-bottom: 78px; } }
+
+    /* ---------- reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(24px); filter: blur(6px); transition: opacity .7s var(--ease), transform .7s var(--ease), filter .7s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; filter: blur(0); }
+
+    /* ---------- demo marker ---------- */
+    .demo>i{font-style:normal;font-size:.6em;font-weight:600;letter-spacing:.08em;padding:1px 5px;margin-left:6px;border-radius:4px;vertical-align:middle;white-space:nowrap;color:color-mix(in srgb,currentColor 58%,transparent);background:color-mix(in srgb,currentColor 10%,transparent);border:1px solid color-mix(in srgb,currentColor 26%,transparent)}
+
+    /* ---------- reduced motion ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+      .page-hero::before { animation: none !important; }
+    }
+  
+    /* 相鄰同色區塊補細線，避免節奏過平 */
+    .band.white + .band.white, .band.dark + .band.dark { border-top: 1px solid var(--line); }
+  
+    /* ============================================================
+       全站打磨層 v1（一致性 + 手機 + 深色質感 + 弱化示範）
+       ============================================================ */
+    :root { --ease-p: cubic-bezier(.23,1,.32,1); }
+
+    /* ── 深色質感：極淡顆粒，讓深色更「貴」不「悶」 ── */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .55;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    /* ── 弱化「示範/待補」徽章，別搶信任感 ── */
+    .demo > i, .fake, .stat .fake {
+      opacity: .5 !important; font-size: .54em !important; letter-spacing: .04em !important;
+    }
+    .stat .fake { color: rgba(240,242,246,.42) !important; border-color: rgba(240,242,246,.1) !important; }
+
+    /* ── 頂部捲動進度條（子頁補上） ── */
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 70; pointer-events: none; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--gold-deep,#C7A968), var(--gold-bright,#E6D2A2)); box-shadow: 0 0 12px rgba(217,190,134,.5); }
+
+    /* ── 常駐 CTA：滑過 hero 才淡入（全站統一行為） ── */
+    .sticky-line { opacity: 0; transform: translateY(14px); pointer-events: none; transition: opacity .45s var(--ease-p), transform .45s var(--ease-p); }
+    .sticky-line.show { opacity: 1; transform: none; pointer-events: auto; }
+
+    /* ── 回頁首鈕（長頁） ── */
+    .to-top { position: fixed; left: 22px; bottom: 24px; z-index: 54; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(27,34,48,.9); color: #fff; border: 1px solid var(--line,rgba(240,242,246,.12)); backdrop-filter: blur(8px); opacity: 0; transform: translateY(10px); pointer-events: none; cursor: pointer; transition: opacity .3s var(--ease-p), transform .3s var(--ease-p), border-color .2s; }
+    .to-top:hover { border-color: rgba(217,190,134,.5); color: var(--gold-bright,#E6D2A2); }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    @media (max-width: 640px) { .to-top { left: 14px; bottom: 84px; width: 42px; height: 42px; } }
+
+    /* ── 手機體驗打磨 ── */
+    @media (max-width: 600px) {
+      /* Hero 主 CTA 改整寬區塊，不再折成醜兩行 */
+      .hero-cta { flex-direction: column; align-items: stretch; gap: 14px; }
+      .hero-cta .btn { width: 100%; }
+      .hero-cta .arrow-link { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      /* 手機藏掉 header 重複的金鈕（底部常駐已涵蓋），header 更清爽 */
+      .nav-cta .btn-gold { display: none !important; }
+    }
+
+    /* ── reduced-motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-line { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+      .scroll-progress { display: none !important; }
+      .to-top { transition: none !important; }
+      body::after { opacity: .4; }
+    }
+
+    /* ---------- 旅程步驟層 journey ---------- */
+    .journey { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); }
+    .jstep { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 10px; }
+    .jstep::before { content: ""; position: absolute; top: 21px; left: -50%; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(217,190,134,.45), transparent); z-index: 0; }
+    .jstep:first-child::before { display: none; }
+    .jnum { position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--fig); font-size: .92rem; font-weight: 700; color: var(--gold-bright); background: var(--midnight-2); box-shadow: inset 0 0 0 1px rgba(217,190,134,.4), 0 0 14px rgba(217,190,134,.12); }
+    .jstep.active .jnum { background: var(--gold); color: var(--midnight-2); box-shadow: 0 0 0 1px var(--gold), 0 0 20px rgba(217,190,134,.4); }
+    .jlbl { margin-top: 12px; font-weight: 700; color: var(--ink); font-size: 1.02rem; letter-spacing: .02em; }
+    .jstep.active .jlbl { color: var(--gold-bright); }
+    .jdesc { margin-top: 4px; font-size: .82rem; color: var(--paper-dim); line-height: 1.5; max-width: 13em; }
+    @media (max-width: 720px) { .journey { grid-template-columns: 1fr 1fr; gap: 30px 0; } .jstep::before { display: none; } }
+    /* ---------- 成果統計帶 stat-band ---------- */
+    .statband { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; }
+    .statband li { text-align: center; padding: 8px 12px; border-left: 1px solid rgba(217,190,134,.16); }
+    .statband li:first-child { border-left: 0; }
+    .statband b { display: block; font-family: var(--fig); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--gold-bright); line-height: 1; letter-spacing: .01em; }
+    .statband span { display: block; margin-top: 10px; font-size: .9rem; color: var(--paper-dim); line-height: 1.5; }
+    @media (max-width: 720px) { .statband { grid-template-columns: 1fr 1fr; gap: 30px 16px; } .statband li:nth-child(odd) { border-left: 0; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <span class="dot"></span>
+          <span>上架美國<small>台灣品牌 · 北美大型通路</small></span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">首頁</a>
+          <div class="nav-dd">
+            <a href="index.html#services" class="active">服務<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="services-diagnosis.html" class="active"><b><span class="st">01</span>產品診斷報告</b><i>能不能進美國，先驗證</i></a>
+              <a href="services-expo.html"><b><span class="st">02</span>展覽備展</b><i>把你推到 buyer 面前</i></a>
+              <a href="services-channel.html"><b><span class="st">03</span>通路上架與優化</b><i>談進去，上架後不放生</i></a>
+            </div>
+          </div>
+          <a href="cases.html">案例</a>
+          <div class="nav-dd">
+            <a href="index.html#difficulty">資源<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="resources-exhibitions.html"><b><span class="st">01</span>海外展覽資訊</b><i>值得參加的展，錯的不上</i></a>
+              <a href="resources-grants.html"><b><span class="st">02</span>補助案資訊</b><i>出海外銷補助，過期不留</i></a>
+              <a href="resources-blog.html"><b><span class="st">03</span>部落格</b><i>出海會卡的關，一篇篇拆</i></a>
+            </div>
+          </div>
+          <a href="about.html">關於</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn btn-ghost btn-sm" href="boss.html">給老闆看</a>
+          <a class="btn btn-gold btn-sm" href="#contact">免費聊 15 分鐘</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">首頁</a>
+        <a href="services-diagnosis.html">服務・產品診斷報告</a>
+        <a href="services-expo.html">服務・展覽備展</a>
+        <a href="services-channel.html">服務・通路上架與優化</a>
+        <a href="cases.html">案例</a>
+        <a href="resources-exhibitions.html">資源・海外展覽資訊</a>
+        <a href="resources-grants.html">資源・補助案資訊</a>
+        <a href="resources-blog.html">資源・部落格</a>
+        <a href="about.html">關於</a><a href="boss.html">給老闆看</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEXT 帶（冷入口保護）===== -->
+  <div class="hero-screen">
+  <div class="context-strip">
+    <div class="wrap">
+      <svg class="pin" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>我們幫台灣品牌進入<b>北美大型通路</b>（如 Costco）——這一頁講的是第一步：產品診斷。</span>
+    </div>
+  </div>
+
+  <!-- ===== 麵包屑 ===== -->
+  <nav class="crumb" aria-label="breadcrumb">
+    <div class="wrap">
+      <a href="index.html">首頁</a>
+      <span class="sep">›</span>
+      <a href="services-diagnosis.html">服務</a>
+      <span class="sep">›</span>
+      <span class="here">產品診斷報告</span>
+    </div>
+  </nav>
+
+  <!-- ===== 服務頁 HERO（深）===== -->
+  <section class="page-hero" id="top" aria-labelledby="svc-h1">
+    <div class="wrap">
+      <h1 id="svc-h1">先搞清楚：你的產品，到底能不能進美國</h1>
+      <p class="sub">還不確定能不能進美國？別急著花大錢備展、談通路。第一步，是一份誠實的產品診斷——先幫你看清楚卡在哪、值不值得往下走，再決定怎麼投。</p>
+      <div class="stage-pills" aria-label="服務三階段，目前在第一階段">
+        <span class="sp on">① 產品診斷</span>
+        <span class="sp">② 展覽備展</span>
+        <span class="sp">③ 通路上架與優化</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 你卡在哪（白）===== -->
+  </div><!-- /hero-screen -->
+
+  <!-- ===== 旅程步驟層 ===== -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2>從產品到美國貨架，這條路長這樣</h2>
+      </div>
+      <ol class="journey reveal" aria-label="服務旅程六階段">
+        <li class="jstep active"><span class="jnum">01</span><span class="jlbl">診斷</span><span class="jdesc">找出真正卡住的地方</span></li>
+        <li class="jstep"><span class="jnum">02</span><span class="jlbl">改造</span><span class="jdesc">翻成美國貨架的語言</span></li>
+        <li class="jstep"><span class="jnum">03</span><span class="jlbl">參展</span><span class="jdesc">把品牌送到 buyer 面前</span></li>
+        <li class="jstep"><span class="jnum">04</span><span class="jlbl">談判</span><span class="jdesc">對齊通路條款與定價</span></li>
+        <li class="jstep"><span class="jnum">05</span><span class="jlbl">上架</span><span class="jdesc">真的擺上貨架</span></li>
+        <li class="jstep"><span class="jnum">06</span><span class="jlbl">優化</span><span class="jdesc">上架後持續調整</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== 區段一｜你卡在這裡（問題・白・安靜）===== -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="intro2 reveal">
+        <div class="lead">
+          <h2>還沒搞清楚能不能進，就先燒錢備展、談通路？</h2>
+          <p>很多人一頭熱衝美國，型錄印了、展位訂了，才發現產品根本卡在<span class="hl">定價或法規</span>——錢燒了、時間沒了。第一步不該是花錢，是先誠實搞清楚：你的產品到底<span class="hl">能不能進、卡在哪</span>。</p>
+        </div>
+        <div class="ph">
+          <svg class="cam" viewBox="0 0 24 24" fill="none"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="13" r="3.2" stroke="currentColor" stroke-width="1.4"/></svg>
+          <span class="lbl">產品被攤在桌上檢視<small>研究／檢視場景・實拍待補</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 區段二｜不解決會怎樣（風險・白）===== -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2>沒先搞清楚就衝，通常是這三種下場</h2>
+      </div>
+      <div class="riskgrid reveal">
+        <div class="riskcard">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M8.5 8.2c0-1.5 1.5-2.4 3.5-2.4s3.5.9 3.5 2.3-1.4 2-3.5 2.3-3.5.9-3.5 2.4 1.5 2.4 3.5 2.4 3.5-.9 3.5-2.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 15.5c1.4.8 2.2 2 2.2 3.1 0 1.1-.8 1.9-1.9 1.9M20.2 14l.5 2.2-2.2.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>憑感覺定價，進了通路才發現沒利潤</p>
+        </div>
+        <div class="riskcard">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9.2 9a2.9 2.9 0 0 1 5.6 1c0 1.9-2.8 2.5-2.8 4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="18.2" r="1" fill="currentColor"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg></div>
+          <p>用想像猜美國人要什麼，配方全錯</p>
+        </div>
+        <div class="riskcard">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4.5 21 20H3L12 4.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 10v4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="17.3" r="1" fill="currentColor"/></svg></div>
+          <p>FDA、標籤沒先查，整批卡關</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 區段三｜我們怎麼做（解法・深・主角）===== -->
+  <section class="band dark">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2>先過五關體檢，再給你一份能做決策的研究報告</h2>
+      </div>
+
+      <div class="dxblock gate reveal">
+        <span class="pl">五關體檢</span>
+        <h3>先把最容易卡的五個地方，一關一關對齊</h3>
+        <div class="gate-grid">
+          <div class="gate-cell">
+            <div class="gi"><svg viewBox="0 0 24 24" fill="none"><path d="M4 15h16M7 15V9m5 6V6m5 9v-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+            <b>定價</b><span>反推通路可行價</span>
+          </div>
+          <div class="gate-cell">
+            <div class="gi"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3v3.5L5 18a3 3 0 0 0 3 4h8a3 3 0 0 0 3-4L15 6.5V3M8 3h8M6.5 13h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <b>配方口味</b><span>對齊當地偏好</span>
+          </div>
+          <div class="gate-cell">
+            <div class="gi"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3h9l3 3v15H6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 13l1.8 1.8L15 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <b>FDA 法規預檢</b><span>標籤與合規快篩</span>
+          </div>
+          <div class="gate-cell">
+            <div class="gi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5 5.6.5-4.2 3.8 1.3 5.7L12 20l-5.1 3 1.3-5.7L4 13.5 9.6 13 12 3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+            <b>品牌故事</b><span>能不能打動買家</span>
+          </div>
+          <div class="gate-cell">
+            <div class="gi"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V9l8-5 8 5v12M4 21h16M9 21v-5h6v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <b>工廠合規與獎項</b><span>談判籌碼盤點</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dxblock report reveal">
+        <span class="pl">★ 主角 · 一份真研究報告</span>
+        <h3>不是幾句建議，是一份能做決策的研究報告</h3>
+        <p class="desc">我們不是用 AI 猜市場——是真的派人到當地，拿你的產品去問真的消費者，再盤點競品，最後給你一份有方法、有資料來源、有結論的報告。</p>
+        <div class="report-body">
+          <div>
+            <div class="rep-item">
+              <div class="ri"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM5 20c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+              <div><b>當地真人市調</b><span>派人到當地，找市調公司做真人盲測與訪談——不是用 AI 猜，是拿你的產品去問真的消費者。<em style="color:var(--gold);font-style:normal">〔服務規劃・措辭上線前確認〕</em></span></div>
+            </div>
+            <div class="rep-item">
+              <div class="ri"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10m5 10V5m5 15v-7m5 7V8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+              <div><b>競品情報盤點</b><span>盤點當地同類 10 個競品的訴求、價格、通路、正負評，找出你的差異切入口。</span></div>
+            </div>
+            <div class="rep-item">
+              <div class="ri"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3h9l3 3v15H6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 10h6M9 13.5h6M9 17h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+              <div><b>一份研究報告</b><span>研究方法、資料來源、競品橫表、切入口建議、進入挑戰、結論——你拿到的是能做決策的報告，不是幾句建議。</span></div>
+            </div>
+          </div>
+          <div class="toc" aria-label="報告目錄示意">
+            <div class="toc-h">報告目錄・示意</div>
+            <ol>
+              <li>研究方法與資料來源</li>
+              <li>當地真人市調結果</li>
+              <li>競品橫向比較表</li>
+              <li>差異化切入口建議</li>
+              <li>進入挑戰與風險</li>
+              <li>結論與下一步</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 區段四｜證明（魚鬆診斷・進行中・白）===== -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2>剛簽約的魚鬆，診斷正在進行中</h2>
+      </div>
+      <div class="microcase reveal">
+        <div>
+          <span class="flag">進行中 · 真實</span>
+          <h3>魚鬆 · 剛簽約，診斷進行中</h3>
+          <div class="proof">
+            <p><span class="num">問題 1｜</span><b class="demo">鈉含量偏高，需重算以符合 FDA 營養標示<i>示範</i></b></p>
+            <p><span class="num">問題 2｜</span><b class="demo">包裝英文訴求不清，貨架上看不出賣點<i>示範</i></b></p>
+            <p><span class="num">問題 3｜</span><b class="demo">只有單一規格，缺量販組合價<i>示範</i></b></p>
+          </div>
+          <p class="closer">診斷完，他才知道該先改什麼、再談出海。</p>
+          <a class="arrow-link" href="cases.html#fishfloss" style="margin-top:18px">看完整案例 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="ph">
+          <svg class="cam" viewBox="0 0 24 24" fill="none"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="13" r="3.2" stroke="currentColor" stroke-width="1.4"/></svg>
+          <span class="lbl">魚鬆產品／報告示意<small>實拍待補</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 成果統計帶 ===== -->
+  <section class="band white">
+    <div class="wrap">
+      <ul class="statband reveal" aria-label="診斷成果">
+        <li><b>5 關</b><span>逐關體檢，決定能不能進</span></li>
+        <li><b>1 份</b><span>可做決策的研究報告</span></li>
+        <li><b>US$1,500 起</b><span class="demo">產品診斷<i>示範</i></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 區段五｜自我分流 + 費用鉤子（白）===== -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="route-fee reveal">
+        <div class="rf">
+          <div class="k">這一頁適合誰</div>
+          <p>診斷是所有品牌的第一步——不管你最後走不走完，先花幾週、花一份報告的錢，把「不確定」變成<b>算得出來的事</b>。</p>
+        </div>
+        <div class="rf">
+          <div class="k">費用</div>
+          <p>產品診斷</p>
+          <div class="feeprice demo">US$1,500 起<i>示範</i></div>
+          <p style="margin-top:10px">精確報價依你的產品與目標通路，<a href="#contact">加 LINE</a> 我們給你估算。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 區段六｜結尾導流（深・置中）===== -->
+  <section class="band dark final center" id="contact">
+    <div class="wrap">
+      <div class="shead reveal" style="margin-bottom:0">
+        <h2>不確定能不能進美國？先做一次診斷就知道</h2>
+        <div class="line-block" style="justify-content:center">
+          <a class="btn btn-gold" href="#contact">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            加 LINE，先做一次產品診斷
+          </a>
+          <a class="btn btn-ghost" href="boss.html">下載一頁簡介給老闆看</a>
+        </div>
+      </div>
+      <div class="trustrow reveal" style="margin-top:40px">
+        <span class="ti"><b>香皂鐵證</b>：已進美國 Costco</span>
+        <span class="ti demo">躍鹿跨境整合 · 統編 90000001<i>示範</i></span>
+        <span class="ti">團隊真名真臉：<span class="fill">待補</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footcols">
+        <div>
+          <a class="brand" href="index.html" style="color:#fff"><span class="dot"></span><span>上架美國</span></a>
+          <p style="margin-top:14px">協助台灣品牌進入北美大型通路（如 Costco）的整合服務。靠方法，不靠運氣。</p>
+        </div>
+        <div>
+          <h4>服務</h4>
+          <a href="services-diagnosis.html">產品診斷報告</a>
+          <a href="services-expo.html">展覽備展</a>
+          <a href="services-channel.html">通路上架與優化</a>
+        </div>
+        <div>
+          <h4>資源</h4>
+          <a href="resources-exhibitions.html">海外展覽資訊</a>
+          <a href="resources-grants.html">補助案資訊</a>
+          <a href="resources-blog.html">部落格</a>
+        </div>
+        <div>
+          <h4>探索</h4>
+          <a href="cases.html">案例</a>
+          <a href="about.html">關於我們</a>
+          <a href="boss.html">給老闆看</a>
+        </div>
+        <div>
+          <h4>聯絡</h4>
+          <a href="#contact">加 LINE</a>
+          <a href="index.html#contact">留資料</a>
+          <p style="color:rgba(246,244,239,.4);font-size:.8rem;padding-top:10px">英文版（/en）籌備中</p>
+        </div>
+      </div>
+      <div class="footbar">
+        <span class="demo">© 2025 躍鹿跨境整合股份有限公司<i>示範</i></span>
+        <span>只走北美大型通路，不走華人超市</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- sticky LINE -->
+  <div class="sticky-line">
+    <a class="btn btn-gold" href="#contact">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      免費聊 15 分鐘
+    </a>
+  </div>
+
+  <script>
+    // mobile nav
+    (function () {
+      var t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
+      if (t && m) {
+        t.addEventListener('click', function () {
+          var open = m.classList.toggle('open');
+          t.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        m.addEventListener('click', function (e) { if (e.target.tagName === 'A') { m.classList.remove('open'); t.setAttribute('aria-expanded','false'); } });
+      }
+    })();
+
+    // header：透明浮於深色頂區 → 捲離 hero 後淡入玻璃（與首頁一致）
+    (function () {
+      var h = document.getElementById('header');
+      if (!h) return;
+      var darkEnd = document.querySelector('.page-hero');
+      function onScroll() {
+        var trigger = darkEnd ? darkEnd.offsetTop + darkEnd.offsetHeight - 72 : 72;
+        h.classList.toggle('scrolled', window.scrollY > trigger);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    })();
+
+    // reveal on scroll
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+      setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 4000);
+    })();
+  </script>
+  <script>
+  /* 全站打磨層：進度條 + 常駐 CTA 淡入 + 回頁首（idempotent，重複載入安全） */
+  (function () {
+    var hero = document.querySelector('.hero, .page-hero');
+    var sticky = document.querySelector('.sticky-line');
+
+    if (!document.querySelector('.scroll-progress')) {
+      var bar = document.createElement('div');
+      bar.className = 'scroll-progress';
+      bar.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(bar);
+    }
+    var bar = document.querySelector('.scroll-progress');
+
+    var tt = document.querySelector('.to-top');
+    if (!tt) {
+      tt = document.createElement('button');
+      tt.className = 'to-top';
+      tt.type = 'button';
+      tt.setAttribute('aria-label', '回頁首');
+      tt.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      tt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      document.body.appendChild(tt);
+    }
+
+    function onScroll() {
+      var st = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var h = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+      if (bar) bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, st / h)) + ')';
+      var hh = hero ? hero.offsetHeight : 500;
+      if (sticky) { if (st > hh * 0.6) sticky.classList.add('show'); else sticky.classList.remove('show'); }
+      if (st > hh * 0.9) tt.classList.add('show'); else tt.classList.remove('show');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>

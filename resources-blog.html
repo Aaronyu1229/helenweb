@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>部落格｜台灣品牌出海會卡的關，一篇篇拆給你看｜資源</title>
+  <meta name="description" content="出海路上最常卡的關——定價、法規、品牌故事、通路——我們一篇篇拆成可讀的深入整理，不發泛泛產業新聞。每篇綁一個真實卡關的深入版，含最新消息分類。想聊你的卡關？加 LINE。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       設計基調 v3：沉穩現代精品 · 深色高級（Direction C）
+       全站深色、香檳金點綴、Sora 現代標題、保留 Hero 大圖。
+       金色語意：門票／主 CTA／已成案標記／勾號。
+       只換視覺系統（CSS＋字體）；HTML／文字／連結／JS 不動。
+       ============================================================ */
+    :root {
+      --bg:          #0C0F16;
+      --bg2:         #11151F;
+      --card:        #161C28;
+      --card-hi:     #1B2230;
+      --paper:       #0C0F16;
+      --paper-hi:    #161C28;
+      --midnight:    #11151F;
+      --midnight-2:  #090C12;
+      --ink:         #F0F2F6;
+      --text:        #C4CBD6;
+      --slate:       #8B93A3;
+      --paper-dim:   rgba(240,242,246,.66);
+      --steel:       #7E96B8;
+      --gold:        #D9BE86;
+      --gold-bright: #E6D2A2;
+      --gold-deep:   #C7A968;
+      --gold-soft:   rgba(217,190,134,.14);
+      --line:        rgba(240,242,246,.10);
+      --line-soft:   rgba(240,242,246,.06);
+      --line-dark:   rgba(240,242,246,.12);
+      --font: 'Noto Sans TC','PingFang TC','Source Han Sans TC','Microsoft JhengHei',sans-serif;
+      --serif: 'Sora','Noto Sans TC',sans-serif;
+      --fig: 'Sora','Noto Sans TC',sans-serif;
+      --ease: cubic-bezier(.23,1,.32,1);
+      --max: 1160px;
+      --r: 12px;
+      --r-s: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 108px; }
+    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: var(--font); font-weight: 400; line-height: 1.85; font-size: 16.5px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; line-height: 1.28; letter-spacing: -.005em; color: #fff; }
+    p { margin: 0; }
+    ::selection { background: var(--gold-soft); }
+
+    /* layout */
+    .wrap { position: relative; z-index: 2; width: min(100%, var(--max)); margin-inline: auto; padding-inline: clamp(20px, 5vw, 40px); }
+    section { position: relative; }
+    .band { padding-block: clamp(64px, 9vw, 116px); }
+    .band.white { background: var(--bg); }
+    .band.paper-hi { background: var(--bg2); }
+    .band.dark { background: var(--bg2); color: var(--text); }
+    .band.dark::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(120% 80% at 88% -5%, rgba(217,190,134,.08), transparent 55%); }
+    .band.dark > .wrap { z-index: 2; }
+
+    /* eyebrow + heads */
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); opacity: .85; }
+    .shead { max-width: 46rem; margin-bottom: clamp(34px, 5vw, 54px); }
+    .shead h2 { font-size: clamp(1.7rem, 4vw, 2.55rem); margin-top: 18px; line-height: 1.3; }
+    .shead .sub { margin-top: 20px; color: var(--slate); font-size: 1.06rem; line-height: 1.95; }
+
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 26px; border: 0; border-radius: var(--r-s); font-weight: 600; letter-spacing: .01em; cursor: pointer; transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease); }
+    .btn svg { flex: none; }
+    .btn:active { transform: scale(.975); }
+    .btn-gold { background: var(--gold); color: #1A1408; }
+    .btn-gold:hover { transform: translateY(-2px); background: #E8D2A0; }
+    .btn-ink { background: var(--card-hi); color: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+    .btn-ink:hover { transform: translateY(-2px); background: #222b3a; }
+    .btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--gold); color: var(--gold-bright); }
+    .band.dark .btn-ghost { color: #fff; }
+    .btn-sm { min-height: 44px; padding: 0 20px; font-size: .9rem; }
+    .arrow-link { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; color: var(--gold); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .band.dark .arrow-link { color: var(--gold); }
+    .arrow-link:hover { border-bottom-color: currentColor; }
+    .arrow-link svg { transition: transform .2s var(--ease); }
+    .arrow-link:hover svg { transform: translateX(4px); }
+
+    /* header / nav */
+    .header { position: fixed; inset: 0 0 auto 0; z-index: 60; background: transparent; border-bottom: 1px solid transparent; transition: background .35s var(--ease), border-color .35s var(--ease), backdrop-filter .35s var(--ease); }
+    .header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgba(9,12,18,.78) 0%, rgba(9,12,18,.36) 46%, rgba(9,12,18,0) 100%); transition: opacity .35s var(--ease); }
+    .header.scrolled { background: rgba(12,15,22,.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(217,190,134,.16); }
+    .header.scrolled::before { opacity: 0; }
+    .header:has(.mobile-menu.open) { background: rgba(12,15,22,.98); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+    .header:has(.mobile-menu.open)::before { opacity: 0; }
+    .nav { display: flex; align-items: center; gap: 24px; height: 68px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-family: var(--serif); font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+    .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); flex: none; }
+    .brand small { display: block; font-family: var(--font); font-size: .6rem; font-weight: 400; letter-spacing: .18em; color: var(--paper-dim); margin-top: 3px; }
+    .nav-links { display: none; gap: 28px; margin-left: 12px; font-size: .9rem; font-weight: 400; color: var(--paper-dim); }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: #fff; }
+    .nav-dd { position: relative; }
+    .nav-dd::after { content: ""; position: absolute; top: 100%; left: -14px; right: -14px; height: 18px; }
+    .nav-dd > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dd > a .chev { transition: transform .2s var(--ease); opacity: .7; }
+    .nav-dd:hover > a .chev, .nav-dd:focus-within > a .chev { transform: rotate(180deg); opacity: 1; }
+    .nav-dd-panel { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); min-width: 256px; padding: 8px; background: rgba(17,21,31,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--line); border-radius: var(--r-s); box-shadow: 0 28px 60px rgba(0,0,0,.55); display: flex; flex-direction: column; gap: 2px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s var(--ease), transform .18s var(--ease); z-index: 60; }
+    .nav-dd:hover .nav-dd-panel, .nav-dd:focus-within .nav-dd-panel { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dd-panel a { display: block; padding: 11px 13px; border-radius: 6px; color: var(--paper-dim); }
+    .nav-dd-panel a:hover, .nav-dd-panel a.active { background: rgba(240,242,246,.05); color: #fff; }
+    .nav-dd-panel a b { display: block; font-size: .92rem; font-weight: 600; color: #fff; }
+    .nav-dd-panel a i { display: block; font-style: normal; font-size: .75rem; color: var(--paper-dim); margin-top: 3px; }
+    .nav-dd-panel a .st { font-family: var(--fig); color: var(--gold); font-weight: 600; font-size: .78rem; margin-right: 8px; }
+    .nav-cta { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+    .nav-cta .btn-ghost { color: #fff; display: none; }
+    @media (min-width: 980px) { .nav-cta .btn-ghost { display: inline-flex; } }
+    @media (max-width: 899px) { .nav-cta { margin-left: 0; } .nav-cta .btn-gold { display: none; } }
+    @media (min-width: 480px) and (max-width: 899px) { .nav-cta .btn-gold { display: inline-flex; } }
+    .nav-toggle { margin-left: auto; display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--line); border-radius: var(--r-s); color: #fff; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; gap: 2px; padding: 8px 0 16px; border-top: 1px solid var(--line); max-height: calc(100svh - 80px); overflow: auto; }
+    .mobile-menu a { color: var(--paper-dim); padding: 13px 4px; font-weight: 500; border-bottom: 1px solid var(--line-soft); }
+    .mobile-menu.open { display: flex; }
+    @media (min-width: 900px) { .nav-links { display: flex; } .nav-toggle { display: none; } .mobile-menu { display: none !important; } }
+
+    /* context strip — cold-entry protection */
+    .hero-screen { min-height: 100svh; display: flex; flex-direction: column; }
+    .context-strip { padding-top: 68px; background: var(--midnight-2); color: var(--paper-dim); border-bottom: 1px solid rgba(217,190,134,.18); }
+    .context-strip .wrap { display: flex; align-items: center; gap: 12px; padding-block: 11px; font-size: .86rem; letter-spacing: .01em; }
+    .context-strip .pin { color: var(--gold); flex: none; }
+    .context-strip b { color: #fff; font-weight: 600; }
+
+    /* breadcrumb */
+    .crumb { background: var(--midnight-2); }
+    .crumb .wrap { display: flex; align-items: center; gap: 8px; padding-block: 10px; font-size: .82rem; color: var(--paper-dim); flex-wrap: wrap; }
+    .crumb a:hover { color: #fff; }
+    .crumb .sep { opacity: .5; }
+    .crumb .here { color: var(--gold); font-weight: 600; }
+
+    /* page hero (short, dark) — 保留該頁自己的 hero 背景圖 + Ken Burns */
+    .page-hero { position: relative; flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; background: var(--bg2); color: #fff; padding-block: clamp(52px, 8vw, 92px); overflow: hidden; }
+    .page-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(168deg, rgba(9,12,18,.82), rgba(9,12,18,.9)), url('assets/bg-resource-blog.jpg') center/cover; pointer-events: none; animation: kenburns 30s cubic-bezier(.16,1,.3,1) infinite alternate; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 120% at 88% 0%, rgba(217,190,134,.14), transparent 55%); pointer-events: none; }
+    @keyframes kenburns { from { transform: scale(1.001); } to { transform: scale(1.09) translateY(-1.4%); } }
+    .page-hero .wrap { position: relative; z-index: 1; }
+    .page-hero .eyebrow { color: var(--gold); }
+    .page-hero h1 { margin-top: 20px; font-size: clamp(2.1rem, 5.4vw, 3.4rem); line-height: 1.1; max-width: 22ch; text-shadow: 0 2px 30px rgba(0,0,0,.45); }
+    .page-hero .sub { margin-top: 22px; max-width: 44rem; font-size: clamp(1rem, 2vw, 1.16rem); line-height: 1.9; color: rgba(255,255,255,.86); }
+    /* 保鮮 + 真人覆核 徽章列 */
+    .res-badges { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .res-badge { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 600; padding: 8px 15px; border-radius: 999px; background: rgba(240,242,246,.05); border: 1px solid var(--line); color: var(--paper-dim); }
+    .res-badge svg { color: var(--gold); flex: none; }
+    .res-badge b { color: #fff; font-weight: 600; }
+
+    /* resource tabs (三頁切換，內建於資源頁) */
+    .res-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .res-tab { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-weight: 600; font-size: .92rem; color: var(--slate); transition: border-color .18s var(--ease), color .18s var(--ease); }
+    .res-tab:hover { border-color: rgba(217,190,134,.5); color: #fff; }
+    .res-tab.on { background: var(--card-hi); color: #fff; border-color: var(--line); box-shadow: inset 0 0 0 1px var(--line); }
+    .res-tab.on .n { color: var(--gold); }
+    .res-tab .n { font-family: var(--fig); font-size: .74rem; font-weight: 700; letter-spacing: .05em; color: var(--slate); }
+
+    /* filter chips */
+    .filters { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .filters .flabel { font-size: .78rem; font-weight: 700; letter-spacing: .1em; color: var(--slate); margin-right: 4px; }
+    .chip { padding: 7px 15px; border-radius: 999px; border: 1px solid var(--line); background: transparent; font-size: .86rem; font-weight: 600; color: var(--slate); cursor: pointer; transition: border-color .16s var(--ease), color .16s var(--ease), background .16s var(--ease); }
+    .chip:hover { border-color: rgba(217,190,134,.5); color: #fff; }
+    .chip.on { background: var(--gold-soft); border-color: rgba(217,190,134,.5); color: var(--gold-bright); }
+
+    /* blog list — article cards */
+    .blist { margin-top: clamp(24px, 4vw, 36px); display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 720px) { .blist { grid-template-columns: repeat(2, 1fr); } }
+    .bcard { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--r); padding: clamp(22px, 3vw, 30px); background: var(--card); transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease); }
+    .bcard:hover { transform: translateY(-4px); border-color: rgba(217,190,134,.5); box-shadow: 0 30px 60px -34px rgba(0,0,0,.7); }
+    .bcard .btop { display: flex; align-items: center; gap: 10px; }
+    .bcard .cat { display: inline-flex; align-items: center; font-size: .7rem; font-weight: 700; letter-spacing: .1em; padding: 4px 11px; border-radius: 999px; background: rgba(126,150,184,.12); color: var(--steel); }
+    .bcard .cat.news { background: var(--gold-soft); color: var(--gold-bright); }
+    .bcard h3 { margin-top: 16px; font-size: clamp(1.16rem, 2.5vw, 1.42rem); color: #fff; line-height: 1.3; text-wrap: pretty; }
+    .bcard .excerpt { margin-top: 12px; color: var(--slate); font-size: .96rem; line-height: 1.85; flex: 1; }
+    .bcard .bfoot { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .bcard .status { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 700; letter-spacing: .06em; color: var(--gold-bright); }
+    .bcard .status .dt { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .bcard .readmore { display: inline-flex; align-items: center; gap: 6px; font-size: .82rem; font-weight: 600; color: var(--slate); }
+    .bcard .readmore svg { transition: transform .2s var(--ease); }
+    .bcard:hover .readmore { color: var(--gold-bright); }
+    .bcard:hover .readmore svg { transform: translateX(3px); }
+    .bcard .btop .type { display: inline-flex; align-items: center; font-size: .7rem; font-weight: 700; letter-spacing: .1em; padding: 4px 11px; border-radius: 999px; background: var(--card-hi); color: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+    .bcard .btop .type.news { background: var(--gold-soft); color: var(--gold-bright); box-shadow: none; }
+    .bcard .bdate { margin-top: 12px; font-size: .74rem; font-weight: 600; letter-spacing: .04em; color: var(--slate); display: inline-flex; align-items: center; gap: 6px; }
+    .bcard .bdate .fill { color: var(--gold-bright); font-style: italic; }
+
+    /* 頁尾信任列（深色段） */
+    .trustrow { margin-top: clamp(30px, 4vw, 44px); display: flex; flex-wrap: wrap; gap: 12px; }
+    .trustrow .titem { display: inline-flex; align-items: center; gap: 9px; font-size: .86rem; font-weight: 600; padding: 10px 16px; border-radius: 999px; background: rgba(240,242,246,.05); border: 1px solid var(--line); color: var(--paper-dim); }
+    .trustrow .titem svg { color: var(--gold); flex: none; }
+    .trustrow .titem b { color: #fff; font-weight: 600; }
+    .trustrow .titem .fill { color: var(--gold); font-style: italic; }
+
+    /* editorial guardrail (why this isn't a content farm) */
+    .guard { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: clamp(30px, 4vw, 44px); }
+    @media (min-width: 720px) { .guard { grid-template-columns: repeat(3, 1fr); } }
+    .gcell { border: 1px solid var(--line); border-radius: var(--r); padding: 28px 26px; background: var(--card); transition: transform .25s var(--ease), border-color .25s var(--ease); }
+    .gcell:hover { transform: translateY(-4px); border-color: rgba(217,190,134,.5); }
+    .gcell .ic { width: 40px; height: 40px; border-radius: 11px; background: var(--gold-soft); color: var(--gold); display: grid; place-items: center; }
+    .gcell h3 { margin-top: 14px; font-size: 1.1rem; color: #fff; }
+    .gcell p { margin-top: 9px; color: var(--slate); font-size: .94rem; line-height: 1.85; }
+
+    /* author signature (E-E-A-T) */
+    .author { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 22px; border: 1px solid var(--line); border-radius: var(--r); padding: 22px 26px; background: var(--card); margin-top: clamp(28px, 4vw, 40px); }
+    .author .avatar { width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--card-hi); border: 1px dashed rgba(217,190,134,.45); color: var(--paper-dim); font-size: .58rem; letter-spacing: .04em; flex: none; }
+    .author .who b { font-size: 1rem; font-weight: 700; color: #fff; }
+    .author .who p { margin-top: 4px; color: var(--slate); font-size: .88rem; line-height: 1.7; }
+    .author .who .fill { color: var(--gold-bright); font-style: italic; font-weight: 600; }
+
+    /* funnel block */
+    .final h2 { font-size: clamp(1.9rem,5vw,2.9rem); max-width: 22ch; }
+    .final .sub { margin-top: 20px; max-width: 40rem; color: var(--paper-dim); font-size: 1.06rem; line-height: 1.9; }
+    .final .line-block { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .final .qr { width: 92px; height: 92px; border-radius: var(--r-s); background: repeating-linear-gradient(135deg, rgba(240,242,246,.06) 0 8px, transparent 8px 16px), rgba(255,255,255,.03); border: 1px dashed rgba(217,190,134,.45); display: flex; align-items: center; justify-content: center; text-align: center; font-size: .62rem; color: var(--paper-dim); letter-spacing: .06em; transition: transform .25s var(--ease); }
+    .final .qr:hover { transform: scale(1.05); }
+
+    /* footer */
+    .footer { background: var(--midnight-2); color: var(--paper-dim); padding-block: 52px; }
+    .footcols { display: grid; grid-template-columns: 1fr; gap: 30px; }
+    @media (min-width: 760px) { .footcols { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+    .footcols h4 { color: #fff; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; margin: 0 0 16px; }
+    .footcols a, .footcols p { display: block; color: var(--paper-dim); font-size: .9rem; padding: 6px 0; margin: 0; }
+    .footcols a:hover { color: var(--gold-bright); }
+    .footbar { margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: .8rem; color: var(--paper-dim); }
+
+    /* sticky LINE */
+    .sticky-line { position: fixed; z-index: 55; right: 20px; bottom: 20px; }
+    .sticky-line .btn { border-radius: var(--r-s); box-shadow: 0 18px 44px -14px rgba(0,0,0,.6); }
+    @media (max-width: 640px) { .sticky-line { left: 16px; right: 16px; bottom: 14px; } .sticky-line .btn { width: 100%; min-height: 54px; font-size: 1.05rem; } body { padding-bottom: 78px; } }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(22px); filter: blur(6px); transition: opacity .7s var(--ease), transform .7s var(--ease), filter .7s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; filter: blur(0); }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+    }
+
+    /* demo-content marker — swappable placeholder values */
+    .demo>i{font-style:normal;font-size:.6em;font-weight:500;letter-spacing:.08em;padding:1px 5px;margin-left:6px;border-radius:4px;vertical-align:middle;white-space:nowrap;color:color-mix(in srgb,currentColor 58%,transparent);background:color-mix(in srgb,currentColor 10%,transparent);border:1px solid color-mix(in srgb,currentColor 26%,transparent)}
+  
+    /* 相鄰同色區塊補細線，避免節奏過平 */
+    .band.white + .band.white, .band.dark + .band.dark { border-top: 1px solid var(--line); }
+  
+    /* ============================================================
+       全站打磨層 v1（一致性 + 手機 + 深色質感 + 弱化示範）
+       ============================================================ */
+    :root { --ease-p: cubic-bezier(.23,1,.32,1); }
+
+    /* ── 深色質感：極淡顆粒，讓深色更「貴」不「悶」 ── */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .55;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    /* ── 弱化「示範/待補」徽章，別搶信任感 ── */
+    .demo > i, .fake, .stat .fake {
+      opacity: .5 !important; font-size: .54em !important; letter-spacing: .04em !important;
+    }
+    .stat .fake { color: rgba(240,242,246,.42) !important; border-color: rgba(240,242,246,.1) !important; }
+
+    /* ── 頂部捲動進度條（子頁補上） ── */
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 70; pointer-events: none; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--gold-deep,#C7A968), var(--gold-bright,#E6D2A2)); box-shadow: 0 0 12px rgba(217,190,134,.5); }
+
+    /* ── 常駐 CTA：滑過 hero 才淡入（全站統一行為） ── */
+    .sticky-line { opacity: 0; transform: translateY(14px); pointer-events: none; transition: opacity .45s var(--ease-p), transform .45s var(--ease-p); }
+    .sticky-line.show { opacity: 1; transform: none; pointer-events: auto; }
+
+    /* ── 回頁首鈕（長頁） ── */
+    .to-top { position: fixed; left: 22px; bottom: 24px; z-index: 54; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(27,34,48,.9); color: #fff; border: 1px solid var(--line,rgba(240,242,246,.12)); backdrop-filter: blur(8px); opacity: 0; transform: translateY(10px); pointer-events: none; cursor: pointer; transition: opacity .3s var(--ease-p), transform .3s var(--ease-p), border-color .2s; }
+    .to-top:hover { border-color: rgba(217,190,134,.5); color: var(--gold-bright,#E6D2A2); }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    @media (max-width: 640px) { .to-top { left: 14px; bottom: 84px; width: 42px; height: 42px; } }
+
+    /* ── 手機體驗打磨 ── */
+    @media (max-width: 600px) {
+      /* Hero 主 CTA 改整寬區塊，不再折成醜兩行 */
+      .hero-cta { flex-direction: column; align-items: stretch; gap: 14px; }
+      .hero-cta .btn { width: 100%; }
+      .hero-cta .arrow-link { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      /* 手機藏掉 header 重複的金鈕（底部常駐已涵蓋），header 更清爽 */
+      .nav-cta .btn-gold { display: none !important; }
+    }
+
+    /* ── reduced-motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-line { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+      .scroll-progress { display: none !important; }
+      .to-top { transition: none !important; }
+      body::after { opacity: .4; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <span class="dot"></span>
+          <span>上架美國<small>台灣品牌 · 北美大型通路</small></span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">首頁</a>
+          <div class="nav-dd">
+            <a href="index.html#services">服務<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="services-diagnosis.html"><b><span class="st">01</span>產品診斷報告</b><i>能不能進美國，先驗證</i></a>
+              <a href="services-expo.html"><b><span class="st">02</span>展覽備展</b><i>把你推到 buyer 面前</i></a>
+              <a href="services-channel.html"><b><span class="st">03</span>通路上架與優化</b><i>談進去，上架後不放生</i></a>
+            </div>
+          </div>
+          <a href="cases.html">案例</a>
+          <div class="nav-dd">
+            <a href="index.html#difficulty" class="active">資源<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="resources-exhibitions.html"><b>海外展覽資訊</b><i>值得參加的展，持續整理</i></a>
+              <a href="resources-grants.html"><b>補助案資訊</b><i>出海／外銷補助彙整</i></a>
+              <a href="resources-blog.html" class="active"><b>部落格</b><i>出海 know-how＋最新消息</i></a>
+            </div>
+          </div>
+          <a href="about.html">關於</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn btn-ghost btn-sm" href="boss.html">給老闆看</a>
+          <a class="btn btn-gold btn-sm" href="#contact">免費聊 15 分鐘</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">首頁</a>
+        <a href="services-diagnosis.html">服務・產品診斷報告</a>
+        <a href="services-expo.html">服務・展覽備展</a>
+        <a href="services-channel.html">服務・通路上架與優化</a>
+        <a href="cases.html">案例</a>
+        <a href="resources-exhibitions.html">資源・海外展覽資訊</a>
+        <a href="resources-grants.html">資源・補助案資訊</a>
+        <a href="resources-blog.html">資源・部落格</a>
+        <a href="about.html">關於</a>
+        <a href="boss.html">給老闆看</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEXT 帶（冷入口保護）===== -->
+  <div class="hero-screen">
+  <div class="context-strip">
+    <div class="wrap">
+      <svg class="pin" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>我們幫台灣品牌進入<b>北美大型通路</b>（如 Costco）——產品診斷、參展媒合、通路上架一路整合</span>
+      <a href="#contact" style="margin-left:auto;flex:none;color:var(--gold);font-weight:700;text-decoration:none;white-space:nowrap">加 LINE →</a>
+    </div>
+  </div>
+
+  <!-- ===== 麵包屑 ===== -->
+  <nav class="crumb" aria-label="breadcrumb">
+    <div class="wrap">
+      <a href="index.html">首頁</a>
+      <span class="sep">›</span>
+      <a href="resources-exhibitions.html">資源</a>
+      <span class="sep">›</span>
+      <span class="here">部落格</span>
+    </div>
+  </nav>
+
+  <!-- ===== 資源頁 HERO（深）===== -->
+  <section class="page-hero" id="top" aria-labelledby="res-h1">
+    <div class="wrap">
+      <h1 id="res-h1">出海會卡的關，我們一篇篇拆給你看</h1>
+      <p class="sub">這裡不發泛泛的產業新聞、不做內容農場。每一篇都綁一個真實的「卡關」——定價、法規、品牌故事、通路——把它的深入版寫清楚，讓你讀完知道下一步該怎麼走。另收「最新消息」，看我們近期在做什麼。</p>
+      <div class="res-badges">
+        <span class="res-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 11h6M9 15h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>每篇綁<b>一個真實卡關</b></span>
+        <span class="res-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>真人寫、<b>不做內容農場</b></span>
+        <span class="res-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg>含<b>最新消息</b>分類</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 文章列表（白）===== -->
+  </div><!-- /hero-screen -->
+  <section class="band white">
+    <div class="wrap">
+      <!-- §1 Hero 下方說明句 -->
+      <div class="shead reveal" style="margin-bottom:22px">
+        <h2>部落格</h2>
+        <p class="sub">我們不寫泛泛的產業新聞。每一篇都拆一個台灣品牌出海真的會卡的關——定價、法規、品牌、通路——用我們踩過、做過的經驗寫，讓你讀完知道下一步怎麼走。</p>
+      </div>
+
+      <!-- 資源三頁切換 -->
+      <div class="res-tabs reveal">
+        <a class="res-tab" href="resources-exhibitions.html"><span class="n">01</span>海外展覽資訊</a>
+        <a class="res-tab" href="resources-grants.html"><span class="n">02</span>補助案資訊</a>
+        <a class="res-tab on" href="resources-blog.html"><span class="n">03</span>部落格</a>
+      </div>
+
+      <!-- §2 分類標籤列（深度文 / 最新消息；未來可再細分 定價／法規／品牌／通路）-->
+      <div class="filters reveal" role="group" aria-label="文章分類篩選">
+        <span class="flabel">分類</span>
+        <button class="chip on" type="button" data-filter="all">全部</button>
+        <button class="chip" type="button" data-filter="deep">深度文</button>
+        <button class="chip" type="button" data-filter="news">最新消息</button>
+      </div>
+
+      <!-- §3 文章列表（骨架先搭：主題確定、內文撰寫中；每篇待撰寫）-->
+      <div class="blist reveal">
+        <article class="bcard" data-type="deep">
+          <div class="btop"><span class="type">深度文</span><span class="cat">定價</span></div>
+          <h3>為什麼台灣食品定價，進不了 Costco 的貨架？</h3>
+          <p class="excerpt">把台灣零售價直接換算美金，是最常見的第一個錯——先看 Costco 的定價邏輯怎麼反推。</p>
+          <div class="bdate">發佈日 <span class="fill">2026/06/18</span> · 範例文章・待撰寫</div>
+          <div class="bfoot">
+            <span class="status"><span class="dt"></span>深度整理中</span>
+            <span class="readmore">即將發佈 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+
+        <article class="bcard" data-type="deep">
+          <div class="btop"><span class="type">深度文</span><span class="cat">法規</span></div>
+          <h3>FDA 與標籤，台灣品牌最常踩的三個雷</h3>
+          <p class="excerpt">營養標示、過敏原、英文成分——沒先查清楚，整批貨可能卡在海關。</p>
+          <div class="bdate">發佈日 <span class="fill">2026/05/30</span> · 範例文章・待撰寫</div>
+          <div class="bfoot">
+            <span class="status"><span class="dt"></span>深度整理中</span>
+            <span class="readmore">即將發佈 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+
+        <article class="bcard" data-type="deep">
+          <div class="btop"><span class="type">深度文</span><span class="cat">品牌</span></div>
+          <h3>你的包裝在美國看起來「便宜」，問題出在哪</h3>
+          <p class="excerpt">同樣的產品，換一套貨架語言就換一個價格帶。談的是品牌感知，不是好不好看。</p>
+          <div class="bdate">發佈日 <span class="fill">2026/05/12</span> · 範例文章・待撰寫</div>
+          <div class="bfoot">
+            <span class="status"><span class="dt"></span>深度整理中</span>
+            <span class="readmore">即將發佈 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+
+        <article class="bcard" data-type="deep">
+          <div class="btop"><span class="type">深度文</span><span class="cat">通路</span></div>
+          <h3>有 buyer 聯絡方式，為什麼還是談不進通路？</h3>
+          <p class="excerpt">認識人只是入場券，真正的關卡在價格結構、帳期與退貨條款。</p>
+          <div class="bdate">發佈日 <span class="fill">2026/04/28</span> · 範例文章・待撰寫</div>
+          <div class="bfoot">
+            <span class="status"><span class="dt"></span>深度整理中</span>
+            <span class="readmore">即將發佈 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+
+        <article class="bcard" data-type="news">
+          <div class="btop"><span class="type news">最新消息</span></div>
+          <h3>魚鬆進 Costco 計畫，最新進度</h3>
+          <p class="excerpt">診斷與改造已完成，FDA 規劃中、明年上半年參展——我們把進度公開記錄。</p>
+          <div class="bdate">發佈日 <span class="fill">2026/06/02</span> · 進行中・持續更新</div>
+          <div class="bfoot">
+            <span class="status"><span class="dt"></span>持續更新</span>
+            <span class="readmore">即將發佈 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </article>
+      </div>
+
+      <!-- 空狀態（篩選無結果時顯示）-->
+      <p class="filter-empty sub" hidden style="margin-top:20px;color:var(--slate)">這個分類的文章還在撰寫中，先看看其他分類。</p>
+
+      <!--
+        §3 SEO/GEO：每篇文章的 BlogPosting Schema 模板（E-E-A-T 署名為 AI 引用關鍵）
+        文章實際發佈、有真實 url／日期／內文後，把下方註解改成 <script type="application/ld+json"> 上線。
+        未經查證前不放 live schema，避免對 Google/AI 送出不實結構化資料被判 spammy。
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "文章標題",
+          "datePublished": "YYYY-MM-DD",
+          "author": { "@type": "Person", "name": "作者真名（待補）" },
+          "publisher": { "@type": "Organization", "name": "公司名（待補）" },
+          "articleSection": "定價 / 法規 / 品牌 / 通路 / 最新消息",
+          "url": "文章網址"
+        }
+      -->
+
+      <p class="sub reveal" style="margin-top:26px; max-width:44rem; color:var(--slate)">文章我們寧可寫慢、寫深，也不灌泛泛的產業新聞——薄薄的內容既幫不了你，對搜尋也是扣分。想先聊你正卡在哪一關？不用等文章，直接<a href="#contact" style="color:var(--steel);font-weight:700;text-decoration:underline">加 LINE 問我們</a>。</p>
+    </div>
+  </section>
+
+  <!-- ===== 編輯守則（為什麼不是內容農場）（白 hi）===== -->
+  <section class="band paper-hi">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2>我們的文章，每篇都要對得起你花的時間</h2>
+        <p class="sub">出海資訊網路上一堆，但多數是複製貼上的空話。我們給自己定了三條守則，讓這裡的每一篇都有讀的價值——AI 做雜活，人做信任。</p>
+      </div>
+
+      <div class="guard reveal">
+        <div class="gcell">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.2 5.5.8-4 4 1 5.6L12 17l-5 3 1-5.6-4-4 5.5-.8L12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+          <h3>每篇綁一個真實卡關</h3>
+          <p>不寫泛泛的產業趨勢。每篇對應一個台灣品牌真的會遇到的關卡，把它的深入版講到能用。</p>
+        </div>
+        <div class="gcell">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg></div>
+          <h3>真人寫、真人的經驗</h3>
+          <p>內容出自我們自己帶品牌出海的第一線經驗，不是拼湊來的二手轉載，也不外包給內容農場。</p>
+        </div>
+        <div class="gcell">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>寧可少、也要有用</h3>
+          <p>我們寧可發得慢，也不灌數量。薄的內容幫不了你，對搜尋也是扣分——品質，才是這頁存在的理由。</p>
+        </div>
+      </div>
+
+      <!-- 作者署名（E-E-A-T）-->
+      <div class="author reveal">
+        <div class="avatar">真人照<br>待補</div>
+        <div class="who">
+          <b>由團隊真人撰寫</b>
+          <p>文章由 <span class="fill">Aaron</span>・Helen・Wendy 依各自負責的領域撰寫——我們寫的是自己走過的路，不是憑空整理。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FunnelBlock 結尾加 LINE（深）===== -->
+  <section class="band dark final" id="contact">
+    <div class="wrap">
+      <div class="shead reveal" style="margin-bottom:0">
+        <h2>讀完發現你也卡在同一關？</h2>
+        <p class="sub">文章能幫你看懂方向，但每個品牌卡的地方都不一樣。與其自己對號入座，不如把你現在的狀況直接告訴我們——定價、法規、品牌、通路，哪一關卡住，我們用第一線經驗幫你看下一步。</p>
+        <div class="line-block">
+          <a class="btn btn-gold" href="#contact">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            加 LINE，聊聊你的產品
+          </a>
+          <a class="btn btn-ghost" href="services-diagnosis.html">看我們怎麼帶你出海 →</a>
+          <div class="qr">LINE QR<br>待補</div>
+        </div>
+
+        <!-- §5 信任列（每頁必備）-->
+        <div class="trustrow reveal">
+          <span class="titem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><b>香皂已進美國 Costco</b>・可查證鐵證</span>
+          <span class="titem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>公司名／統編 <span class="fill">待補</span></span>
+          <span class="titem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>團隊真名真臉 <span class="fill">待補</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footcols">
+        <div>
+          <a class="brand" href="index.html" style="color:#fff"><span class="dot"></span><span>上架美國</span></a>
+          <p style="margin-top:14px">協助台灣品牌進入北美大型通路（如 Costco）的整合服務。靠方法，不靠運氣。</p>
+        </div>
+        <div>
+          <h4>服務</h4>
+          <a href="services-diagnosis.html">產品診斷報告</a>
+          <a href="services-expo.html">展覽備展</a>
+          <a href="services-channel.html">通路上架與優化</a>
+        </div>
+        <div>
+          <h4>資源</h4>
+          <a href="resources-exhibitions.html">海外展覽資訊</a>
+          <a href="resources-grants.html">補助案資訊</a>
+          <a href="resources-blog.html">部落格</a>
+        </div>
+        <div>
+          <h4>探索</h4>
+          <a href="cases.html">案例</a>
+          <a href="about.html">關於我們</a>
+          <a href="boss.html">給老闆看</a>
+          <a href="#contact">加 LINE</a>
+        </div>
+      </div>
+      <div class="footbar">
+        <span>© 2025 上架美國<span class="demo">躍鹿跨境整合股份有限公司<i>示範</i></span></span>
+        <span>只走北美大型通路，不走華人超市</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- sticky LINE -->
+  <div class="sticky-line">
+    <a class="btn btn-gold" href="#contact">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      免費聊 15 分鐘
+    </a>
+  </div>
+
+  <script>
+    // mobile nav
+    (function () {
+      var t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
+      if (t && m) {
+        t.addEventListener('click', function () {
+          var open = m.classList.toggle('open');
+          t.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        m.addEventListener('click', function (e) { if (e.target.tagName === 'A') { m.classList.remove('open'); t.setAttribute('aria-expanded','false'); } });
+      }
+    })();
+
+    // 分類篩選 chip（即時篩選：深度文 / 最新消息）
+    (function () {
+      var chips = Array.prototype.slice.call(document.querySelectorAll('.filters .chip'));
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.blist .bcard'));
+      var empty = document.querySelector('.filter-empty');
+      chips.forEach(function (c) {
+        c.addEventListener('click', function () {
+          chips.forEach(function (x) { x.classList.remove('on'); });
+          c.classList.add('on');
+          var f = c.getAttribute('data-filter');
+          var shown = 0;
+          cards.forEach(function (card) {
+            var match = (f === 'all') || (card.getAttribute('data-type') === f);
+            card.style.display = match ? '' : 'none';
+            if (match) shown++;
+          });
+          if (empty) empty.hidden = shown > 0;
+        });
+      });
+    })();
+
+    // header：透明浮於深色頂區 → 捲離 hero 後淡入玻璃（與首頁一致）
+    (function () {
+      var h = document.getElementById('header');
+      if (!h) return;
+      var darkEnd = document.querySelector('.page-hero');
+      function onScroll() {
+        var trigger = darkEnd ? darkEnd.offsetTop + darkEnd.offsetHeight - 72 : 72;
+        h.classList.toggle('scrolled', window.scrollY > trigger);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    })();
+
+    // reveal on scroll
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+      setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 4000);
+    })();
+  </script>
+  <script>
+  /* 全站打磨層：進度條 + 常駐 CTA 淡入 + 回頁首（idempotent，重複載入安全） */
+  (function () {
+    var hero = document.querySelector('.hero, .page-hero');
+    var sticky = document.querySelector('.sticky-line');
+
+    if (!document.querySelector('.scroll-progress')) {
+      var bar = document.createElement('div');
+      bar.className = 'scroll-progress';
+      bar.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(bar);
+    }
+    var bar = document.querySelector('.scroll-progress');
+
+    var tt = document.querySelector('.to-top');
+    if (!tt) {
+      tt = document.createElement('button');
+      tt.className = 'to-top';
+      tt.type = 'button';
+      tt.setAttribute('aria-label', '回頁首');
+      tt.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      tt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      document.body.appendChild(tt);
+    }
+
+    function onScroll() {
+      var st = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var h = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+      if (bar) bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, st / h)) + ')';
+      var hh = hero ? hero.offsetHeight : 500;
+      if (sticky) { if (st > hh * 0.6) sticky.classList.add('show'); else sticky.classList.remove('show'); }
+      if (st > hh * 0.9) tt.classList.add('show'); else tt.classList.remove('show');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>案例｜真的做成的案子，攤開給你看｜北美大型通路出海整合服務</title>
+  <meta name="description" content="加拿大香皂進美國 Costco（已成）、魚鬆正在衝 Costco（進行中）——每個案子用『卡在哪→怎麼改→結果→洞察』攤開，靠方法，不靠運氣。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       案例頁 · 深色高級（Direction C）— 與首頁一致
+       只換視覺系統：全站深色、香檳金點綴、Sora 現代標題。
+       金色語意：主 CTA／門票／已成案標記／勾號。
+       所有 class 名沿用，HTML/JS 不動。
+       ============================================================ */
+    :root {
+      --bg:          #0C0F16;
+      --bg2:         #11151F;
+      --card:        #161C28;
+      --card-hi:     #1B2230;
+      --paper:       #0C0F16;
+      --paper-hi:    #161C28;
+      --midnight:    #11151F;
+      --midnight-2:  #090C12;
+      --ink:         #F0F2F6;
+      --text:        #C4CBD6;
+      --slate:       #8B93A3;
+      --paper-dim:   rgba(240,242,246,.66);
+      --steel:       #7E96B8;
+      --gold:        #D9BE86;
+      --gold-bright: #E6D2A2;
+      --gold-deep:   #C7A968;
+      --gold-soft:   rgba(217,190,134,.14);
+      --line:        rgba(240,242,246,.10);
+      --line-soft:   rgba(240,242,246,.06);
+      --line-dark:   rgba(240,242,246,.12);
+      --font: 'Noto Sans TC','PingFang TC','Source Han Sans TC','Microsoft JhengHei',sans-serif;
+      --serif: 'Sora','Noto Sans TC',sans-serif;
+      --fig: 'Sora','Noto Sans TC',sans-serif;
+      --ease: cubic-bezier(.23,1,.32,1);
+      --max: 1160px;
+      --r: 12px;
+      --r-s: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 74px; }
+    body {
+      margin: 0; min-width: 320px;
+      background: var(--bg); color: var(--text);
+      font-family: var(--font); font-weight: 400; line-height: 1.85; font-size: 16.5px;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, h4 { margin: 0; font-family: var(--serif); font-weight: 700; line-height: 1.28; letter-spacing: -.005em; color: #fff; }
+    p { margin: 0; }
+    ::selection { background: var(--gold-soft); }
+
+    /* ---------- layout ---------- */
+    .wrap { position: relative; z-index: 2; width: min(100%, var(--max)); margin-inline: auto; padding-inline: clamp(22px, 5.5vw, 52px); }
+    section { position: relative; }
+    .band { padding-block: clamp(80px, 10vw, 148px); }
+    .band.white { background: var(--bg); }
+    .band.paper-hi { background: var(--bg2); }
+    .band.dark { background: var(--bg2); color: var(--text); }
+    .band.dark::after {
+      content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: radial-gradient(120% 80% at 88% -5%, rgba(217,190,134,.08), transparent 55%);
+    }
+    .band.dark > .wrap { z-index: 2; }
+    .band.dark h2, .band.dark h3, .band.dark h4 { color: #fff; }
+
+    /* ---------- eyebrow + section head ---------- */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: .72rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold);
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); opacity: .85; }
+    .shead { max-width: 50rem; margin-bottom: clamp(44px, 5.5vw, 68px); }
+    .shead h2 { font-size: clamp(1.7rem, 4vw, 2.55rem); margin-top: 18px; line-height: 1.3; }
+    .shead .sub { margin-top: 20px; color: var(--slate); font-size: 1.06rem; line-height: 1.95; max-width: 42rem; }
+    .band.dark .shead .sub { color: var(--slate); }
+
+    /* ---------- buttons ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 28px; border: 0; border-radius: var(--r-s);
+      font-weight: 600; letter-spacing: .01em; cursor: pointer;
+      transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease);
+    }
+    .btn svg { flex: none; }
+    .btn-gold { background: var(--gold); color: #1A1408; }
+    .btn-gold:hover { transform: translateY(-2px); background: #E8D2A0; }
+    .btn-ink { background: var(--card-hi); color: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+    .btn-ink:hover { transform: translateY(-2px); background: #222b3a; }
+    .btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--gold); color: var(--gold-bright); }
+    .band.dark .btn-ghost { color: #fff; }
+    .btn-sm { min-height: 44px; padding: 0 20px; font-size: .9rem; }
+    .btn:active { transform: scale(.975); }
+    .arrow-link { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; color: var(--gold); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .band.dark .arrow-link { color: var(--gold); }
+    .arrow-link:hover { border-bottom-color: currentColor; }
+    .arrow-link svg { transition: transform .2s var(--ease); }
+    .arrow-link:hover svg { transform: translateX(4px); }
+
+    /* ---------- header / nav ---------- */
+    .header { position: fixed; inset: 0 0 auto 0; z-index: 60; background: transparent; border-bottom: 1px solid transparent; transition: background .35s var(--ease), border-color .35s var(--ease), backdrop-filter .35s var(--ease); }
+    .header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgba(9,12,18,.78) 0%, rgba(9,12,18,.36) 46%, rgba(9,12,18,0) 100%); transition: opacity .35s var(--ease); }
+    .header.scrolled { background: rgba(12,15,22,.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(217,190,134,.16); }
+    .header.scrolled::before { opacity: 0; }
+    .header:has(.mobile-menu.open) { background: rgba(12,15,22,.98); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+    .header:has(.mobile-menu.open)::before { opacity: 0; }
+    .nav { display: flex; align-items: center; gap: 24px; height: 68px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-family: var(--serif); font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+    .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); flex: none; }
+    .brand small { display: block; font-family: var(--font); font-size: .6rem; font-weight: 400; letter-spacing: .18em; color: var(--paper-dim); margin-top: 3px; }
+    .nav-links { display: none; gap: 28px; margin-left: 12px; font-size: .9rem; font-weight: 400; color: var(--paper-dim); }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: #fff; }
+    .nav-links a.active::after { content: ""; display: block; height: 2px; margin-top: 3px; background: var(--gold); border-radius: 2px; }
+    .nav-dd { position: relative; }
+    .nav-dd::after { content: ""; position: absolute; top: 100%; left: -14px; right: -14px; height: 18px; }
+    .nav-dd > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dd > a .chev { transition: transform .2s var(--ease); opacity: .7; }
+    .nav-dd:hover > a .chev, .nav-dd:focus-within > a .chev { transform: rotate(180deg); opacity: 1; }
+    .nav-dd-panel { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); min-width: 256px; padding: 8px; background: rgba(17,21,31,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--line); border-radius: var(--r-s); box-shadow: 0 28px 60px rgba(0,0,0,.55); display: flex; flex-direction: column; gap: 2px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s var(--ease), transform .18s var(--ease); z-index: 60; }
+    .nav-dd:hover .nav-dd-panel, .nav-dd:focus-within .nav-dd-panel { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dd-panel a { display: block; padding: 11px 13px; border-radius: 6px; color: var(--paper-dim); }
+    .nav-dd-panel a:hover, .nav-dd-panel a.active { background: rgba(240,242,246,.05); color: #fff; }
+    .nav-dd-panel a b { display: block; font-size: .92rem; font-weight: 600; color: #fff; }
+    .nav-dd-panel a i { display: block; font-style: normal; font-size: .75rem; color: var(--paper-dim); margin-top: 3px; }
+    .nav-dd-panel a .st { font-family: var(--fig); color: var(--gold); font-weight: 600; font-size: .78rem; margin-right: 8px; }
+    .nav-cta { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+    .nav-cta .btn-ghost { color: #fff; display: none; }
+    @media (min-width: 980px) { .nav-cta .btn-ghost { display: inline-flex; } }
+    @media (max-width: 899px) { .nav-cta { margin-left: 0; } }
+    .nav-toggle { margin-left: auto; display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--line); border-radius: var(--r-s); color: #fff; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; gap: 2px; padding: 8px 0 16px; border-top: 1px solid var(--line); max-height: calc(100svh - 80px); overflow: auto; }
+    .mobile-menu a { color: var(--paper-dim); padding: 13px 4px; font-weight: 500; border-bottom: 1px solid var(--line-soft); }
+    .mobile-menu.open { display: flex; }
+    @media (min-width: 900px) { .nav-links { display: flex; } .nav-toggle { display: none; } .mobile-menu { display: none !important; } }
+
+    /* ---------- context strip（冷入口保護）---------- */
+    .hero-screen { min-height: 100svh; display: flex; flex-direction: column; }
+    .page-hero { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
+    .context-strip { padding-top: 68px; background: var(--midnight-2); color: var(--paper-dim); border-bottom: 1px solid rgba(217,190,134,.18); }
+    .context-strip .wrap { display: flex; align-items: center; gap: 12px; padding-block: 11px; font-size: .86rem; letter-spacing: .01em; }
+    .context-strip .pin { color: var(--gold); flex: none; }
+    .context-strip b { color: #fff; font-weight: 600; }
+
+    /* ---------- breadcrumb ---------- */
+    .crumb { background: var(--midnight-2); }
+    .crumb .wrap { display: flex; align-items: center; gap: 8px; padding-block: 10px; font-size: .82rem; color: var(--paper-dim); flex-wrap: wrap; }
+    .crumb a:hover { color: #fff; }
+    .crumb .sep { opacity: .5; }
+    .crumb .here { color: var(--gold); font-weight: 600; }
+
+    /* ---------- page hero（短・深）---------- */
+    .page-hero { background: var(--bg); color: #fff; padding-block: clamp(64px, 9vw, 112px); overflow: hidden; }
+    .page-hero::before {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background: linear-gradient(168deg, var(--bg2), var(--midnight-2));
+    }
+    .page-hero::after {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(70% 120% at 88% 0%, rgba(217,190,134,.14), transparent 55%),
+        linear-gradient(0deg, rgba(9,12,18,.4), transparent 60%);
+    }
+    .page-hero .wrap { position: relative; z-index: 1; }
+    .page-hero .eyebrow { color: var(--gold); }
+    .page-hero h1 { margin-top: 22px; font-size: clamp(2.1rem, 5.6vw, 3.6rem); font-weight: 700; line-height: 1.12; letter-spacing: -.01em; max-width: 18ch; text-shadow: 0 2px 30px rgba(0,0,0,.4); }
+    .page-hero .sub { margin-top: 24px; max-width: 40rem; font-size: clamp(1rem, 2vw, 1.16rem); line-height: 1.95; color: rgba(255,255,255,.86); }
+
+    /* ---------- case index list（未用於本頁，保留樣式一致）---------- */
+    .caseindex { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 760px) { .caseindex { grid-template-columns: 1fr 1fr; } }
+    .ci { display: flex; align-items: center; gap: 18px; border: 1px solid var(--line); border-radius: var(--r); padding: 22px 24px; background: var(--card); transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease); }
+    .ci:hover { transform: translateY(-3px); border-color: rgba(217,190,134,.45); box-shadow: 0 24px 50px -30px rgba(0,0,0,.7); }
+    .ci .n { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; background: var(--card-hi); color: var(--gold); font-family: var(--fig); font-weight: 700; font-size: 1.1rem; box-shadow: inset 0 0 0 1px var(--line); }
+    .ci .txt { flex: 1; }
+    .ci .flag { display: inline-flex; font-size: .68rem; font-weight: 700; letter-spacing: .1em; padding: 4px 10px; border-radius: 6px; margin-bottom: 8px; }
+    .ci .flag.done { background: rgba(217,190,134,.14); color: var(--gold-bright); box-shadow: inset 0 0 0 1px rgba(217,190,134,.4); }
+    .ci .flag.wip { background: transparent; color: var(--steel); box-shadow: inset 0 0 0 1px rgba(126,150,184,.45); }
+    .ci h3 { font-size: 1.14rem; }
+    .ci .arw { flex: none; color: var(--gold); font-size: 1.3rem; }
+
+    /* ---------- placeholder（編輯式留白・實拍待補） ---------- */
+    .ph { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border-radius: var(--r); color: var(--paper-dim); text-align: center; min-height: 200px; padding: 32px;
+      background:
+        radial-gradient(120% 88% at 50% 6%, rgba(217,190,134,.07) 0%, transparent 56%),
+        linear-gradient(180deg, var(--card-hi) 0%, var(--midnight-2) 100%);
+      box-shadow: inset 0 0 0 1px rgba(217,190,134,.20), inset 0 1px 0 rgba(255,255,255,.03); }
+    /* 內襯雙框——雜誌襯邊感 */
+    .ph::before { content: ""; position: absolute; inset: 14px; border-radius: 6px; border: 1px solid rgba(217,190,134,.16); pointer-events: none; }
+    /* 緩慢金色微光掃過——暗示「等待入鏡」而非破圖 */
+    .ph::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, transparent 42%, rgba(230,210,162,.05) 50%, transparent 58%); transform: translateX(-100%); animation: phsheen 6.5s ease-in-out infinite; }
+    @keyframes phsheen { 0%, 72% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    .ph.dark { background: radial-gradient(120% 88% at 50% 6%, rgba(217,190,134,.05) 0%, transparent 56%), linear-gradient(180deg, var(--midnight) 0%, var(--midnight-2) 100%); }
+    .ph .cam { width: 34px; height: 34px; opacity: .9; color: var(--gold); filter: drop-shadow(0 0 10px rgba(217,190,134,.28)); position: relative; z-index: 1; }
+    .ph .lbl { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: .8rem; letter-spacing: .18em; font-weight: 600; text-transform: uppercase; color: var(--gold-bright); }
+    .ph .lbl::before { content: ""; width: 34px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .ph .lbl small { display: block; max-width: 30ch; font-weight: 400; font-size: .72rem; letter-spacing: .03em; text-transform: none; color: var(--paper-dim); opacity: .82; margin-top: 2px; }
+
+    /* ---------- case article（未用於本頁，保留一致）---------- */
+    .case-article { border-top: 2px solid var(--gold); }
+    .case-article + .case-article { margin-top: clamp(56px, 8vw, 96px); }
+    .ca-head { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; padding-top: 34px; }
+    @media (min-width: 900px) { .ca-head { grid-template-columns: 1fr 1fr; gap: 44px; } }
+    .ca-head .flag { display: inline-flex; align-self: flex-start; font-size: .72rem; font-weight: 700; letter-spacing: .1em; padding: 5px 12px; border-radius: 6px; }
+    .ca-head .flag.done { background: rgba(217,190,134,.14); color: var(--gold-bright); box-shadow: inset 0 0 0 1px rgba(217,190,134,.4); }
+    .ca-head .flag.wip { background: transparent; color: var(--steel); box-shadow: inset 0 0 0 1px rgba(126,150,184,.45); }
+    .ca-head h2 { margin-top: 14px; font-size: clamp(1.6rem, 3.6vw, 2.3rem); }
+    .ca-head .lede { margin-top: 16px; color: var(--slate); font-size: 1.05rem; line-height: 1.95; }
+    .ca-visual .ph { min-height: 300px; }
+
+    /* ---------- story steps ---------- */
+    .story { margin-top: clamp(38px, 5vw, 56px); }
+    .step { display: grid; grid-template-columns: auto 1fr; gap: 22px; padding: 30px 0; border-top: 1px solid var(--line); }
+    @media (min-width: 720px) { .step { grid-template-columns: 200px 1fr; gap: 40px; } }
+    .step .rail { display: flex; align-items: flex-start; gap: 14px; }
+    .step .rail .num { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--card-hi); color: var(--gold); font-family: var(--fig); font-weight: 700; box-shadow: inset 0 0 0 1px var(--line); }
+    .step.insight .rail .num { background: var(--gold); color: #1A1408; box-shadow: 0 0 0 5px var(--gold-soft); }
+    .step .rail .slabel { font-family: var(--serif); font-weight: 700; font-size: 1.06rem; color: #fff; line-height: 1.3; padding-top: 6px; }
+    .step .rail .slabel small { display: block; font-family: var(--font); font-weight: 600; font-size: .68rem; letter-spacing: .16em; color: var(--slate); margin-top: 4px; }
+    .step .scontent { color: var(--slate); font-size: 1rem; line-height: 1.95; }
+    .step .scontent p + p { margin-top: 12px; }
+    .step .scontent b { color: var(--ink); font-weight: 600; }
+    .todo { display: inline-flex; align-items: baseline; gap: 6px; color: var(--steel); font-style: italic; font-weight: 600; font-size: .92rem; }
+    .todo::before { content: "✎"; font-style: normal; }
+
+    /* ---------- 之字形圖文行 ---------- */
+    .zz { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: center; margin: clamp(30px,4.5vw,46px) 0 clamp(4px,1vw,8px); }
+    @media (min-width: 760px) { .zz { grid-template-columns: 1.12fr .88fr; gap: clamp(30px,4vw,52px); } .zz.flip .zz-fig { order: 2; } }
+    .zz-fig { position: relative; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); box-shadow: 0 26px 56px -32px rgba(0,0,0,.7); aspect-ratio: 16 / 10; background: var(--card); }
+    .zz-fig img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s var(--ease); }
+    .zz-fig:hover img { transform: scale(1.05); }
+    .zz-fig::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(9,12,18,.5), transparent 46%); pointer-events: none; }
+    .zz-fig .cap { position: absolute; left: 12px; bottom: 12px; z-index: 2; display: inline-flex; align-items: center; gap: 7px; background: rgba(9,12,18,.78); color: #fff; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); font-size: .72rem; font-weight: 500; letter-spacing: .04em; padding: 6px 11px; border-radius: 6px; }
+    .zz-fig .cap::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex: none; }
+    .zz-txt .k { font-size: .72rem; font-weight: 600; letter-spacing: .16em; color: var(--slate); text-transform: uppercase; }
+    .zz-txt h4 { margin: 10px 0 0; font-size: clamp(1.15rem, 2.4vw, 1.4rem); color: #fff; line-height: 1.4; }
+    .zz-txt p { margin-top: 12px; color: var(--slate); font-size: 1rem; line-height: 1.9; }
+    .zz-txt .note { color: var(--steel); font-style: italic; font-size: .9rem; }
+
+    /* ---------- result data block ---------- */
+    .meta { display: grid; gap: 0; max-width: 34rem; border-top: 1px solid var(--line); }
+    .meta .row { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: .98rem; }
+    .meta .row span:first-child { color: var(--slate); }
+    .meta .row .fill { color: var(--steel); font-style: italic; font-weight: 600; }
+    .turning { margin-top: 22px; border-left: 2px solid var(--gold); padding: 6px 0 6px 20px; font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.6; }
+    .turning .fill { display: block; margin-top: 6px; color: var(--steel); font-style: italic; font-weight: 600; font-size: .96rem; }
+
+    /* ---------- stagebar / diag ---------- */
+    .stagebar { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stagebar .st { display: inline-flex; align-items: center; gap: 6px; font-size: .84rem; font-weight: 500; padding: 7px 13px; border-radius: 6px; background: transparent; box-shadow: inset 0 0 0 1px var(--line); color: var(--slate); }
+    .stagebar .st.done { color: var(--steel); box-shadow: inset 0 0 0 1px rgba(126,150,184,.45); }
+    .stagebar .st.now { background: var(--gold); color: #1A1408; box-shadow: none; }
+    .diag { display: grid; gap: 10px; }
+    .diag .d { display: flex; gap: 12px; align-items: baseline; color: var(--slate); font-size: 1rem; }
+    .diag .d b { flex: none; color: var(--gold); font-family: var(--fig); font-weight: 500; }
+
+    /* ---------- trust band / team ---------- */
+    .team { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--line); }
+    @media (min-width: 720px) { .team { grid-template-columns: repeat(3,1fr); } }
+    .tcard { padding: 34px 0; text-align: left; border-bottom: 1px solid var(--line); }
+    @media (min-width: 720px) { .tcard { padding: 36px 32px; border-bottom: 0; border-right: 1px solid var(--line); } .tcard:first-child { padding-left: 0; } .tcard:last-child { border-right: 0; } }
+    .tcard .avatar { width: 84px; height: 84px; margin: 0; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--card); border: 1px dashed rgba(217,190,134,.45); color: var(--paper-dim); font-size: .62rem; letter-spacing: .06em; text-align: center; }
+    .tcard h3 { margin-top: 16px; font-size: 1.1rem; color: #fff; }
+    .tcard .role { margin-top: 7px; color: var(--gold-bright); font-size: .88rem; font-weight: 600; }
+    .trustrow { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; color: var(--paper-dim); font-size: .92rem; }
+    .trustrow .ti b { color: #fff; }
+    .trustrow .ti .fill { color: var(--gold); font-style: italic; }
+
+    /* ---------- final CTA ---------- */
+    .final h2 { font-size: clamp(1.9rem,5vw,2.9rem); max-width: 20ch; line-height: 1.3; }
+    .final .sub { margin-top: 20px; max-width: 38rem; color: var(--paper-dim); font-size: 1.06rem; line-height: 1.95; }
+    .final .line-block { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .final .qr { width: 92px; height: 92px; border-radius: var(--r-s); background: repeating-linear-gradient(135deg, rgba(240,242,246,.06) 0 8px, transparent 8px 16px), rgba(255,255,255,.03); border: 1px dashed rgba(217,190,134,.45); display: flex; align-items: center; justify-content: center; text-align: center; font-size: .62rem; color: var(--paper-dim); letter-spacing: .06em; }
+
+    /* ---------- footer ---------- */
+    .footer { background: var(--midnight-2); color: var(--paper-dim); padding-block: 64px; }
+    .footcols { display: grid; grid-template-columns: 1fr; gap: 32px; }
+    @media (min-width: 760px) { .footcols { grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 30px; } }
+    .footcols h4 { color: #fff; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; margin: 0 0 16px; }
+    .footcols a, .footcols p { display: block; color: var(--paper-dim); font-size: .9rem; padding: 6px 0; margin: 0; }
+    .footcols a:hover { color: var(--gold-bright); }
+    .footbar { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: .8rem; color: var(--paper-dim); }
+
+    /* ---------- sticky LINE ---------- */
+    .sticky-line { position: fixed; z-index: 55; right: 22px; bottom: 22px; }
+    .sticky-line .btn { border-radius: var(--r-s); box-shadow: 0 18px 44px -14px rgba(0,0,0,.6); }
+    @media (max-width: 640px) { .sticky-line { left: 16px; right: 16px; bottom: 14px; } .sticky-line .btn { width: 100%; min-height: 54px; font-size: 1.02rem; } body { padding-bottom: 78px; } }
+
+    /* ---------- reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(24px); filter: blur(6px); transition: opacity .7s var(--ease), transform .7s var(--ease), filter .7s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; filter: blur(0); }
+
+    /* ===== 案例列表：招牌大卡 + 早期小卡 ===== */
+    .bigcases { display: grid; gap: 30px; margin-top: 4px; }
+    .bigcase { display: grid; grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr); background: var(--card); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; box-shadow: 0 30px 64px -40px rgba(0,0,0,.8); transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease); }
+    .bigcase:hover { transform: translateY(-4px); border-color: rgba(217,190,134,.4); box-shadow: 0 40px 80px -40px rgba(0,0,0,.9); }
+    .bigcase.flip .bc-fig { order: 2; }
+    .bc-fig { position: relative; min-height: 320px; padding: 22px; display: flex; background: var(--bg2); }
+    .bc-fig .ph { flex: 1; min-height: 0; }
+    .badge { position: absolute; top: 22px; left: 22px; z-index: 2; display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 700; letter-spacing: .08em; padding: 6px 13px; border-radius: 6px; }
+    .badge.done { background: rgba(217,190,134,.14); color: var(--gold-bright); box-shadow: inset 0 0 0 1px rgba(217,190,134,.4); }
+    .badge.wip { background: var(--gold); color: #1A1408; }
+    .bc-body { padding: 36px clamp(24px,3vw,42px); display: flex; flex-direction: column; }
+    .bc-body > .flag { align-self: flex-start; font-size: .72rem; font-weight: 700; letter-spacing: .1em; padding: 5px 12px; border-radius: 6px; }
+    .bc-body > .flag.done { background: rgba(217,190,134,.14); color: var(--gold-bright); box-shadow: inset 0 0 0 1px rgba(217,190,134,.4); }
+    .bc-body > .flag.wip { background: transparent; color: var(--steel); box-shadow: inset 0 0 0 1px rgba(126,150,184,.45); }
+    .bc-body h3 { font-size: clamp(1.4rem,2.4vw,1.95rem); margin: 13px 0 2px; letter-spacing: -.01em; color: #fff; }
+    .ministory { display: grid; gap: 17px; margin: 20px 0 16px; }
+    .ministory .ms .msl { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .12em; color: var(--gold); margin-bottom: 5px; }
+    .ministory .ms p { margin: 0; color: var(--slate); font-size: .98rem; line-height: 1.78; }
+    .statrow { display: flex; flex-wrap: wrap; gap: 14px 30px; margin-top: 8px; }
+    .statrow .stat { display: flex; flex-direction: column; }
+    .statrow .stat b { font-family: var(--fig); font-size: 1.55rem; color: var(--gold); font-weight: 700; line-height: 1; }
+    .statrow .stat span { font-size: .82rem; color: var(--slate); margin-top: 5px; }
+    .statrow .stat i { color: var(--gold); font-style: italic; font-weight: 600; }
+    .insight-line { margin: auto 0 16px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--serif); font-weight: 700; color: #fff; font-size: 1.02rem; }
+    .bigcase .stagebar { margin: 20px 0 6px; }
+    .bigcase .diag { margin-top: 4px; }
+    .bigcase .arrow-link { color: var(--gold); }
+
+    .earlygrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 6px; }
+    .ecard { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 22px 20px; transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease); }
+    .ecard:hover { transform: translateY(-4px); border-color: rgba(217,190,134,.4); box-shadow: 0 20px 44px -28px rgba(0,0,0,.75); }
+    .ecard .eic { width: 30px; height: 30px; color: var(--gold); }
+    .ecard .ecat { display: block; font-family: var(--serif); font-weight: 700; font-size: 1.05rem; color: #fff; margin: 12px 0 6px; }
+    .ecard p { margin: 0; font-size: .9rem; color: var(--slate); }
+    .ecard .etag { display: inline-block; margin-top: 8px; font-size: .72rem; font-weight: 600; letter-spacing: .05em; color: var(--steel); background: rgba(126,150,184,.12); padding: 3px 9px; border-radius: 6px; }
+    .early-note { margin-top: 26px; max-width: 760px; color: var(--slate); font-size: .95rem; font-style: italic; }
+
+    @media (max-width: 860px) {
+      .bigcase { grid-template-columns: 1fr; }
+      .bigcase.flip .bc-fig { order: 0; }
+      .earlygrid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) { .earlygrid { grid-template-columns: 1fr; } }
+
+    /* demo-content marker — swappable placeholder values (示範) */
+    .demo>i{font-style:normal;font-size:.6em;font-weight:500;letter-spacing:.08em;padding:1px 5px;margin-left:6px;border-radius:3px;vertical-align:middle;white-space:nowrap;color:color-mix(in srgb,currentColor 56%,transparent);background:color-mix(in srgb,currentColor 8%,transparent);border:1px solid color-mix(in srgb,currentColor 24%,transparent)}
+
+    /* ---------- reduced motion ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+      .zz-fig:hover img, .bigcase:hover, .ci:hover, .ecard:hover { transform: none !important; }
+    }
+  
+    /* 相鄰同色區塊補細線，避免節奏過平 */
+    .band.white + .band.white, .band.dark + .band.dark { border-top: 1px solid var(--line); }
+  
+    /* ============================================================
+       全站打磨層 v1（一致性 + 手機 + 深色質感 + 弱化示範）
+       ============================================================ */
+    :root { --ease-p: cubic-bezier(.23,1,.32,1); }
+
+    /* ── 深色質感：極淡顆粒，讓深色更「貴」不「悶」 ── */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .55;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    /* ── 弱化「示範/待補」徽章，別搶信任感 ── */
+    .demo > i, .fake, .stat .fake {
+      opacity: .5 !important; font-size: .54em !important; letter-spacing: .04em !important;
+    }
+    .stat .fake { color: rgba(240,242,246,.42) !important; border-color: rgba(240,242,246,.1) !important; }
+
+    /* ── 頂部捲動進度條（子頁補上） ── */
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 70; pointer-events: none; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--gold-deep,#C7A968), var(--gold-bright,#E6D2A2)); box-shadow: 0 0 12px rgba(217,190,134,.5); }
+
+    /* ── 常駐 CTA：滑過 hero 才淡入（全站統一行為） ── */
+    .sticky-line { opacity: 0; transform: translateY(14px); pointer-events: none; transition: opacity .45s var(--ease-p), transform .45s var(--ease-p); }
+    .sticky-line.show { opacity: 1; transform: none; pointer-events: auto; }
+
+    /* ── 回頁首鈕（長頁） ── */
+    .to-top { position: fixed; left: 22px; bottom: 24px; z-index: 54; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(27,34,48,.9); color: #fff; border: 1px solid var(--line,rgba(240,242,246,.12)); backdrop-filter: blur(8px); opacity: 0; transform: translateY(10px); pointer-events: none; cursor: pointer; transition: opacity .3s var(--ease-p), transform .3s var(--ease-p), border-color .2s; }
+    .to-top:hover { border-color: rgba(217,190,134,.5); color: var(--gold-bright,#E6D2A2); }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    @media (max-width: 640px) { .to-top { left: 14px; bottom: 84px; width: 42px; height: 42px; } }
+
+    /* ── 手機體驗打磨 ── */
+    @media (max-width: 600px) {
+      /* Hero 主 CTA 改整寬區塊，不再折成醜兩行 */
+      .hero-cta { flex-direction: column; align-items: stretch; gap: 14px; }
+      .hero-cta .btn { width: 100%; }
+      .hero-cta .arrow-link { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      /* 手機藏掉 header 重複的金鈕（底部常駐已涵蓋），header 更清爽 */
+      .nav-cta .btn-gold { display: none !important; }
+    }
+
+    /* ── reduced-motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-line { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+      .scroll-progress { display: none !important; }
+      .to-top { transition: none !important; }
+      body::after { opacity: .4; }
+    }
+
+    /* ---------- 旅程步驟層 journey ---------- */
+    .journey { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); }
+    .jstep { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 10px; }
+    .jstep::before { content: ""; position: absolute; top: 21px; left: -50%; width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(217,190,134,.45), transparent); z-index: 0; }
+    .jstep:first-child::before { display: none; }
+    .jnum { position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--fig); font-size: .92rem; font-weight: 700; color: var(--gold-bright); background: var(--midnight-2); box-shadow: inset 0 0 0 1px rgba(217,190,134,.4), 0 0 14px rgba(217,190,134,.12); }
+    .jlbl { margin-top: 12px; font-weight: 700; color: var(--ink); font-size: 1.02rem; letter-spacing: .02em; }
+    .jdesc { margin-top: 4px; font-size: .82rem; color: var(--paper-dim); line-height: 1.5; max-width: 13em; }
+    @media (max-width: 720px) { .journey { grid-template-columns: 1fr 1fr; gap: 30px 0; } .jstep::before { display: none; } }
+
+    /* ---------- 金句層 pull-quote ---------- */
+    .case-quote { position: relative; margin: 6px 0; padding: 44px clamp(20px,5vw,64px); text-align: center; }
+    .case-quote blockquote { margin: 0; font-size: clamp(1.3rem, 3.2vw, 1.9rem); line-height: 1.5; font-weight: 600; color: var(--ink); letter-spacing: .01em; }
+    .case-quote figcaption { margin-top: 16px; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+    .case-quote::before, .case-quote::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); width: 40px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .case-quote::before { top: 0; }
+    .case-quote::after { bottom: 0; }
+
+    /* ---------- 成果統計帶 stat-band ---------- */
+    .statband { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .statband li { text-align: center; padding: 8px 12px; border-left: 1px solid rgba(217,190,134,.16); }
+    .statband li:first-child { border-left: 0; }
+    .statband b { display: block; font-family: var(--fig); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--gold-bright); line-height: 1; letter-spacing: .01em; }
+    .statband span { display: block; margin-top: 10px; font-size: .9rem; color: var(--paper-dim); line-height: 1.5; }
+    @media (max-width: 720px) { .statband { grid-template-columns: 1fr 1fr; gap: 30px 16px; } .statband li:nth-child(odd) { border-left: 0; } }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <span class="dot"></span>
+          <span>上架美國<small>台灣品牌 · 北美大型通路</small></span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">首頁</a>
+          <div class="nav-dd">
+            <a href="index.html#services">服務<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="services-diagnosis.html"><b><span class="st">01</span>產品診斷報告</b><i>能不能進美國，先驗證</i></a>
+              <a href="services-expo.html"><b><span class="st">02</span>展覽備展</b><i>把你推到 buyer 面前</i></a>
+              <a href="services-channel.html"><b><span class="st">03</span>通路上架與優化</b><i>談進去，上架後不放生</i></a>
+            </div>
+          </div>
+          <a href="cases.html" class="active">案例</a>
+          <div class="nav-dd">
+            <a href="index.html#difficulty">資源<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="resources-exhibitions.html"><b><span class="st">01</span>海外展覽資訊</b><i>值得參加的展，錯的不上</i></a>
+              <a href="resources-grants.html"><b><span class="st">02</span>補助案資訊</b><i>出海外銷補助，過期不留</i></a>
+              <a href="resources-blog.html"><b><span class="st">03</span>部落格</b><i>出海會卡的關，一篇篇拆</i></a>
+            </div>
+          </div>
+          <a href="about.html">關於</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn btn-ghost btn-sm" href="boss.html">給老闆看</a>
+          <a class="btn btn-gold btn-sm" href="#contact">免費聊 15 分鐘</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">首頁</a>
+        <a href="services-diagnosis.html">服務・產品診斷報告</a>
+        <a href="services-expo.html">服務・展覽備展</a>
+        <a href="services-channel.html">服務・通路上架與優化</a>
+        <a href="cases.html">案例</a>
+        <a href="resources-exhibitions.html">資源・海外展覽資訊</a>
+        <a href="resources-grants.html">資源・補助案資訊</a>
+        <a href="resources-blog.html">資源・部落格</a>
+        <a href="about.html">關於</a><a href="boss.html">給老闆看</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEXT 帶（冷入口保護）===== -->
+  <div class="hero-screen">
+  <div class="context-strip">
+    <div class="wrap">
+      <svg class="pin" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>我們幫台灣品牌進入<b>北美大型通路</b>（如 Costco）——產品診斷、參展媒合、通路上架一路整合</span>
+      <a href="#contact" style="margin-left:auto;flex:none;color:var(--gold);font-weight:700;text-decoration:none;white-space:nowrap">加 LINE →</a>
+    </div>
+  </div>
+
+  <!-- ===== 麵包屑 ===== -->
+  <nav class="crumb" aria-label="breadcrumb">
+    <div class="wrap">
+      <a href="index.html">首頁</a>
+      <span class="sep">›</span>
+      <span class="here">案例</span>
+    </div>
+  </nav>
+
+  <!-- ===== 案例頁 HERO（深）===== -->
+  <section class="page-hero" id="top" aria-labelledby="cases-h1">
+    <div class="wrap">
+      <h1 id="cases-h1">真的做成的案子，攤開給你看</h1>
+      <p class="sub">從魚鬆到日用品——我們已經把品牌送進北美大型通路（如 Costco）。這裡不放漂亮口號，只把每個案子用「卡在哪 → 怎麼改 → 結果 → 洞察」拆開，讓你判斷這事到底多難、我們憑什麼幫得了你。</p>
+    </div>
+  </section>
+
+  <!-- ===== 案例庫列表（白）===== -->
+  </div><!-- /hero-screen -->
+
+  <!-- ===== 旅程步驟層：這條路長這樣 ===== -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2>從產品到美國貨架，這條路長這樣</h2>
+      </div>
+      <ol class="journey reveal" aria-label="服務旅程六階段">
+        <li class="jstep"><span class="jnum">01</span><span class="jlbl">診斷</span><span class="jdesc">找出真正卡住的地方</span></li>
+        <li class="jstep"><span class="jnum">02</span><span class="jlbl">改造</span><span class="jdesc">翻成美國貨架的語言</span></li>
+        <li class="jstep"><span class="jnum">03</span><span class="jlbl">參展</span><span class="jdesc">把品牌送到 buyer 面前</span></li>
+        <li class="jstep"><span class="jnum">04</span><span class="jlbl">談判</span><span class="jdesc">對齊通路條款與定價</span></li>
+        <li class="jstep"><span class="jnum">05</span><span class="jlbl">上架</span><span class="jdesc">真的擺上貨架</span></li>
+        <li class="jstep"><span class="jnum">06</span><span class="jlbl">優化</span><span class="jdesc">上架後持續調整</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== §1 引導句 + §2 招牌案例（白）===== -->
+  <section class="band white">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2>正在跑、跑完整條路的招牌案子在前，早期貿易的項目在後</h2>
+        <p class="sub">你可以看到我們一路怎麼走到今天——從早期做貿易，到現在幫品牌整合出海。招牌案例放前面，早期項目放後面。</p>
+      </div>
+
+      <div class="bigcases">
+
+        <!-- 卡 A：香皂（已上架・招牌） -->
+        <article class="bigcase reveal" id="soap">
+          <div class="bc-fig">
+            <span class="badge done">✔ 已上架</span>
+            <div class="ph">
+              <svg class="cam" viewBox="0 0 24 24" fill="none"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="13" r="3.2" stroke="currentColor" stroke-width="1.4"/></svg>
+              <span class="lbl">貨架實拍待補<small>香皂在 Costco 貨架・拿到後替換，不用 stock／3D</small></span>
+            </div>
+          </div>
+          <div class="bc-body">
+            <span class="flag done">加拿大香皂 · 已進美國 Costco</span>
+            <h3>加拿大香皂，進美國 Costco</h3>
+            <div class="ministory">
+              <div class="ms">
+                <span class="msl">卡在哪</span>
+                <p>認識 buyer 不等於進得去——真正卡的是定價結構與通路條款。<span class="demo">台灣零售價直接換算，在美國貨架比同類貴約 30%，通路不埋單。<i>示範</i></span></p>
+              </div>
+              <div class="ms">
+                <span class="msl">我們怎麼談進去</span>
+                <p>從診斷逐關對齊大型通路要求，再用通路門票把品牌送到 buyer 面前。<span class="demo">反推 Costco 可行售價，改成 6 入量販組、重談 MOQ 與帳期。<i>示範</i></span></p>
+              </div>
+              <div class="ms">
+                <span class="msl">結果</span>
+                <div class="statrow demo">
+                  <div class="stat"><b data-count="6.99">$6.99</b><span>改造後定價（6 入／組）</span></div>
+                  <div class="stat"><b>12 州</b><span>現在體量（鋪貨州數）</span></div>
+                  <div class="stat"><b>8 個月</b><span>洽談到上架</span></div>
+                  <i>示範</i>
+                </div>
+              </div>
+            </div>
+            <p class="insight-line">走完整條、真的上得了架的案子。</p>
+            <a class="arrow-link" href="#">看完整故事 →</a>
+          </div>
+        </article>
+
+        <!-- 金句層 -->
+        <figure class="case-quote reveal">
+          <blockquote>「認識 buyer，不等於進得去。真正卡的，是定價結構與通路條款。」</blockquote>
+          <figcaption>每個案子，我們最先拆開的那一關</figcaption>
+        </figure>
+
+        <!-- 卡 B：魚鬆（進行中） -->
+        <article class="bigcase flip reveal" id="floss">
+          <div class="bc-fig">
+            <span class="badge wip">↻ 進行中</span>
+            <div class="ph">
+              <svg class="cam" viewBox="0 0 24 24" fill="none"><path d="M4 8h3l1.5-2h7L17 8h3v11H4z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="13" r="3.2" stroke="currentColor" stroke-width="1.4"/></svg>
+              <span class="lbl">產品／備展照待補<small>魚鬆產品與參展階段拍到後替換</small></span>
+            </div>
+          </div>
+          <div class="bc-body">
+            <span class="flag wip">魚鬆 · 正在衝 Costco</span>
+            <h3>魚鬆，正在衝 Costco</h3>
+            <div class="stagebar">
+              <span class="st done">診斷 ✓</span>
+              <span class="st done">改造 ✓</span>
+              <span class="st">FDA（規劃中）</span>
+              <span class="st">參展（明年上半年）</span>
+              <span class="st now">Costco 洽談中</span>
+            </div>
+            <div class="ministory">
+              <div class="ms">
+                <span class="msl">診斷發現的前三個問題</span>
+                <div class="diag">
+                  <div class="d"><b>問題 1</b><span class="demo">鈉含量偏高，需重算以符合 FDA 營養標示<i>示範</i></span></div>
+                  <div class="d"><b>問題 2</b><span class="demo">包裝英文訴求不清，貨架上看不出賣點<i>示範</i></span></div>
+                  <div class="d"><b>問題 3</b><span class="demo">只有單一規格，缺量販組合價<i>示範</i></span></div>
+                </div>
+              </div>
+            </div>
+            <p class="insight-line">這不是紙上談兵，是現在正在跑的案子。</p>
+            <a class="arrow-link" href="#">看完整故事 →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== §3 早期項目（白 hi・退後排）===== -->
+  <section class="band paper-hi">
+    <div class="wrap">
+      <div class="shead reveal" style="max-width:720px">
+        <h2>更早，我們從貿易一路做起</h2>
+      </div>
+      <div class="earlygrid reveal">
+        <div class="ecard">
+          <svg class="eic" viewBox="0 0 24 24" fill="none"><path d="M4 20V9l8-5 8 5v11" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 20v-6h6v6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span class="ecat">食品</span>
+          <p><span class="demo">日式調味料代理進口<i>示範</i></span><span class="etag">早期項目 · 數字待補</span></p>
+        </div>
+        <div class="ecard">
+          <svg class="eic" viewBox="0 0 24 24" fill="none"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span class="ecat">日用品</span>
+          <p><span class="demo">家用清潔用品北美鋪貨<i>示範</i></span><span class="etag">早期項目 · 數字待補</span></p>
+        </div>
+        <div class="ecard">
+          <svg class="eic" viewBox="0 0 24 24" fill="none"><path d="M4 12 12 4l8 8-8 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg>
+          <span class="ecat demo">家電配件<i>示範</i></span>
+          <p><span class="demo">小型廚房家電通路開發<i>示範</i></span><span class="etag">待補</span></p>
+        </div>
+        <div class="ecard">
+          <svg class="eic" viewBox="0 0 24 24" fill="none"><path d="M4 12 12 4l8 8-8 8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></svg>
+          <span class="ecat demo">保健<i>示範</i></span>
+          <p><span class="demo">機能性沖泡飲品外銷<i>示範</i></span><span class="etag">待補</span></p>
+        </div>
+      </div>
+      <p class="early-note reveal">這些是我們早期做貿易時的項目——我們是從這裡，一路轉型成今天幫品牌整合出海的公司。</p>
+    </div>
+  </section>
+
+  <!-- ===== 成果統計帶 ===== -->
+  <section class="band paper-hi">
+    <div class="wrap">
+      <ul class="statband reveal" aria-label="成果統計">
+        <li><b>2</b><span class="demo">品牌正在進 Costco<i>示範</i></span></li>
+        <li><b>12 州</b><span class="demo">目前鋪貨體量<i>示範</i></span></li>
+        <li><b>8 個月</b><span class="demo">洽談到上架<i>示範</i></span></li>
+        <li><b>1 條</b><span>從診斷到優化的完整路徑</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== §4 結尾導流 + 信任列（深）===== -->
+  <section class="band dark final" id="contact">
+    <div class="wrap">
+      <div class="shead reveal" style="margin-bottom:0">
+        <h2>你的產品，會是下一個攤開來講的案子嗎？</h2>
+        <p class="sub">不用先準備好一切——把你的產品和想進的通路告訴我們，先聊。</p>
+        <div class="line-block">
+          <a class="btn btn-gold" href="#contact">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            加 LINE，聊聊你的產品
+          </a>
+          <a class="btn btn-ghost" href="boss.html">下載一頁簡介給老闆看 →</a>
+        </div>
+        <div class="trustrow" style="margin-top:34px;justify-content:center">
+          <span class="ti">團隊真人臉：<span class="fill">待補</span></span>
+          <span class="ti">公司名／統編：<span class="demo">躍鹿跨境整合 · 統編 90000001<i>示範</i></span></span>
+          <span class="ti"><b>香皂鐵證</b>：已進美國 Costco</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footcols">
+        <div>
+          <a class="brand" href="index.html" style="color:#fff"><span class="dot"></span><span>上架美國</span></a>
+          <p style="margin-top:14px">協助台灣品牌進入北美大型通路（如 Costco）的整合服務。靠方法，不靠運氣。</p>
+        </div>
+        <div>
+          <h4>服務</h4>
+          <a href="services-diagnosis.html">產品診斷報告</a>
+          <a href="services-expo.html">展覽備展</a>
+          <a href="services-channel.html">通路上架與優化</a>
+        </div>
+        <div>
+          <h4>資源</h4>
+          <a href="resources-exhibitions.html">海外展覽資訊</a>
+          <a href="resources-grants.html">補助案資訊</a>
+          <a href="resources-blog.html">部落格</a>
+        </div>
+        <div>
+          <h4>探索</h4>
+          <a href="cases.html">案例</a>
+          <a href="about.html">關於我們</a>
+          <a href="boss.html">給老闆看</a>
+        </div>
+        <div>
+          <h4>聯絡</h4>
+          <a href="#contact">加 LINE</a>
+          <a href="index.html#contact">留資料</a>
+          <p style="color:rgba(246,244,239,.4);font-size:.8rem;padding-top:10px">英文版（/en）籌備中</p>
+        </div>
+      </div>
+      <div class="footbar">
+        <span>© 2025 上架美國<span class="demo">躍鹿跨境整合股份有限公司<i>示範</i></span></span>
+        <span>只走北美大型通路，不走華人超市</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- sticky LINE -->
+  <div class="sticky-line">
+    <a class="btn btn-gold" href="#contact">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      免費聊 15 分鐘
+    </a>
+  </div>
+
+  <script>
+    // mobile nav
+    (function () {
+      var t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
+      if (t && m) {
+        t.addEventListener('click', function () {
+          var open = m.classList.toggle('open');
+          t.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        m.addEventListener('click', function (e) { if (e.target.tagName === 'A') { m.classList.remove('open'); t.setAttribute('aria-expanded','false'); } });
+      }
+    })();
+
+    // header：透明浮於深色頂區 → 捲離 hero 後淡入玻璃（與首頁一致）
+    (function () {
+      var h = document.getElementById('header');
+      if (!h) return;
+      var darkEnd = document.querySelector('.page-hero');
+      function onScroll() {
+        var trigger = darkEnd ? darkEnd.offsetTop + darkEnd.offsetHeight - 72 : 72;
+        h.classList.toggle('scrolled', window.scrollY > trigger);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    })();
+
+    // reveal on scroll
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+      setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 4000);
+    })();
+  </script>
+  <script>
+  /* 全站打磨層：進度條 + 常駐 CTA 淡入 + 回頁首（idempotent，重複載入安全） */
+  (function () {
+    var hero = document.querySelector('.hero, .page-hero');
+    var sticky = document.querySelector('.sticky-line');
+
+    if (!document.querySelector('.scroll-progress')) {
+      var bar = document.createElement('div');
+      bar.className = 'scroll-progress';
+      bar.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(bar);
+    }
+    var bar = document.querySelector('.scroll-progress');
+
+    var tt = document.querySelector('.to-top');
+    if (!tt) {
+      tt = document.createElement('button');
+      tt.className = 'to-top';
+      tt.type = 'button';
+      tt.setAttribute('aria-label', '回頁首');
+      tt.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      tt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      document.body.appendChild(tt);
+    }
+
+    function onScroll() {
+      var st = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var h = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+      if (bar) bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, st / h)) + ')';
+      var hh = hero ? hero.offsetHeight : 500;
+      if (sticky) { if (st > hh * 0.6) sticky.classList.add('show'); else sticky.classList.remove('show'); }
+      if (st > hh * 0.9) tt.classList.add('show'); else tt.classList.remove('show');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>

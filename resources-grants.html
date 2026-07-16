@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>補助案資訊｜台灣品牌出海／外銷政府補助彙整｜資源</title>
+  <meta name="description" content="彙整台灣品牌出海、外銷、數位轉型相關的政府補助——補助名、申請期間、額度與對象、申請連結。自動整理＋真人覆核上架，過期的不留。補助＋診斷怎麼搭，加 LINE 我們幫你看。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       設計基調 v3：沉穩現代精品 · 深色高級（Direction C）
+       共用元件抄自首頁 helenweb-c；本頁專屬區塊以同語言深色重做。
+       只換視覺（CSS）＋字體 link，HTML/文字/連結/JS 不動。
+       ============================================================ */
+    :root {
+      --bg:          #0C0F16;
+      --bg2:         #11151F;
+      --card:        #161C28;
+      --card-hi:     #1B2230;
+      --paper:       #0C0F16;
+      --paper-hi:    #161C28;
+      --midnight:    #11151F;
+      --midnight-2:  #090C12;
+      --ink:         #F0F2F6;
+      --text:        #C4CBD6;
+      --slate:       #8B93A3;
+      --paper-dim:   rgba(240,242,246,.66);
+      --steel:       #7E96B8;
+      --gold:        #D9BE86;
+      --gold-bright: #E6D2A2;
+      --gold-deep:   #C7A968;
+      --gold-soft:   rgba(217,190,134,.14);
+      --line:        rgba(240,242,246,.10);
+      --line-soft:   rgba(240,242,246,.06);
+      --line-dark:   rgba(240,242,246,.12);
+      --font: 'Noto Sans TC','PingFang TC','Source Han Sans TC','Microsoft JhengHei',sans-serif;
+      --serif: 'Sora','Noto Sans TC',sans-serif;
+      --fig: 'Sora','Noto Sans TC',sans-serif;
+      --ease: cubic-bezier(.23,1,.32,1);
+      --max: 1160px;
+      --r: 12px;
+      --r-s: 8px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 74px; }
+    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: var(--font); font-weight: 400; line-height: 1.85; font-size: 16.5px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; line-height: 1.28; letter-spacing: -.005em; color: #fff; }
+    p { margin: 0; }
+    ::selection { background: var(--gold-soft); }
+
+    /* layout */
+    .wrap { position: relative; z-index: 2; width: min(100%, var(--max)); margin-inline: auto; padding-inline: clamp(22px, 5.5vw, 52px); }
+    section { position: relative; }
+    .band { padding-block: clamp(80px, 10vw, 148px); }
+    .band.white { background: var(--bg); color: var(--text); }
+    .band.paper-hi { background: var(--bg2); color: var(--text); }
+    .band.dark { background: var(--bg2); color: var(--text); }
+    .band.dark::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(120% 80% at 88% -5%, rgba(217,190,134,.08), transparent 55%); }
+    .band.dark > .wrap { z-index: 2; }
+    .band.dark h2, .band.dark h3, .band.dark h4 { color: #fff; }
+
+    /* eyebrow + heads */
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+    .band.dark .eyebrow { color: var(--gold); }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; border-radius: 0; background: var(--gold); opacity: .85; }
+    .shead { max-width: 50rem; margin-bottom: clamp(44px, 5.5vw, 68px); }
+    .shead h2 { font-size: clamp(1.7rem, 4vw, 2.55rem); margin-top: 18px; line-height: 1.3; }
+    .shead .sub { margin-top: 20px; color: var(--slate); font-size: 1.06rem; line-height: 1.95; max-width: 42rem; }
+    .band.dark .shead .sub { color: var(--slate); }
+    .sub { color: var(--slate); font-size: 1.06rem; line-height: 1.95; }
+
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; border: 0; border-radius: var(--r-s); font-weight: 600; letter-spacing: .01em; cursor: pointer; transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease); }
+    .btn svg { flex: none; }
+    .btn:active { transform: scale(.975); }
+    .btn-gold { background: var(--gold); color: #1A1408; }
+    .btn-gold:hover { transform: translateY(-2px); background: #E8D2A0; }
+    .btn-ink { background: var(--card-hi); color: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+    .btn-ink:hover { transform: translateY(-2px); background: #222b3a; }
+    .btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--gold); color: var(--gold-bright); }
+    .band.dark .btn-ghost { color: #fff; }
+    .btn-sm { min-height: 44px; padding: 0 20px; font-size: .9rem; }
+    .arrow-link { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; color: var(--gold); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .band.dark .arrow-link { color: var(--gold); }
+    .arrow-link:hover { border-bottom-color: currentColor; }
+    .arrow-link svg { transition: transform .2s var(--ease); }
+    .arrow-link:hover svg { transform: translateX(4px); }
+
+    /* header / nav */
+    .header { position: fixed; inset: 0 0 auto 0; z-index: 60; background: transparent; border-bottom: 1px solid transparent; transition: background .35s var(--ease), border-color .35s var(--ease), backdrop-filter .35s var(--ease); }
+    .header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgba(9,12,18,.78) 0%, rgba(9,12,18,.36) 46%, rgba(9,12,18,0) 100%); transition: opacity .35s var(--ease); }
+    .header.scrolled { background: rgba(12,15,22,.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(217,190,134,.16); }
+    .header.scrolled::before { opacity: 0; }
+    .header:has(.mobile-menu.open) { background: rgba(12,15,22,.98); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+    .header:has(.mobile-menu.open)::before { opacity: 0; }
+    .nav { display: flex; align-items: center; gap: 24px; height: 68px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-family: var(--serif); font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+    .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); flex: none; }
+    .brand small { display: block; font-family: var(--font); font-size: .6rem; font-weight: 400; letter-spacing: .18em; color: var(--paper-dim); margin-top: 3px; }
+    .nav-links { display: none; gap: 28px; margin-left: 12px; font-size: .9rem; font-weight: 400; color: var(--paper-dim); }
+    .nav-links a:hover { color: #fff; }
+    .nav-links a.active { color: #fff; }
+    .nav-links a.active::after { content: ""; display: block; height: 2px; margin-top: 3px; background: var(--gold); border-radius: 2px; }
+    .nav-dd { position: relative; }
+    .nav-dd::after { content: ""; position: absolute; top: 100%; left: -14px; right: -14px; height: 18px; }
+    .nav-dd > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dd > a .chev { transition: transform .2s var(--ease); opacity: .7; }
+    .nav-dd:hover > a .chev, .nav-dd:focus-within > a .chev { transform: rotate(180deg); opacity: 1; }
+    .nav-dd-panel { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); min-width: 256px; padding: 8px; background: rgba(17,21,31,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--line); border-radius: var(--r-s); box-shadow: 0 28px 60px rgba(0,0,0,.55); display: flex; flex-direction: column; gap: 2px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s var(--ease), transform .18s var(--ease); z-index: 60; }
+    .nav-dd:hover .nav-dd-panel, .nav-dd:focus-within .nav-dd-panel { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dd-panel a { display: block; padding: 11px 13px; border-radius: 6px; color: var(--paper-dim); }
+    .nav-dd-panel a:hover, .nav-dd-panel a.active { background: rgba(240,242,246,.05); color: #fff; }
+    .nav-dd-panel a b { display: block; font-size: .92rem; font-weight: 600; color: #fff; }
+    .nav-dd-panel a i { display: block; font-style: normal; font-size: .75rem; color: var(--paper-dim); margin-top: 3px; }
+    .nav-dd-panel a .st { display: inline; padding: 0; border-radius: 0; background: none; font-family: var(--fig); color: var(--gold); font-weight: 600; font-size: .78rem; letter-spacing: .05em; margin-right: 8px; }
+    .nav-cta { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+    .nav-cta .btn-ghost { color: #fff; display: none; }
+    @media (min-width: 900px) { .nav-cta .btn-ghost { display: inline-flex; } }
+    @media (max-width: 899px) { .nav-cta { margin-left: 0; } }
+    .nav-toggle { margin-left: auto; display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--line); border-radius: var(--r-s); color: #fff; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; gap: 2px; padding: 8px 0 16px; border-top: 1px solid var(--line); max-height: calc(100svh - 80px); overflow: auto; }
+    .mobile-menu a { color: var(--paper-dim); padding: 13px 4px; font-weight: 500; border-bottom: 1px solid var(--line-soft); }
+    .mobile-menu.open { display: flex; }
+    @media (min-width: 900px) { .nav-links { display: flex; } .nav-toggle { display: none; } .mobile-menu { display: none !important; } }
+
+    /* context strip — cold-entry protection */
+    .hero-screen { min-height: 100svh; display: flex; flex-direction: column; }
+    .page-hero { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
+    .context-strip { padding-top: 64px; background: var(--midnight-2); color: var(--paper-dim); border-bottom: 1px solid rgba(217,190,134,.18); }
+    .context-strip .wrap { display: flex; align-items: center; gap: 12px; padding-block: 11px; font-size: .86rem; letter-spacing: .01em; }
+    .context-strip .pin { color: var(--gold); flex: none; }
+    .context-strip b { color: #fff; font-weight: 700; }
+
+    /* breadcrumb */
+    .crumb { background: var(--midnight-2); }
+    .crumb .wrap { display: flex; align-items: center; gap: 8px; padding-block: 10px; font-size: .82rem; color: var(--paper-dim); flex-wrap: wrap; }
+    .crumb a:hover { color: #fff; }
+    .crumb .sep { opacity: .5; }
+    .crumb .here { color: var(--gold); font-weight: 700; }
+
+    /* page hero (short, dark) — 保留本頁 hero 背景圖 + Ken Burns */
+    .page-hero { position: relative; background: var(--bg); color: #fff; padding-block: clamp(52px, 8vw, 92px); overflow: hidden; }
+    .page-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(100deg, rgba(9,12,18,.94) 0%, rgba(9,12,18,.72) 52%, rgba(9,12,18,.5) 100%), url('assets/bg-resource-grants.jpg') center/cover; pointer-events: none; animation: kenburns 30s cubic-bezier(.16,1,.3,1) infinite alternate; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; z-index: 0; background: radial-gradient(70% 90% at 88% 0%, rgba(217,190,134,.16), transparent 55%); pointer-events: none; }
+    @keyframes kenburns { from { transform: scale(1.001); } to { transform: scale(1.09) translateY(-1.4%); } }
+    .page-hero .wrap { position: relative; z-index: 1; }
+    .page-hero .eyebrow { color: var(--gold); }
+    .page-hero h1 { margin-top: 20px; font-size: clamp(2.1rem, 5.4vw, 3.4rem); line-height: 1.14; max-width: 22ch; text-shadow: 0 2px 40px rgba(0,0,0,.4); }
+    .page-hero .sub { margin-top: 22px; max-width: 44rem; font-size: clamp(1rem, 2vw, 1.16rem); line-height: 1.95; color: rgba(255,255,255,.86); }
+    /* 保鮮 + 真人覆核 徽章列 */
+    .res-badges { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .res-badge { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 600; padding: 8px 15px; border-radius: var(--r-s); background: rgba(240,242,246,.05); border: 1px solid var(--line); color: var(--paper-dim); }
+    .res-badge svg { color: var(--gold); flex: none; }
+    .res-badge b { color: #fff; font-weight: 700; }
+
+    /* resource tabs (三頁切換，內建於資源頁) */
+    .res-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .res-tab { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: var(--r-s); border: 1px solid var(--line); background: var(--card); font-weight: 600; font-size: .92rem; color: var(--slate); transition: border-color .18s var(--ease), color .18s var(--ease), background .18s var(--ease); }
+    .res-tab:hover { border-color: rgba(217,190,134,.4); color: #fff; }
+    .res-tab.on { background: var(--card-hi); color: #fff; border-color: rgba(217,190,134,.4); }
+    .res-tab.on .n { color: var(--gold); }
+    .res-tab .n { font-family: var(--fig); font-size: .74rem; font-weight: 700; letter-spacing: .05em; color: var(--slate); }
+
+    /* filter chips */
+    .filters { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .filters .flabel { font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--slate); margin-right: 4px; }
+    .chip { padding: 8px 15px; border-radius: var(--r-s); border: 1px solid var(--line); background: transparent; font-size: .86rem; font-weight: 600; color: var(--slate); cursor: pointer; transition: border-color .16s var(--ease), color .16s var(--ease), background .16s var(--ease); }
+    .chip:hover { border-color: rgba(217,190,134,.4); color: #fff; }
+    .chip.on { background: var(--gold-soft); border-color: rgba(217,190,134,.45); color: var(--gold-bright); }
+
+    /* funnel block */
+    .final h2 { font-size: clamp(1.9rem,5vw,2.9rem); max-width: 22ch; }
+    .final .sub { margin-top: 20px; max-width: 40rem; color: var(--paper-dim); font-size: 1.06rem; line-height: 1.95; }
+    .final .line-block { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .final .qr { width: 92px; height: 92px; border-radius: var(--r-s); background: repeating-linear-gradient(135deg, rgba(240,242,246,.06) 0 8px, transparent 8px 16px), rgba(255,255,255,.03); border: 1px dashed rgba(217,190,134,.45); display: flex; align-items: center; justify-content: center; text-align: center; font-size: .62rem; color: var(--paper-dim); letter-spacing: .06em; transition: transform .25s var(--ease); }
+    .final .qr:hover { transform: scale(1.05); }
+
+    /* footer */
+    .footer { background: var(--midnight-2); color: var(--paper-dim); padding-block: 64px; }
+    .footcols { display: grid; grid-template-columns: 1fr; gap: 30px; }
+    @media (min-width: 760px) { .footcols { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+    .footcols h4 { color: #fff; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; margin: 0 0 16px; }
+    .footcols a, .footcols p { display: block; color: var(--paper-dim); font-size: .9rem; padding: 6px 0; margin: 0; }
+    .footcols a:hover { color: var(--gold-bright); }
+    .footbar { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: .8rem; color: var(--paper-dim); }
+
+    /* sticky LINE */
+    .sticky-line { position: fixed; z-index: 55; right: 22px; bottom: 22px; }
+    .sticky-line .btn { border-radius: var(--r-s); box-shadow: 0 18px 44px -14px rgba(0,0,0,.6); }
+    @media (max-width: 640px) { .sticky-line { left: 16px; right: 16px; bottom: 14px; } .sticky-line .btn { width: 100%; min-height: 54px; font-size: 1.02rem; } body { padding-bottom: 78px; } }
+
+    /* filter groups (類型 + 狀態) */
+    .fgroup { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .fgroup + .fgroup { margin-top: 12px; }
+
+    /* rich grant list (資訊型・每筆一列・狀態時效・Schema 預留) */
+    .evlist { margin-top: clamp(24px, 4vw, 36px); display: grid; gap: 14px; }
+    .evcard { border: 1px solid var(--line); border-radius: var(--r); padding: clamp(20px, 3vw, 26px) clamp(22px, 3vw, 28px); background: var(--card); transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease); }
+    .evcard:hover { transform: translateY(-3px); border-color: rgba(217,190,134,.5); box-shadow: 0 30px 60px -34px rgba(0,0,0,.7); }
+    .evcard .top { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
+    .evcard .cat { display: inline-flex; align-items: center; font-size: .7rem; font-weight: 700; letter-spacing: .1em; padding: 4px 11px; border-radius: var(--r-s); background: rgba(126,150,184,.12); color: var(--steel); }
+    /* 狀態時效標籤：申請中(綠)／即將截止(金)／已截止(灰) */
+    .st { display: inline-flex; align-items: center; gap: 6px; font-size: .68rem; font-weight: 700; letter-spacing: .06em; padding: 4px 11px; border-radius: var(--r-s); }
+    .st .dt { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .st-open { background: rgba(102,187,140,.14); color: #86D3A6; }
+    .st-soon { background: var(--gold-soft); color: var(--gold-bright); }
+    .st-closed { background: rgba(139,147,163,.14); color: var(--slate); }
+    .evcard .eg { display: inline-flex; align-items: center; gap: 6px; font-size: .66rem; font-weight: 600; letter-spacing: .05em; padding: 4px 10px; border-radius: var(--r-s); background: rgba(240,242,246,.06); color: var(--slate); }
+    .evcard h3 { margin-top: 13px; font-size: clamp(1.12rem, 2.5vw, 1.38rem); color: #fff; }
+    .evcard .fit { margin-top: 9px; color: var(--ink); font-size: .95rem; font-weight: 600; line-height: 1.7; }
+    .evcard .fit span { color: var(--slate); font-weight: 400; }
+    .evcard .meta { margin-top: 13px; display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--slate); font-size: .9rem; font-weight: 400; }
+    .evcard .meta span { display: inline-flex; align-items: center; gap: 7px; }
+    .evcard .meta svg { color: var(--steel); opacity: .8; flex: none; }
+    .evcard .meta .fill { color: var(--ink); font-style: italic; font-weight: 500; }
+    .evcard .foot { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+    .evcard .foot .note { font-size: .8rem; color: var(--slate); }
+    .evcard .foot .btn[aria-disabled="true"] { opacity: .5; cursor: default; box-shadow: none; pointer-events: none; }
+    @media (max-width: 640px) { .evcard .foot { flex-direction: column; align-items: stretch; } .evcard .foot .btn { width: 100%; } }
+    /* 免責小字（補助頁特有）*/
+    .disclaimer { margin-top: 20px; display: flex; gap: 10px; align-items: flex-start; padding: 14px 18px; border: 1px dashed var(--line); border-radius: var(--r); background: rgba(240,242,246,.03); color: var(--slate); font-size: .84rem; line-height: 1.7; }
+    .disclaimer svg { color: var(--steel); flex: none; margin-top: 2px; }
+
+    /* 信任列 */
+    .trustrow { display: flex; flex-wrap: wrap; gap: 14px 26px; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--line); }
+    .trustrow .titem { display: inline-flex; align-items: center; gap: 9px; font-size: .9rem; font-weight: 400; color: var(--paper-dim); }
+    .trustrow .titem svg { color: var(--gold); flex: none; }
+    .trustrow .titem b { color: #fff; font-weight: 700; }
+    .trustrow .titem .fill { color: var(--gold-bright); font-style: italic; font-weight: 600; }
+
+    /* reveal */
+    .reveal { opacity: 0; transform: translateY(24px); filter: blur(6px); transition: opacity .7s var(--ease), transform .7s var(--ease), filter .7s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; filter: blur(0); }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+      .page-hero::before { animation: none !important; }
+    }
+
+    /* demo-content marker — swappable placeholder values */
+    .demo>i{font-style:normal;font-size:.58em;font-weight:500;letter-spacing:.08em;padding:1px 5px;margin-left:6px;border-radius:3px;vertical-align:middle;white-space:nowrap;color:color-mix(in srgb,currentColor 56%,transparent);background:color-mix(in srgb,currentColor 8%,transparent);border:1px solid color-mix(in srgb,currentColor 24%,transparent)}
+  
+    /* 相鄰同色區塊補細線，避免節奏過平 */
+    .band.white + .band.white, .band.dark + .band.dark { border-top: 1px solid var(--line); }
+  
+    /* ============================================================
+       全站打磨層 v1（一致性 + 手機 + 深色質感 + 弱化示範）
+       ============================================================ */
+    :root { --ease-p: cubic-bezier(.23,1,.32,1); }
+
+    /* ── 深色質感：極淡顆粒，讓深色更「貴」不「悶」 ── */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .55;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    /* ── 弱化「示範/待補」徽章，別搶信任感 ── */
+    .demo > i, .fake, .stat .fake {
+      opacity: .5 !important; font-size: .54em !important; letter-spacing: .04em !important;
+    }
+    .stat .fake { color: rgba(240,242,246,.42) !important; border-color: rgba(240,242,246,.1) !important; }
+
+    /* ── 頂部捲動進度條（子頁補上） ── */
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 70; pointer-events: none; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--gold-deep,#C7A968), var(--gold-bright,#E6D2A2)); box-shadow: 0 0 12px rgba(217,190,134,.5); }
+
+    /* ── 常駐 CTA：滑過 hero 才淡入（全站統一行為） ── */
+    .sticky-line { opacity: 0; transform: translateY(14px); pointer-events: none; transition: opacity .45s var(--ease-p), transform .45s var(--ease-p); }
+    .sticky-line.show { opacity: 1; transform: none; pointer-events: auto; }
+
+    /* ── 回頁首鈕（長頁） ── */
+    .to-top { position: fixed; left: 22px; bottom: 24px; z-index: 54; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(27,34,48,.9); color: #fff; border: 1px solid var(--line,rgba(240,242,246,.12)); backdrop-filter: blur(8px); opacity: 0; transform: translateY(10px); pointer-events: none; cursor: pointer; transition: opacity .3s var(--ease-p), transform .3s var(--ease-p), border-color .2s; }
+    .to-top:hover { border-color: rgba(217,190,134,.5); color: var(--gold-bright,#E6D2A2); }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    @media (max-width: 640px) { .to-top { left: 14px; bottom: 84px; width: 42px; height: 42px; } }
+
+    /* ── 手機體驗打磨 ── */
+    @media (max-width: 600px) {
+      /* Hero 主 CTA 改整寬區塊，不再折成醜兩行 */
+      .hero-cta { flex-direction: column; align-items: stretch; gap: 14px; }
+      .hero-cta .btn { width: 100%; }
+      .hero-cta .arrow-link { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      /* 手機藏掉 header 重複的金鈕（底部常駐已涵蓋），header 更清爽 */
+      .nav-cta .btn-gold { display: none !important; }
+    }
+
+    /* ── reduced-motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-line { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+      .scroll-progress { display: none !important; }
+      .to-top { transition: none !important; }
+      body::after { opacity: .4; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <span class="dot"></span>
+          <span>上架美國<small>台灣品牌 · 北美大型通路</small></span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">首頁</a>
+          <div class="nav-dd">
+            <a href="index.html#services">服務<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="services-diagnosis.html"><b><span class="st">01</span>產品診斷報告</b><i>能不能進美國，先驗證</i></a>
+              <a href="services-expo.html"><b><span class="st">02</span>展覽備展</b><i>把你推到 buyer 面前</i></a>
+              <a href="services-channel.html"><b><span class="st">03</span>通路上架與優化</b><i>談進去，上架後不放生</i></a>
+            </div>
+          </div>
+          <a href="cases.html">案例</a>
+          <div class="nav-dd">
+            <a href="index.html#difficulty" class="active">資源<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="resources-exhibitions.html"><b>海外展覽資訊</b><i>值得參加的展，持續整理</i></a>
+              <a href="resources-grants.html" class="active"><b>補助案資訊</b><i>出海／外銷補助彙整</i></a>
+              <a href="resources-blog.html"><b>部落格</b><i>出海 know-how＋最新消息</i></a>
+            </div>
+          </div>
+          <a href="about.html">關於</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn btn-ghost btn-sm" href="boss.html">給老闆看</a>
+          <a class="btn btn-gold btn-sm" href="#contact">免費聊 15 分鐘</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">首頁</a>
+        <a href="services-diagnosis.html">服務・產品診斷報告</a>
+        <a href="services-expo.html">服務・展覽備展</a>
+        <a href="services-channel.html">服務・通路上架與優化</a>
+        <a href="cases.html">案例</a>
+        <a href="resources-exhibitions.html">資源・海外展覽資訊</a>
+        <a href="resources-grants.html">資源・補助案資訊</a>
+        <a href="resources-blog.html">資源・部落格</a>
+        <a href="about.html">關於</a>
+        <a href="boss.html">給老闆看</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEXT 帶（冷入口保護）===== -->
+  <div class="hero-screen">
+  <div class="context-strip">
+    <div class="wrap">
+      <svg class="pin" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>我們幫台灣品牌進入<b>北美大型通路</b>（如 Costco）——產品診斷、參展媒合、通路上架一路整合</span>
+      <a href="#contact" style="margin-left:auto;flex:none;color:var(--gold);font-weight:700;text-decoration:none;white-space:nowrap">加 LINE →</a>
+    </div>
+  </div>
+
+  <!-- ===== 麵包屑 ===== -->
+  <nav class="crumb" aria-label="breadcrumb">
+    <div class="wrap">
+      <a href="index.html">首頁</a>
+      <span class="sep">›</span>
+      <a href="resources-exhibitions.html">資源</a>
+      <span class="sep">›</span>
+      <span class="here">補助案資訊</span>
+    </div>
+  </nav>
+
+  <!-- ===== 資源頁 HERO（深）===== -->
+  <section class="page-hero" id="top" aria-labelledby="res-h1">
+    <div class="wrap">
+      <h1 id="res-h1">有哪些補助能用？我們幫你盯著，過期的不留</h1>
+      <p class="sub">出海這條路，政府其實有不少補助——外銷拓銷、國際行銷、數位轉型都可能派上用場。但補助分散在各部會、期限又常變。我們把跟出海、外銷相關的補助持續彙整：補助名、申請期間、額度與對象、申請連結一次看清楚，讓你少花冤枉錢。</p>
+      <div class="res-badges">
+        <span class="res-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg>持續保鮮 · <b>定期更新</b></span>
+        <span class="res-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>自動整理 + <b>真人覆核</b>才上架</span>
+        <span class="res-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.2 5.5.8-4 4 1 5.6L12 21l-4.5 2.4M12 3L9.5 8.2 4 9l4 4-1 5.6" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>聚焦<b>出海・外銷</b>補助</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 補助列表（白）===== -->
+  </div><!-- /hero-screen -->
+  <!-- ===== 區段一｜Hero 下方說明句 + 區段二｜篩選 + 區段三｜清單（白・主體）===== -->
+  <section class="band white">
+    <div class="wrap">
+      <!-- §1 說明句 -->
+      <div class="shead reveal" style="margin-bottom:24px">
+        <h2>能用的補助，我們幫你盯著、標清楚時效</h2>
+        <p class="sub">政府出海／外銷補助分散在各部會、期限又常變。我們把跟出海相關的補助持續彙整——補助名、主辦單位、申請期間、額度、適用對象、申請連結一次看清楚，還幫你盯著更新，過期的不留。</p>
+      </div>
+
+      <!-- 資源三頁切換 -->
+      <div class="res-tabs reveal" style="margin-bottom:22px">
+        <a class="res-tab" href="resources-exhibitions.html"><span class="n">01</span>海外展覽資訊</a>
+        <a class="res-tab on" href="resources-grants.html"><span class="n">02</span>補助案資訊</a>
+        <a class="res-tab" href="resources-blog.html"><span class="n">03</span>部落格</a>
+      </div>
+
+      <!-- §2 篩選標籤列（類型 + 狀態，即時篩選）-->
+      <div class="reveal" id="gvFilters">
+        <div class="fgroup" role="group" aria-label="依類型篩選">
+          <span class="flabel">類型</span>
+          <button class="chip on" type="button" data-group="cat" data-val="all">全部</button>
+          <button class="chip" type="button" data-group="cat" data-val="export">外銷拓銷</button>
+          <button class="chip" type="button" data-group="cat" data-val="marketing">國際行銷</button>
+          <button class="chip" type="button" data-group="cat" data-val="digital">數位轉型</button>
+          <button class="chip" type="button" data-group="cat" data-val="expo">展覽補助</button>
+        </div>
+        <div class="fgroup" role="group" aria-label="依狀態篩選">
+          <span class="flabel">狀態</span>
+          <button class="chip on" type="button" data-group="status" data-val="all">全部</button>
+          <button class="chip" type="button" data-group="status" data-val="open">申請中</button>
+          <button class="chip" type="button" data-group="status" data-val="soon">即將截止</button>
+        </div>
+      </div>
+
+      <!-- §3 補助清單（假資料佔位，每筆標【範例・待自動化資料】；狀態時效一眼看；Schema 見下方預留註解）-->
+      <div class="evlist reveal" id="gvList">
+        <article class="evcard" data-cat="export" data-status="open">
+          <div class="top"><span class="cat">外銷拓銷</span><span class="st st-open"><span class="dt"></span>申請中</span><span class="eg">範例 · 待自動化資料</span></div>
+          <h3>外銷市場多元化拓銷計畫</h3>
+          <p class="fit">適合誰、能補什麼：<span>想拓展美國等多元市場、需要補參展或拓銷費用的中小外銷企業</span></p>
+          <div class="meta">
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-5 8 5v13" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>主辦單位 <span class="fill">國際貿易署</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>申請期間 <span class="fill">2026/01–03</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v10M9.5 9.3c0-1.2 1.1-1.8 2.5-1.8s2.5.7 2.5 1.9c0 2.6-5 1.4-5 3.9 0 1.2 1.1 1.9 2.5 1.9s2.5-.6 2.5-1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>額度／比例 <span class="fill">補助上限 50%</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>適用對象 <span class="fill">中小外銷企業</span></span>
+          </div>
+          <div class="foot"><span class="note">官方申請連結・覆核後開放</span><a class="btn btn-ink btn-sm" href="#" aria-disabled="true">前往官方申請頁 →</a></div>
+        </article>
+
+        <article class="evcard" data-cat="marketing" data-status="open">
+          <div class="top"><span class="cat">國際行銷</span><span class="st st-open"><span class="dt"></span>申請中</span><span class="eg">範例 · 待自動化資料</span></div>
+          <h3>品牌國際行銷補助</h3>
+          <p class="fit">適合誰、能補什麼：<span>要做品牌形象、通路上架行銷、數位廣告投放的自有品牌業者</span></p>
+          <div class="meta">
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-5 8 5v13" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>主辦單位 <span class="fill">中小企業處</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>申請期間 <span class="fill">2026/02–04</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v10M9.5 9.3c0-1.2 1.1-1.8 2.5-1.8s2.5.7 2.5 1.9c0 2.6-5 1.4-5 3.9 0 1.2 1.1 1.9 2.5 1.9s2.5-.6 2.5-1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>額度／比例 <span class="fill">上限 NT$100 萬</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>適用對象 <span class="fill">自有品牌業者</span></span>
+          </div>
+          <div class="foot"><span class="note">官方申請連結・覆核後開放</span><a class="btn btn-ink btn-sm" href="#" aria-disabled="true">前往官方申請頁 →</a></div>
+        </article>
+
+        <article class="evcard" data-cat="digital" data-status="soon">
+          <div class="top"><span class="cat">數位轉型</span><span class="st st-soon"><span class="dt"></span>即將截止</span><span class="eg">範例 · 待自動化資料</span></div>
+          <h3>數位轉型應用補助</h3>
+          <p class="fit">適合誰、能補什麼：<span>要導入電商、數據工具、跨境系統的品牌</span></p>
+          <div class="meta">
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-5 8 5v13" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>主辦單位 <span class="fill">數位發展部</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>申請期間 <span class="fill">2026/03</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v10M9.5 9.3c0-1.2 1.1-1.8 2.5-1.8s2.5.7 2.5 1.9c0 2.6-5 1.4-5 3.9 0 1.2 1.1 1.9 2.5 1.9s2.5-.6 2.5-1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>額度／比例 <span class="fill">補助 40%</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>適用對象 <span class="fill">導入電商／數據工具者</span></span>
+          </div>
+          <div class="foot"><span class="note">官方申請連結・覆核後開放</span><a class="btn btn-ink btn-sm" href="#" aria-disabled="true">前往官方申請頁 →</a></div>
+        </article>
+
+        <article class="evcard" data-cat="expo" data-status="soon">
+          <div class="top"><span class="cat">展覽補助</span><span class="st st-soon"><span class="dt"></span>即將截止</span><span class="eg">範例 · 待自動化資料</span></div>
+          <h3>海外參展攤位補助</h3>
+          <p class="fit">適合誰、能補什麼：<span>要赴海外參加指定國際展、需補攤位費的品牌</span></p>
+          <div class="meta">
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-5 8 5v13" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>主辦單位 <span class="fill">外貿協會</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>申請期間 <span class="fill">2026/01–02</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v10M9.5 9.3c0-1.2 1.1-1.8 2.5-1.8s2.5.7 2.5 1.9c0 2.6-5 1.4-5 3.9 0 1.2 1.1 1.9 2.5 1.9s2.5-.6 2.5-1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>額度／比例 <span class="fill">攤位費 50%</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>適用對象 <span class="fill">參加指定展會者</span></span>
+          </div>
+          <div class="foot"><span class="note">官方申請連結・覆核後開放</span><a class="btn btn-ink btn-sm" href="#" aria-disabled="true">前往官方申請頁 →</a></div>
+        </article>
+
+        <article class="evcard" data-cat="export" data-status="closed">
+          <div class="top"><span class="cat">外銷拓銷</span><span class="st st-closed"><span class="dt"></span>已截止</span><span class="eg">範例 · 待自動化資料</span></div>
+          <h3>新南向拓銷補助</h3>
+          <p class="fit">適合誰、能補什麼：<span>想布局新南向等新市場的外銷業者（本梯次已截止，留著參考下一梯條件）</span></p>
+          <div class="meta">
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-5 8 5v13" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>主辦單位 <span class="fill">國際貿易署</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>申請期間 <span class="fill">2025/11–12</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v10M9.5 9.3c0-1.2 1.1-1.8 2.5-1.8s2.5.7 2.5 1.9c0 2.6-5 1.4-5 3.9 0 1.2 1.1 1.9 2.5 1.9s2.5-.6 2.5-1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>額度／比例 <span class="fill">上限 NT$60 萬</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>適用對象 <span class="fill">布局新市場的業者</span></span>
+          </div>
+          <div class="foot"><span class="note">官方申請連結・覆核後開放</span><a class="btn btn-ink btn-sm" href="#" aria-disabled="true">前往官方申請頁 →</a></div>
+        </article>
+
+        <article class="evcard" data-cat="export" data-status="open">
+          <div class="top"><span class="cat">外銷拓銷</span><span class="st st-open"><span class="dt"></span>申請中</span><span class="eg">範例 · 待自動化資料</span></div>
+          <h3>食品外銷法規輔導</h3>
+          <p class="fit">適合誰、能補什麼：<span>需要 FDA 標示、成分與法規輔導的食品出口業者</span></p>
+          <div class="meta">
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-5 8 5v13" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>主辦單位 <span class="fill">食品所</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>申請期間 <span class="fill">2026/02–05</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v10M9.5 9.3c0-1.2 1.1-1.8 2.5-1.8s2.5.7 2.5 1.9c0 2.6-5 1.4-5 3.9 0 1.2 1.1 1.9 2.5 1.9s2.5-.6 2.5-1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>額度／比例 <span class="fill">全額輔導</span></span>
+            <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>適用對象 <span class="fill">食品出口業者</span></span>
+          </div>
+          <div class="foot"><span class="note">官方申請連結・覆核後開放</span><a class="btn btn-ink btn-sm" href="#" aria-disabled="true">前往官方申請頁 →</a></div>
+        </article>
+      </div>
+
+      <p class="sub reveal" id="gvEmpty" hidden style="margin-top:22px;color:var(--slate)">這個條件下目前沒有補助——換個類型或狀態看看，或直接<a href="#contact" style="color:var(--steel);font-weight:700;text-decoration:underline">加 LINE 問我們</a>。</p>
+
+      <!-- 免責小字（補助頁特有）-->
+      <div class="disclaimer reveal">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 8h.01M11 12h1v4h1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>補助資訊以各主辦單位公告為準，申請前請至官方連結確認最新期限與條件。上表為【範例・待自動化資料】，實際補助以官方公告為準。</span>
+      </div>
+
+      <!--
+        SEO / GEO 預留：補助結構化資料（Schema.org）
+        目前清單為【範例・待自動化資料】，刻意不放進 live JSON-LD——
+        對搜尋引擎送出未經查證的假申請期／額度會被視為不實結構化資料，反傷 SEO。
+        待自動化資料 + 真人覆核落地後，每筆補助依下列模板填入並改為 <script type="application/ld+json">：
+        {
+          "@context": "https://schema.org",
+          "@type": "MonetaryGrant",
+          "name": "（補助名）",
+          "funder": { "@type": "GovernmentOrganization", "name": "（主辦單位）" },
+          "amount": "（額度或比例）",
+          "description": "（適合誰、能補什麼）",
+          "url": "（官方申請連結）",
+          "validFrom": "（YYYY-MM-DD 開放）",
+          "validThrough": "（YYYY-MM-DD 截止）"
+        }
+      -->
+
+      <p class="sub reveal" style="margin-top:26px; max-width:46rem; color:var(--slate)">補助的申請期間、額度與資格條件我們寧可慢一點、確認過再上，也不放沒查證的資訊——因為看錯一個截止日或資格門檻，燒的是你的信任、也可能讓你錯過整年的機會。<b style="color:var(--ink)">AI 做雜活，人做信任</b>：工具負責保鮮抓取，真人負責覆核才上架。想知道你的品牌現在能申請哪些補助？直接<a href="#contact" style="color:var(--steel);font-weight:700;text-decoration:underline">加 LINE 問我們</a>。</p>
+    </div>
+  </section>
+
+  <!-- ===== 區段四｜統一導流塊（深）+ 區段五｜信任列 ===== -->
+  <section class="band dark final" id="contact">
+    <div class="wrap">
+      <div class="shead reveal" style="margin-bottom:0">
+        <h2>搞不清楚哪個補助適合你、怎麼搭配出海計畫？</h2>
+        <p class="sub">補助能把出海成本降下來，但前提是產品真的進得了北美大型通路。與其為了補助硬做，不如先確定方向對了，再讓補助幫你省力——補助最常搭在第一階段的產品診斷。哪個補助你符合資格、怎麼跟診斷搭著用，加 LINE，我們幫你看。</p>
+        <div class="line-block">
+          <a class="btn btn-gold" href="#contact">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            加 LINE，聊聊你的產品
+          </a>
+          <a class="btn btn-ghost" href="services-diagnosis.html">看我們怎麼帶你出海 →</a>
+          <div class="qr">LINE QR<br>待補</div>
+        </div>
+
+        <!-- §5 信任列（每頁必備）-->
+        <div class="trustrow reveal">
+          <span class="titem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><b>香皂已進美國 Costco</b>・可查證鐵證</span>
+          <span class="titem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>公司名／統編 <span class="fill">待補</span></span>
+          <span class="titem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>團隊真名真臉 <span class="fill">待補</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footcols">
+        <div>
+          <a class="brand" href="index.html" style="color:#fff"><span class="dot"></span><span>上架美國</span></a>
+          <p style="margin-top:14px">協助台灣品牌進入北美大型通路（如 Costco）的整合服務。靠方法，不靠運氣。</p>
+        </div>
+        <div>
+          <h4>服務</h4>
+          <a href="services-diagnosis.html">產品診斷報告</a>
+          <a href="services-expo.html">展覽備展</a>
+          <a href="services-channel.html">通路上架與優化</a>
+        </div>
+        <div>
+          <h4>資源</h4>
+          <a href="resources-exhibitions.html">海外展覽資訊</a>
+          <a href="resources-grants.html">補助案資訊</a>
+          <a href="resources-blog.html">部落格</a>
+        </div>
+        <div>
+          <h4>探索</h4>
+          <a href="cases.html">案例</a>
+          <a href="about.html">關於我們</a>
+          <a href="boss.html">給老闆看</a>
+          <a href="#contact">加 LINE</a>
+        </div>
+      </div>
+      <div class="footbar">
+        <span>© 2025 上架美國 · <span class="demo">躍鹿跨境整合股份有限公司<i>示範</i></span> · 統編 <span class="demo">90000001<i>示範</i></span></span>
+        <span>只走北美大型通路，不走華人超市</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- sticky LINE -->
+  <div class="sticky-line">
+    <a class="btn btn-gold" href="#contact">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      免費聊 15 分鐘
+    </a>
+  </div>
+
+  <script>
+    // mobile nav
+    (function () {
+      var t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
+      if (t && m) {
+        t.addEventListener('click', function () {
+          var open = m.classList.toggle('open');
+          t.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        m.addEventListener('click', function (e) { if (e.target.tagName === 'A') { m.classList.remove('open'); t.setAttribute('aria-expanded','false'); } });
+      }
+    })();
+
+    // §2 篩選（類型 + 狀態，即時篩選補助清單）
+    (function () {
+      var root = document.getElementById('gvFilters');
+      var list = document.getElementById('gvList');
+      var empty = document.getElementById('gvEmpty');
+      if (!root || !list) return;
+      var chips = Array.prototype.slice.call(root.querySelectorAll('.chip'));
+      var cards = Array.prototype.slice.call(list.querySelectorAll('.evcard'));
+      var sel = { cat: 'all', status: 'all' };
+      function apply() {
+        var shown = 0;
+        cards.forEach(function (card) {
+          var okCat = sel.cat === 'all' || card.getAttribute('data-cat') === sel.cat;
+          var okStatus = sel.status === 'all' || card.getAttribute('data-status') === sel.status;
+          var vis = okCat && okStatus;
+          card.style.display = vis ? '' : 'none';
+          if (vis) shown++;
+        });
+        if (empty) empty.hidden = shown !== 0;
+      }
+      chips.forEach(function (c) {
+        c.addEventListener('click', function () {
+          var g = c.getAttribute('data-group');
+          root.querySelectorAll('.chip[data-group="' + g + '"]').forEach(function (x) { x.classList.remove('on'); });
+          c.classList.add('on');
+          sel[g] = c.getAttribute('data-val');
+          apply();
+        });
+      });
+    })();
+
+    // header：透明浮於深色頂區 → 捲離 hero 後淡入玻璃（與首頁一致）
+    (function () {
+      var h = document.getElementById('header');
+      if (!h) return;
+      var darkEnd = document.querySelector('.page-hero');
+      function onScroll() {
+        var trigger = darkEnd ? darkEnd.offsetTop + darkEnd.offsetHeight - 72 : 72;
+        h.classList.toggle('scrolled', window.scrollY > trigger);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    })();
+
+    // reveal on scroll
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+      setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 4000);
+    })();
+  </script>
+  <script>
+  /* 全站打磨層：進度條 + 常駐 CTA 淡入 + 回頁首（idempotent，重複載入安全） */
+  (function () {
+    var hero = document.querySelector('.hero, .page-hero');
+    var sticky = document.querySelector('.sticky-line');
+
+    if (!document.querySelector('.scroll-progress')) {
+      var bar = document.createElement('div');
+      bar.className = 'scroll-progress';
+      bar.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(bar);
+    }
+    var bar = document.querySelector('.scroll-progress');
+
+    var tt = document.querySelector('.to-top');
+    if (!tt) {
+      tt = document.createElement('button');
+      tt.className = 'to-top';
+      tt.type = 'button';
+      tt.setAttribute('aria-label', '回頁首');
+      tt.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      tt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      document.body.appendChild(tt);
+    }
+
+    function onScroll() {
+      var st = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var h = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+      if (bar) bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, st / h)) + ')';
+      var hh = hero ? hero.offsetHeight : 500;
+      if (sticky) { if (st > hh * 0.6) sticky.classList.add('show'); else sticky.classList.remove('show'); }
+      if (st > hh * 0.9) tt.classList.add('show'); else tt.classList.remove('show');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>

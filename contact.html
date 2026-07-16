@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>加 LINE／聯絡｜先聊聊你的產品，一起看能不能進北美大型通路</title>
+  <meta name="description" content="想把台灣品牌帶進北美大型通路（如 Costco）？把你的產品與目標通路告訴我們，先聊聊合不合適。加 LINE 有真人即時回覆；不方便加 LINE 也可以留資料，我們主動聯絡你。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       設計基調：沉穩現代精品 · 深色高級（Direction C）
+       全站深色、香檳金點綴、Sora 現代標題、Noto Sans TC 內文。
+       金色語意：主 CTA／門票／已成／勾號。
+       所有 class 名沿用，HTML/JS/表單不動，只換視覺。
+       ============================================================ */
+    :root {
+      --bg:          #0C0F16;   /* 主底・近黑 */
+      --bg2:         #11151F;   /* 交替區塊 */
+      --card:        #161C28;   /* 卡面 */
+      --card-hi:     #1B2230;   /* 卡面亮 */
+      --paper:       #0C0F16;   /* = bg（沿用舊名） */
+      --paper-hi:    #161C28;
+      --midnight:    #11151F;
+      --midnight-2:  #090C12;
+      --ink:         #F0F2F6;   /* 主要淺色文字 */
+      --text:        #C4CBD6;   /* 內文 */
+      --slate:       #8B93A3;   /* 次要文字 */
+      --paper-dim:   rgba(240,242,246,.66);
+      --steel:       #7E96B8;   /* 冷調輔色 */
+      --gold:        #D9BE86;   /* 香檳金 */
+      --gold-bright: #E6D2A2;
+      --gold-deep:   #C7A968;
+      --gold-soft:   rgba(217,190,134,.14);
+      --brand:       #E0736A;   /* 錯誤／必填（深底可讀的紅） */
+      --line:        rgba(240,242,246,.10);
+      --line-soft:   rgba(240,242,246,.06);
+      --line-dark:   rgba(240,242,246,.12);
+      --font: 'Noto Sans TC','PingFang TC','Source Han Sans TC','Microsoft JhengHei',sans-serif;
+      --serif: 'Sora','Noto Sans TC',sans-serif;   /* 標題（現代無襯線） */
+      --fig: 'Sora','Noto Sans TC',sans-serif;      /* 數字/編號 */
+      --ease: cubic-bezier(.23,1,.32,1);
+      --max: 1200px;
+      --r: 12px;
+      --r-s: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 84px; }
+    body { margin: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: var(--font); font-weight: 400; line-height: 1.85; font-size: 16.5px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; color: inherit; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 700; line-height: 1.28; letter-spacing: -.005em; color: #fff; }
+    p { margin: 0; }
+    ::selection { background: var(--gold-soft); }
+
+    /* layout */
+    .wrap { width: min(100%, var(--max)); margin-inline: auto; padding-inline: clamp(20px, 5vw, 40px); }
+    section { position: relative; }
+    .band { padding-block: clamp(64px, 9vw, 116px); }
+    .band.white { background: var(--bg); }
+    .band.paper-hi { background: var(--bg2); }
+    .band.dark { background: radial-gradient(120% 90% at 85% 0%, rgba(217,190,134,.10), transparent 55%), linear-gradient(168deg, var(--midnight), var(--midnight-2)); }
+    .band.dark h2, .band.dark h3, .band.dark h4 { color: #fff; }
+
+    /* eyebrow + heads */
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold); opacity: .85; }
+    .shead { max-width: 46rem; margin-bottom: clamp(34px, 5vw, 54px); }
+    .shead h2 { font-size: clamp(1.7rem, 4vw, 2.55rem); margin-top: 16px; line-height: 1.3; }
+    .shead .sub { margin-top: 18px; color: var(--slate); font-size: 1.06rem; line-height: 1.9; }
+    .big-eyebrow { font-size: clamp(.78rem,1.6vw,.9rem); font-weight: 600; letter-spacing: .22em; }
+    .big-h2 { font-size: clamp(1.6rem, 3.6vw, 2.4rem); margin-top: 14px; }
+
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 28px; border: 0; border-radius: var(--r-s); font-weight: 600; letter-spacing: .01em; cursor: pointer; transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease); }
+    .btn svg { flex: none; }
+    .btn-gold { background: var(--gold); color: #1A1408; }
+    .btn-gold:hover { transform: translateY(-2px); background: #E8D2A0; }
+    .btn-ink { background: var(--card-hi); color: #fff; box-shadow: inset 0 0 0 1px var(--line); }
+    .btn-ink:hover { transform: translateY(-2px); background: #222b3a; }
+    .btn-ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; }
+    .btn-ghost:hover { box-shadow: inset 0 0 0 1px var(--gold); color: var(--gold-bright); }
+    .btn-sm { min-height: 44px; padding: 0 20px; font-size: .9rem; }
+    .btn:active { transform: scale(.975); }
+    .arrow-link { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; color: var(--gold); }
+    .arrow-link svg { transition: transform .2s var(--ease); }
+    .arrow-link:hover svg { transform: translateX(4px); }
+
+    /* header / nav（沿用首頁深色系統） */
+    .header { position: fixed; inset: 0 0 auto 0; z-index: 60; background: transparent; border-bottom: 1px solid transparent; transition: background .35s var(--ease), border-color .35s var(--ease), backdrop-filter .35s var(--ease); }
+    .header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgba(9,12,18,.78) 0%, rgba(9,12,18,.36) 46%, rgba(9,12,18,0) 100%); transition: opacity .35s var(--ease); }
+    .header.scrolled { background: rgba(12,15,22,.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: rgba(217,190,134,.16); }
+    .header.scrolled::before { opacity: 0; }
+    .header:has(.mobile-menu.open) { background: rgba(12,15,22,.98); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+    .header:has(.mobile-menu.open)::before { opacity: 0; }
+    .nav { display: flex; align-items: center; gap: 24px; height: 68px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; font-family: var(--serif); font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+    .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); flex: none; }
+    .brand small { display: block; font-family: var(--font); font-size: .6rem; font-weight: 400; letter-spacing: .18em; color: var(--paper-dim); margin-top: 3px; }
+    .nav-links { display: none; gap: 28px; margin-left: 12px; font-size: .9rem; font-weight: 400; color: var(--paper-dim); }
+    .nav-links a:hover { color: #fff; }
+    .nav-dd { position: relative; }
+    .nav-dd::after { content: ""; position: absolute; top: 100%; left: -14px; right: -14px; height: 18px; }
+    .nav-dd > a { display: inline-flex; align-items: center; gap: 5px; }
+    .nav-dd > a .chev { transition: transform .2s var(--ease); opacity: .7; }
+    .nav-dd:hover > a .chev, .nav-dd:focus-within > a .chev { transform: rotate(180deg); opacity: 1; }
+    .nav-dd-panel { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); min-width: 256px; padding: 8px; background: rgba(17,21,31,.98); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--line); border-radius: var(--r-s); box-shadow: 0 28px 60px rgba(0,0,0,.55); display: flex; flex-direction: column; gap: 2px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .18s var(--ease), transform .18s var(--ease); z-index: 60; }
+    .nav-dd:hover .nav-dd-panel, .nav-dd:focus-within .nav-dd-panel { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+    .nav-dd-panel a { display: block; padding: 11px 13px; border-radius: 6px; color: var(--paper-dim); }
+    .nav-dd-panel a:hover { background: rgba(240,242,246,.05); color: #fff; }
+    .nav-dd-panel a b { display: block; font-size: .92rem; font-weight: 600; color: #fff; }
+    .nav-dd-panel a i { display: block; font-style: normal; font-size: .75rem; color: var(--paper-dim); margin-top: 3px; }
+    .nav-dd-panel a .st { font-family: var(--fig); color: var(--gold); font-weight: 600; font-size: .78rem; margin-right: 8px; }
+    .nav-cta { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+    .nav-cta .btn-ghost { color: #fff; display: none; }
+    @media (min-width: 980px) { .nav-cta .btn-ghost { display: inline-flex; } }
+    @media (max-width: 899px) { .nav-cta { margin-left: 0; } .nav-cta .btn-gold { display: none; } }
+    @media (min-width: 480px) and (max-width: 899px) { .nav-cta .btn-gold { display: inline-flex; } }
+    .nav-toggle { margin-left: auto; display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--line); border-radius: var(--r-s); color: #fff; cursor: pointer; }
+    .mobile-menu { display: none; flex-direction: column; gap: 2px; padding: 8px 0 16px; border-top: 1px solid var(--line); max-height: calc(100svh - 80px); overflow: auto; }
+    .mobile-menu a { color: var(--paper-dim); padding: 13px 4px; font-weight: 500; border-bottom: 1px solid var(--line-soft); }
+    .mobile-menu.open { display: flex; }
+    @media (min-width: 900px) { .nav-links { display: flex; } .nav-toggle { display: none; } .mobile-menu { display: none !important; } }
+
+    /* context strip — cold-entry protection */
+    .hero-screen { min-height: 100svh; display: flex; flex-direction: column; }
+    .context-strip { padding-top: 68px; background: var(--midnight-2); color: var(--paper-dim); border-bottom: 1px solid rgba(217,190,134,.18); }
+    .context-strip .wrap { display: flex; align-items: center; gap: 12px; padding-block: 11px; font-size: .86rem; letter-spacing: .01em; }
+    .context-strip .pin { color: var(--gold); flex: none; }
+    .context-strip b { color: #fff; font-weight: 600; }
+
+    /* breadcrumb */
+    .crumb { background: var(--midnight-2); }
+    .crumb .wrap { display: flex; align-items: center; gap: 8px; padding-block: 10px; font-size: .82rem; color: var(--paper-dim); flex-wrap: wrap; }
+    .crumb a:hover { color: #fff; }
+    .crumb .sep { opacity: .5; }
+    .crumb .here { color: var(--gold); font-weight: 600; }
+
+    /* page hero (short, dark) */
+    .page-hero { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(168deg, var(--midnight), var(--midnight-2)); color: #fff; padding-block: clamp(52px, 8vw, 96px); overflow: hidden; }
+    .page-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 120% at 88% 0%, rgba(217,190,134,.14), transparent 55%); pointer-events: none; }
+    .page-hero .wrap { position: relative; z-index: 1; }
+    .page-hero .eyebrow { color: var(--gold); }
+    .page-hero h1 { margin-top: 20px; font-size: clamp(2.1rem, 5.4vw, 3.5rem); line-height: 1.12; max-width: 18ch; text-shadow: 0 2px 24px rgba(0,0,0,.35); }
+    .page-hero .sub { margin-top: 22px; max-width: 44rem; font-size: clamp(1rem, 2vw, 1.16rem); line-height: 1.9; color: rgba(255,255,255,.9); }
+    .page-hero .meta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; color: var(--paper-dim); font-size: .9rem; }
+    .contact-hero h1 { font-size: clamp(2.2rem, 5.6vw, 3.7rem); line-height: 1.16; max-width: 20ch; }
+    .contact-hero .oneliner { margin-top: 24px; max-width: 42rem; font-size: clamp(1.12rem, 2.3vw, 1.36rem); line-height: 1.85; color: rgba(255,255,255,.94); font-weight: 400; }
+    .contact-hero .oneliner b { color: var(--gold); font-weight: 700; }
+
+    /* 加 LINE 大區 */
+    .line-card { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: center; border: 1px solid var(--line); border-radius: var(--r); padding: clamp(28px,4vw,46px); background: linear-gradient(155deg, var(--gold-soft), transparent 55%), var(--card); transition: border-color .25s var(--ease), transform .25s var(--ease); }
+    @media (min-width: 820px) { .line-card { grid-template-columns: 1.4fr 1fr; gap: 48px; } }
+    .line-card h2 { font-size: clamp(1.6rem,3.6vw,2.3rem); line-height: 1.28; color: #fff; }
+    .line-card .lead { margin-top: 16px; font-size: 1.08rem; line-height: 1.85; color: var(--slate); }
+    .line-card .live { margin-top: 20px; display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border-radius: 999px; background: var(--gold-soft); color: var(--gold-bright); font-weight: 600; font-size: .96rem; }
+    .line-card .live .dotpulse { width: 9px; height: 9px; border-radius: 50%; background: #2DA84A; box-shadow: 0 0 0 0 rgba(45,168,74,.5); animation: lpulse 2s infinite; }
+    @keyframes lpulse { 0%{box-shadow:0 0 0 0 rgba(45,168,74,.45)} 70%{box-shadow:0 0 0 9px rgba(45,168,74,0)} 100%{box-shadow:0 0 0 0 rgba(45,168,74,0)} }
+    .line-card .cta-row { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .line-card .cta-row .btn { min-height: 56px; font-size: 1.06rem; padding: 0 28px; }
+    .line-card .lineid { margin-top: 16px; font-size: .96rem; color: var(--slate); }
+    .line-card .lineid b { color: #fff; }
+    .line-card .lineid .fill { color: var(--gold); font-style: italic; font-weight: 600; }
+    .qr-block { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .qr-lg { width: 190px; height: 190px; border-radius: 18px; background: repeating-linear-gradient(135deg, rgba(240,242,246,.05) 0 9px, transparent 9px 18px), var(--card-hi); border: 1.5px dashed rgba(217,190,134,.45); display: flex; align-items: center; justify-content: center; text-align: center; font-size: .8rem; color: var(--paper-dim); letter-spacing: .04em; line-height: 1.6; }
+    .qr-block span { font-size: .88rem; color: var(--slate); }
+
+    /* 怎麼做 — 步驟流程 */
+    .steps { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 900px) { .steps { grid-template-columns: repeat(4,1fr); gap: 16px; } }
+    .step { position: relative; border: 1px solid var(--line); border-radius: var(--r); padding: 26px 22px 24px; background: var(--card); transition: transform .25s var(--ease), border-color .25s var(--ease); }
+    .step:hover { transform: translateY(-4px); border-color: rgba(217,190,134,.45); }
+    .step .n { width: 40px; height: 40px; border-radius: 12px; background: var(--card-hi); color: var(--gold); font-family: var(--fig); font-weight: 700; font-size: 1.15rem; display: grid; place-items: center; box-shadow: inset 0 0 0 1px var(--line); }
+    .step h3 { margin-top: 16px; font-size: 1.15rem; color: #fff; }
+    .step p { margin-top: 8px; font-size: .96rem; line-height: 1.75; color: var(--slate); }
+    .step .arrow { display: none; }
+    @media (min-width: 900px) { .step:not(:last-child) .arrow { display: block; position: absolute; top: 40px; right: -13px; color: var(--gold); z-index: 2; } }
+
+    /* 留資料表單（深色輸入框） */
+    .lead-form { max-width: 44rem; margin-top: 34px; }
+    .lead-form .grid2 { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    @media (min-width: 640px) { .lead-form .grid2 { grid-template-columns: 1fr 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .96rem; font-weight: 600; color: #fff; }
+    .field label .req { color: var(--brand); margin-left: 3px; }
+    .field input, .field select, .field textarea { font: inherit; font-size: 1rem; padding: 13px 15px; border-radius: var(--r-s); border: 1px solid var(--line); background: rgba(9,12,18,.6); color: #fff; transition: border-color .2s var(--ease), box-shadow .2s var(--ease); width: 100%; }
+    .field textarea { min-height: 104px; resize: vertical; }
+    .field input::placeholder, .field textarea::placeholder { color: var(--paper-dim); }
+    .field select option { color: #16202e; background: #fff; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: rgba(217,190,134,.6); box-shadow: 0 0 0 3px var(--gold-soft); }
+    .field .err { font-size: .84rem; color: var(--brand); min-height: 0; display: none; }
+    .field.invalid input, .field.invalid select { border-color: var(--brand); }
+    .field.invalid .err { display: block; }
+    .lead-form .submit-row { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+    .lead-form .submit-row .btn { min-height: 56px; font-size: 1.06rem; padding: 0 30px; }
+    .lead-form .privacy { font-size: .88rem; color: var(--slate); }
+    .form-ok { display: none; border: 1px solid rgba(217,190,134,.45); border-radius: var(--r); padding: 30px 28px; background: linear-gradient(160deg, var(--gold-soft), rgba(22,28,40,.6)); }
+    .form-ok.show { display: block; }
+    .form-ok h3 { font-size: 1.35rem; color: #fff; display: flex; align-items: center; gap: 10px; }
+    .form-ok h3 svg { color: #2DA84A; flex: none; }
+    .form-ok p { margin-top: 12px; font-size: 1.02rem; line-height: 1.85; color: var(--slate); }
+    .form-ok .btn { margin-top: 20px; }
+
+    /* 營業資訊 */
+    .bizinfo { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 8px; }
+    @media (min-width: 700px) { .bizinfo { grid-template-columns: repeat(3,1fr); } }
+    .bizcard { border: 1px solid var(--line); border-radius: var(--r); padding: 24px 22px; background: var(--card); }
+    .bizcard .k { font-size: .82rem; font-weight: 700; letter-spacing: .08em; color: var(--gold); }
+    .bizcard .v { margin-top: 10px; font-size: 1.06rem; line-height: 1.7; color: #fff; font-weight: 400; }
+    .bizcard .v .fill { color: var(--gold); font-style: italic; font-weight: 600; }
+    .bizcard .v small { display: block; margin-top: 6px; font-size: .88rem; color: var(--paper-dim); font-weight: 400; }
+
+    .trustrow { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: center; color: var(--paper-dim); font-size: .92rem; }
+    .trustrow .ti b { color: #fff; }
+    .trustrow .ti .fill { color: var(--gold); font-style: italic; }
+
+    /* final */
+    .final h2 { font-size: clamp(1.9rem,5vw,2.9rem); max-width: 20ch; }
+    .final .sub { margin-top: 20px; max-width: 38rem; color: var(--paper-dim); font-size: 1.06rem; line-height: 1.9; }
+
+    /* footer */
+    .footer { background: var(--midnight-2); color: var(--paper-dim); padding-block: 52px; }
+    .footcols { display: grid; grid-template-columns: 1fr; gap: 30px; }
+    @media (min-width: 760px) { .footcols { grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; } }
+    .footcols h4 { color: #fff; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; margin: 0 0 14px; }
+    .footcols a, .footcols p { display: block; color: var(--paper-dim); font-size: .9rem; padding: 5px 0; margin: 0; }
+    .footcols a:hover { color: var(--gold-bright); }
+    .footbar { margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font-size: .8rem; color: var(--paper-dim); }
+
+    /* sticky LINE */
+    .sticky-line { position: fixed; z-index: 55; right: 20px; bottom: 20px; }
+    .sticky-line .btn { border-radius: var(--r-s); box-shadow: 0 18px 44px -14px rgba(0,0,0,.6); }
+    @media (max-width: 640px) { .sticky-line { left: 16px; right: 16px; bottom: 14px; } .sticky-line .btn { width: 100%; min-height: 54px; font-size: 1.05rem; } body { padding-bottom: 78px; } }
+
+    /* motion */
+    .hero-bg { animation: kenburns 30s cubic-bezier(.16,1,.3,1) infinite alternate; }
+    @keyframes kenburns { from { transform: scale(1.001); } to { transform: scale(1.09) translateY(-1.4%); } }
+    .reveal { opacity: 0; transform: translateY(22px); filter: blur(6px); transition: opacity .7s var(--ease), transform .7s var(--ease), filter .7s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; filter: blur(0); }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+      .line-card .live .dotpulse { animation: none !important; }
+      .hero-bg { animation: none !important; }
+    }
+
+    /* 列印 / 存 PDF：隱藏導覽與釘底、去掉深色背景省墨 */
+    @media print {
+      .header, .context-strip, .crumb, .sticky-line, .nav-toggle { display: none !important; }
+      .band, .page-hero { padding-block: 24px !important; break-inside: avoid; }
+      .band.dark, .page-hero { background: #fff !important; color: #14233B !important; }
+      .band.dark h2, .band.dark h3, .page-hero h1, .contact-hero .oneliner, .bizcard .v { color: #14233B !important; }
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+    }
+
+    /* demo-content marker — swappable placeholder values */
+    .demo>i{font-style:normal;font-size:.6em;font-weight:600;letter-spacing:.08em;padding:1px 5px;margin-left:6px;border-radius:4px;vertical-align:middle;white-space:nowrap;color:color-mix(in srgb,currentColor 58%,transparent);background:color-mix(in srgb,currentColor 10%,transparent);border:1px solid color-mix(in srgb,currentColor 26%,transparent)}
+  
+    /* 相鄰同色區塊補細線，避免節奏過平 */
+    .band.white + .band.white, .band.dark + .band.dark { border-top: 1px solid var(--line); }
+  
+    /* ============================================================
+       全站打磨層 v1（一致性 + 手機 + 深色質感 + 弱化示範）
+       ============================================================ */
+    :root { --ease-p: cubic-bezier(.23,1,.32,1); }
+
+    /* ── 深色質感：極淡顆粒，讓深色更「貴」不「悶」 ── */
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .55;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    /* ── 弱化「示範/待補」徽章，別搶信任感 ── */
+    .demo > i, .fake, .stat .fake {
+      opacity: .5 !important; font-size: .54em !important; letter-spacing: .04em !important;
+    }
+    .stat .fake { color: rgba(240,242,246,.42) !important; border-color: rgba(240,242,246,.1) !important; }
+
+    /* ── 頂部捲動進度條（子頁補上） ── */
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 70; pointer-events: none; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg, var(--gold-deep,#C7A968), var(--gold-bright,#E6D2A2)); box-shadow: 0 0 12px rgba(217,190,134,.5); }
+
+    /* ── 常駐 CTA：滑過 hero 才淡入（全站統一行為） ── */
+    .sticky-line { opacity: 0; transform: translateY(14px); pointer-events: none; transition: opacity .45s var(--ease-p), transform .45s var(--ease-p); }
+    .sticky-line.show { opacity: 1; transform: none; pointer-events: auto; }
+
+    /* ── 回頁首鈕（長頁） ── */
+    .to-top { position: fixed; left: 22px; bottom: 24px; z-index: 54; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(27,34,48,.9); color: #fff; border: 1px solid var(--line,rgba(240,242,246,.12)); backdrop-filter: blur(8px); opacity: 0; transform: translateY(10px); pointer-events: none; cursor: pointer; transition: opacity .3s var(--ease-p), transform .3s var(--ease-p), border-color .2s; }
+    .to-top:hover { border-color: rgba(217,190,134,.5); color: var(--gold-bright,#E6D2A2); }
+    .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+    @media (max-width: 640px) { .to-top { left: 14px; bottom: 84px; width: 42px; height: 42px; } }
+
+    /* ── 手機體驗打磨 ── */
+    @media (max-width: 600px) {
+      /* Hero 主 CTA 改整寬區塊，不再折成醜兩行 */
+      .hero-cta { flex-direction: column; align-items: stretch; gap: 14px; }
+      .hero-cta .btn { width: 100%; }
+      .hero-cta .arrow-link { justify-content: center; }
+    }
+    @media (max-width: 640px) {
+      /* 手機藏掉 header 重複的金鈕（底部常駐已涵蓋），header 更清爽 */
+      .nav-cta .btn-gold { display: none !important; }
+    }
+
+    /* ── reduced-motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      .sticky-line { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+      .scroll-progress { display: none !important; }
+      .to-top { transition: none !important; }
+      body::after { opacity: .4; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="wrap">
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <span class="dot"></span>
+          <span>上架美國<small>台灣品牌 · 北美大型通路</small></span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">首頁</a>
+          <div class="nav-dd">
+            <a href="index.html#services">服務<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="services-diagnosis.html"><b><span class="st">01</span>產品診斷報告</b><i>能不能進美國，先驗證</i></a>
+              <a href="services-expo.html"><b><span class="st">02</span>展覽備展</b><i>把你推到 buyer 面前</i></a>
+              <a href="services-channel.html"><b><span class="st">03</span>通路上架與優化</b><i>談進去，上架後不放生</i></a>
+            </div>
+          </div>
+          <a href="cases.html">案例</a>
+          <div class="nav-dd">
+            <a href="index.html#difficulty">資源<svg class="chev" width="10" height="7" viewBox="0 0 10 7" fill="none"><path d="M1 1.5L5 5.5L9 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <div class="nav-dd-panel">
+              <a href="resources-exhibitions.html"><b><span class="st">01</span>海外展覽資訊</b><i>值得參加的展，錯的不上</i></a>
+              <a href="resources-grants.html"><b><span class="st">02</span>補助案資訊</b><i>出海外銷補助，過期不留</i></a>
+              <a href="resources-blog.html"><b><span class="st">03</span>部落格</b><i>出海會卡的關，一篇篇拆</i></a>
+            </div>
+          </div>
+          <a href="about.html">關於</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn btn-ghost btn-sm" href="boss.html" style="background:var(--gold-soft);box-shadow:inset 0 0 0 1.5px var(--gold)">給老闆看</a>
+          <a class="btn btn-gold btn-sm" href="#contact">免費聊 15 分鐘</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+          <svg width="20" height="14" viewBox="0 0 20 14" fill="none"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">首頁</a>
+        <a href="services-diagnosis.html">服務・產品診斷報告</a>
+        <a href="services-expo.html">服務・展覽備展</a>
+        <a href="services-channel.html">服務・通路上架與優化</a>
+        <a href="cases.html">案例</a>
+        <a href="resources-exhibitions.html">資源・海外展覽資訊</a>
+        <a href="resources-grants.html">資源・補助案資訊</a>
+        <a href="resources-blog.html">資源・部落格</a>
+        <a href="about.html">關於</a><a href="boss.html" style="color:var(--gold)">給老闆看</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEXT 帶（冷入口保護）===== -->
+  <div class="hero-screen">
+  <div class="context-strip">
+    <div class="wrap">
+      <svg class="pin" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <span>把台灣品牌帶進<b>北美大型通路</b>（如 Costco）——這一頁是所有聯絡方式的收口：加 LINE、留資料，都在這。</span>
+    </div>
+  </div>
+
+  <!-- ===== 麵包屑 ===== -->
+  <nav class="crumb" aria-label="breadcrumb">
+    <div class="wrap">
+      <a href="index.html">首頁</a>
+      <span class="sep">›</span>
+      <span class="here">加 LINE／聯絡</span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO（深）===== -->
+  <section class="page-hero contact-hero" id="top" aria-labelledby="c-h1">
+    <div class="wrap">
+      <h1 id="c-h1">先聊聊你的產品</h1>
+      <p class="oneliner">把你的產品、想進的<b>北美大型通路</b>告訴我們，先聊聊合不合適，再決定要不要走下去。第一步通常就是一份產品診斷。</p>
+      <div class="meta">
+        <span>真人即時回覆・中美台據點</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 加 LINE 大區（白）===== -->
+  </div><!-- /hero-screen -->
+  <section class="band white" id="contact">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2 class="big-h2">加 LINE，先聊聊你的產品</h2>
+        <p class="sub">不用先決定什麼——把產品、想進的通路告訴我們，先聊聊合不合適，再決定要不要走下去。</p>
+      </div>
+
+      <div class="line-card reveal">
+        <div>
+          <h2>用 LINE，直接和我們對話</h2>
+          <p class="lead">掃右邊 QR，或用官方帳號 ID 加我們。跟你對話的是懂供應鏈、真的做過跨境的人。</p>
+          <span class="live"><span class="dotpulse"></span>真人即時回覆</span>
+          <div class="cta-row">
+            <a class="btn btn-gold" href="#lead-form" data-line-cta>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              加 LINE，先聊聊你的產品
+            </a>
+          </div>
+          <p class="lineid">官方帳號 ID：<b><span class="demo">@twin-us<i>示範</i></span></b>（LINE 連結／deep link 上線前接上）</p>
+        </div>
+        <div class="qr-block">
+          <div class="qr-lg">LINE QR<br>待補</div>
+          <span>手機用 LINE 掃描</span>
+        </div>
+      </div>
+
+      <div class="shead reveal" style="margin-top:64px">
+        <h2 class="big-h2" style="font-size:clamp(1.4rem,3vw,1.9rem)">三步，不會被推銷</h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="n">1</div>
+          <h3>先聊你的產品</h3>
+          <p>你賣什麼、想進哪個通路、現在卡在哪——先把狀況講清楚。</p>
+          <svg class="arrow" width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3>我們給初步判斷</h3>
+          <p>依經驗先說：適不適合進北美大型通路、大概要補什麼——不合適也會直說。</p>
+          <svg class="arrow" width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3>適合就從診斷開始</h3>
+          <p>覺得值得往下走，第一步通常是一份<a href="services-diagnosis.html" style="color:var(--steel);font-weight:700;text-decoration:underline">產品診斷</a>。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 留資料表單（白 hi）===== -->
+  <section class="band paper-hi" id="lead-form">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2 class="big-h2">不方便加 LINE？留個資料，我們主動聯絡你</h2>
+        <p class="sub">留下怎麼找到你、你賣什麼，我們會主動聯絡。標<span style="color:var(--brand,#C0392B)">＊</span>為必填。</p>
+      </div>
+
+      <!-- TODO(上線前)：接上表單後端（Formspree／Google 表單／自有 API 或 LINE Notify）。目前為前端驗證＋成功態，資料尚未送出到任何伺服器。 -->
+      <form class="lead-form reveal" id="leadForm" novalidate>
+        <div class="grid2">
+          <div class="field" data-field>
+            <label for="lf-name">姓名<span class="req">＊</span></label>
+            <input type="text" id="lf-name" name="name" autocomplete="name" required placeholder="怎麼稱呼你" />
+            <span class="err">請填姓名</span>
+          </div>
+          <div class="field" data-field>
+            <label for="lf-company">公司／品牌<span class="req">＊</span></label>
+            <input type="text" id="lf-company" name="company" autocomplete="organization" required placeholder="品牌或公司名稱" />
+            <span class="err">請填公司或品牌</span>
+          </div>
+          <div class="field" data-field>
+            <label for="lf-category">產品類別</label>
+            <select id="lf-category" name="category">
+              <option value="">請選擇（可跳過）</option>
+              <option>食品</option>
+              <option>保健食品</option>
+              <option>日用品</option>
+              <option>美妝保養</option>
+              <option>其他</option>
+            </select>
+            <span class="err">請選擇產品類別</span>
+          </div>
+          <div class="field" data-field>
+            <label for="lf-contact">聯絡方式<span class="req">＊</span></label>
+            <input type="text" id="lf-contact" name="contact" required placeholder="LINE ID／Email／電話，擇一即可" />
+            <span class="err">請留一個能聯絡到你的方式</span>
+          </div>
+          <div class="field full">
+            <label for="lf-note">想進的通路／現在卡在哪（選填）</label>
+            <textarea id="lf-note" name="note" placeholder="例如：想進 Costco，卡在定價與 FDA；或想先做一次產品診斷。"></textarea>
+          </div>
+        </div>
+        <div class="submit-row">
+          <button class="btn btn-gold" type="submit">送出資料</button>
+          <span class="privacy">資料只用於與你聯絡，不外流。</span>
+        </div>
+      </form>
+
+      <div class="form-ok reveal" id="formOk" role="status" aria-live="polite">
+        <h3>
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8 12.5l2.5 2.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          已收到，我們會主動聯絡你
+        </h3>
+        <p>謝謝你留下資料。想更快的話，直接加 LINE 最即時——我們通常當天就會回。</p>
+        <a class="btn btn-ink" href="#contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          直接加 LINE 更快
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 營業資訊 ＋ 信任列（深）===== -->
+  <section class="band dark final" id="trust">
+    <div class="wrap">
+      <div class="shead reveal">
+        <h2>能查、能問的，我們一項項擺出來</h2>
+        <p class="sub">信任不靠形容詞。據點、回覆方式、跟通路的實際關係——可以查證的，都放在這。</p>
+      </div>
+
+      <div class="bizinfo reveal">
+        <div class="bizcard">
+          <div class="k">公司名／統編</div>
+          <div class="v"><span class="demo">躍鹿跨境整合股份有限公司<i>示範</i></span>／統編 <span class="demo">90000001<i>示範</i></span><small>上線前補上正式公司名與統一編號</small></div>
+        </div>
+        <div class="bizcard">
+          <div class="k">據點</div>
+          <div class="v"><span class="demo">台北 · 美國洛杉磯<i>示範</i></span><small>懂兩岸供應鏈，也在當地下場做事</small></div>
+        </div>
+        <div class="bizcard">
+          <div class="k">怎麼找到我們</div>
+          <div class="v">LINE 真人即時回覆<small>官方帳號 ID／QR <span class="fill">待補</span>；或留資料我們主動聯絡</small></div>
+        </div>
+      </div>
+
+      <div class="trustrow reveal">
+        <span class="ti"><b>香皂鐵證</b>：已進美國 Costco</span>
+        <span class="ti">團隊真名真臉：<span class="fill">待補</span></span>
+        <span class="ti">只走北美大型通路，不走華人超市</span>
+        <span class="ti"><a href="cases.html#soap" style="color:var(--gold);font-weight:700">看香皂完整案例 ›</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footcols">
+        <div>
+          <a class="brand" href="index.html" style="color:#fff"><span class="dot"></span><span>上架美國</span></a>
+          <p style="margin-top:14px">協助台灣品牌進入北美大型通路（如 Costco）的整合服務。靠方法，不靠運氣。</p>
+        </div>
+        <div>
+          <h4>服務</h4>
+          <a href="services-diagnosis.html">產品診斷報告</a>
+          <a href="services-expo.html">展覽備展</a>
+          <a href="services-channel.html">通路上架與優化</a>
+        </div>
+        <div>
+          <h4>資源</h4>
+          <a href="resources-exhibitions.html">海外展覽資訊</a>
+          <a href="resources-grants.html">補助案資訊</a>
+          <a href="resources-blog.html">部落格</a>
+        </div>
+        <div>
+          <h4>探索</h4>
+          <a href="cases.html">案例</a>
+          <a href="about.html">關於我們</a>
+          <a href="boss.html">給老闆看</a>
+        </div>
+        <div>
+          <h4>聯絡</h4>
+          <a href="#contact">加 LINE</a>
+          <a href="#lead-form">留資料</a>
+          <p style="color:rgba(246,244,239,.4);font-size:.8rem;padding-top:10px">英文版（/en）籌備中</p>
+        </div>
+      </div>
+      <div class="footbar">
+        <span>© 2025 上架美國<span class="demo">躍鹿跨境整合股份有限公司<i>示範</i></span></span>
+        <span>只走北美大型通路，不走華人超市</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- sticky LINE -->
+  <div class="sticky-line">
+    <a class="btn btn-gold" href="#contact">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 11.5c0 4.4-4 8-9 8-1 0-2-.15-2.9-.42L4 20.5l1.2-3.2C4.2 16 3 13.9 3 11.5c0-4.4 4-8 9-8s9 3.6 9 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      免費聊 15 分鐘
+    </a>
+  </div>
+
+  <script>
+    // mobile nav
+    (function () {
+      var t = document.getElementById('navToggle'), m = document.getElementById('mobileMenu');
+      if (t && m) {
+        t.addEventListener('click', function () {
+          var open = m.classList.toggle('open');
+          t.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        m.addEventListener('click', function (e) { if (e.target.tagName === 'A') { m.classList.remove('open'); t.setAttribute('aria-expanded','false'); } });
+      }
+    })();
+
+    // reveal on scroll
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+      setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 4000);
+    })();
+
+    // 留資料表單：前端驗證 + 成功態（後端上線前接上，見表單前的 TODO 註解）
+    (function () {
+      var form = document.getElementById('leadForm');
+      var ok = document.getElementById('formOk');
+      if (!form) return;
+
+      function fieldOf(el) { return el.closest('[data-field]'); }
+      function scrollToEl(el) {
+        if (!el) return;
+        var y = el.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight / 2) + (el.offsetHeight / 2);
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
+      function validate(el) {
+        var f = fieldOf(el);
+        if (!f) return true;
+        var valid = el.checkValidity() && el.value.trim() !== '';
+        f.classList.toggle('invalid', !valid);
+        return valid;
+      }
+      // 即時清除錯誤
+      form.querySelectorAll('[data-field] input, [data-field] select').forEach(function (el) {
+        el.addEventListener('input', function () { if (fieldOf(el).classList.contains('invalid')) validate(el); });
+        el.addEventListener('blur', function () { if (el.value.trim() !== '' || el.required) validate(el); });
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var required = form.querySelectorAll('[data-field] input[required], [data-field] select[required]');
+        var allOk = true, firstBad = null;
+        required.forEach(function (el) { if (!validate(el)) { allOk = false; if (!firstBad) firstBad = fieldOf(el); } });
+        if (!allOk) { scrollToEl(firstBad); return; }
+
+        // TODO(上線前)：改成 fetch() POST 到表單後端，成功回應後再顯示 formOk。
+        form.style.display = 'none';
+        if (ok) { ok.classList.add('show'); scrollToEl(ok); }
+      });
+    })();
+
+    // header：透明浮於深色頂區 → 捲離 hero 後淡入玻璃（與首頁一致）
+    (function () {
+      var h = document.getElementById('header');
+      if (!h) return;
+      var darkEnd = document.querySelector('.page-hero');
+      function onScroll() {
+        var trigger = darkEnd ? darkEnd.offsetTop + darkEnd.offsetHeight - 72 : 72;
+        h.classList.toggle('scrolled', window.scrollY > trigger);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    })();
+  </script>
+  <script>
+  /* 全站打磨層：進度條 + 常駐 CTA 淡入 + 回頁首（idempotent，重複載入安全） */
+  (function () {
+    var hero = document.querySelector('.hero, .page-hero');
+    var sticky = document.querySelector('.sticky-line');
+
+    if (!document.querySelector('.scroll-progress')) {
+      var bar = document.createElement('div');
+      bar.className = 'scroll-progress';
+      bar.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(bar);
+    }
+    var bar = document.querySelector('.scroll-progress');
+
+    var tt = document.querySelector('.to-top');
+    if (!tt) {
+      tt = document.createElement('button');
+      tt.className = 'to-top';
+      tt.type = 'button';
+      tt.setAttribute('aria-label', '回頁首');
+      tt.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      tt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      document.body.appendChild(tt);
+    }
+
+    function onScroll() {
+      var st = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var h = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+      if (bar) bar.style.transform = 'scaleX(' + Math.min(1, Math.max(0, st / h)) + ')';
+      var hh = hero ? hero.offsetHeight : 500;
+      if (sticky) { if (st > hh * 0.6) sticky.classList.add('show'); else sticky.classList.remove('show'); }
+      if (st > hh * 0.9) tt.classList.add('show'); else tt.classList.remove('show');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>
